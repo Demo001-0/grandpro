@@ -1,5 +1,5 @@
 /* js/features/testimonials.js — renders the customer reviews slider on the home page (data: js/data/testimonials.js).
-   Arrows + auto-advance (no swipe) while the section is on screen. */
+   Arrows, dots, press-and-drag with the mouse (touch swipes natively) + auto-advance while the section is on screen. */
 (() => {
   const track = document.getElementById("tmTrack");
   if (!track || typeof TESTIMONIALS === "undefined") return;
@@ -57,14 +57,35 @@
   let dt = 0; track.addEventListener("scroll", () => { cancelAnimationFrame(dt); dt = requestAnimationFrame(markDot); }, { passive: true });
   addEventListener("resize", buildDots);
   setTimeout(buildDots, 0); setTimeout(buildDots, 600);
-  let sx = null;
-  track.addEventListener("pointerdown", e => { sx = e.pointerType === "mouse" ? e.clientX : null; });   // touch swipes scroll natively; mouse drags are handled here
-  addEventListener("pointerup", e => {
-    if (sx === null) return;
-    const dx = e.clientX - sx; sx = null;
-    if (Math.abs(dx) > 45) go(dx * dir < 0 ? 1 : -1);
+  /* mouse: press, hold and drag - the cards follow the pointer, then settle on the nearest card (touch scrolls natively) */
+  let drag = null;
+  track.addEventListener("pointerdown", e => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    drag = { x: e.clientX, left: track.scrollLeft, t: performance.now(), lx: e.clientX, lt: performance.now(), v: 0, moved: false };
   });
-  addEventListener("pointercancel", () => { sx = null; });
+  addEventListener("pointermove", e => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x;
+    if (!drag.moved && Math.abs(dx) < 4) return;
+    if (!drag.moved) { drag.moved = true; track.classList.add("dragging"); }
+    track.scrollLeft = drag.left - dx;                                 // same formula in LTR and RTL
+    const now = performance.now();
+    if (now - drag.lt > 16) { drag.v = (e.clientX - drag.lx) / (now - drag.lt); drag.lx = e.clientX; drag.lt = now; }
+    e.preventDefault();
+  });
+  const endDrag = () => {
+    if (!drag) return;
+    const d = drag; drag = null;
+    if (!d.moved) return;
+    last = Date.now();
+    const flick = Math.abs(d.v) > 0.6 ? (d.v * dir < 0 ? 1 : -1) : 0;   // fast flick = one more card
+    const target = Math.max(0, Math.min(Math.round(pos() / step()) + flick, Math.round(maxScroll() / step())));
+    track.classList.remove("dragging");
+    track.scrollTo({ left: dir * Math.min(target * step(), maxScroll()), behavior: "smooth" });
+  };
+  addEventListener("pointerup", endDrag);
+  addEventListener("pointercancel", endDrag);
+  track.addEventListener("click", e => { if (track.classList.contains("dragging")) e.preventDefault(); }, true);
   track.addEventListener("dragstart", e => e.preventDefault());
 
   /* auto-advance: flips to the next review every 10 s while the section is on screen.

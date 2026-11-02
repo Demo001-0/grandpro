@@ -70,7 +70,7 @@
 @import url("refinements/product-card-type.css");
 @import url("refinements/card-tilt.css");
 @import url("refinements/lang-switch.css");
-@import url("refinements/testimonials.css");
+@import url("refinements/testimonials.css?v=54c");
 @import url("theme/dark-depth.css");
 @import url("motion/sections3d.css");
 
@@ -102,10 +102,10 @@
 @import url("refinements/dive-real-products.css");
 
 /* 3D product orbit (home) */
-@import url("refinements/orbit.css");
+@import url("refinements/orbit.css?v=54b");
 
 /* 3D product orbit (home) */
-@import url("refinements/orbit.css");
+@import url("refinements/orbit.css?v=54b");
 
 /* 3D lens navigation */
 @import url("refinements/nav3d.css");

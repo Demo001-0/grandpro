@@ -56,3 +56,7 @@ html[data-theme="dark"] .tm-card figcaption{border-color:rgba(255,255,255,.12)}
   .tm-dot{width:11px;height:11px}.tm-dot.on{width:30px}
   .tm-nav{gap:16px;margin-top:14px}
 }
+
+/* desktop press-and-drag: cards follow the mouse (snap is paused while dragging, then they settle on the nearest card) */
+.tm-track.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.tm-track.dragging .tm-card{pointer-events:none;transform:none}
