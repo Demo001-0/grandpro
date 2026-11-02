@@ -1,0 +1,50 @@
+/* css/refinements/rtl-arabic.css — Arabic mode (html.is-ar, dir="rtl"): DIN Arabic typography + mirrored layout.
+   Nothing here applies to the English version. */
+
+/* ---- typography: Arabic must never be letter-spaced or upper-cased (it breaks the joined letters) ---- */
+html.is-ar *,html.is-ar *::before,html.is-ar *::after{letter-spacing:0!important;text-transform:none!important}
+/* the wordmark is Latin (LTR) inside an RTL page: balance its trailing letter-space on the physical LEFT so it stays centred */
+html.is-ar .logo .word,html.is-ar #mini .mword{letter-spacing:.28em!important;padding-left:.28em!important;padding-right:0!important}
+html.is-ar body{line-height:1.85;font-weight:400}
+html.is-ar h1,html.is-ar h2,html.is-ar h3,html.is-ar h4,html.is-ar h5{line-height:1.35}
+html.is-ar .hero h1,html.is-ar .hero2 h1,html.is-ar .collection-hero h1{line-height:1.3;font-weight:700}
+html.is-ar .section-title,html.is-ar .sale h2,html.is-ar .product h1,html.is-ar .info-page h1{font-weight:700}
+html.is-ar .nav a,html.is-ar #mini nav a{font-weight:500;font-size:clamp(15px,1.25vw,18px)}
+html.is-ar .btn{font-weight:700}
+html.is-ar .card h3,html.is-ar .cc-info h3{font-weight:500}
+html.is-ar .lk-cap,html.is-ar .hero-tag,html.is-ar .sale-tag,html.is-ar .badge{font-weight:700}
+html.is-ar .product .desc{line-height:2;font-size:18px}
+html.is-ar .logo .sub{font-size:clamp(17px,2.2vw,26px);font-weight:700;padding:0!important;margin-top:14px}
+html.is-ar .home-splash .header .logo .sub{font-size:clamp(18px,2.6vw,30px)!important}
+
+/* ---- mirrored positions ---- */
+html.is-ar .cart-count{right:auto;left:-2px}
+html.is-ar .drawer{right:auto;left:0;transform:translateX(-100%)}
+html.is-ar .drawer.open{transform:none}
+html.is-ar .hero2 .btn{margin-right:0;margin-left:10px}
+html.is-ar .float-card{left:auto;right:-40px}
+html.is-ar .hero-sun{right:auto;left:-150px}
+html.is-ar .lk-cap{left:auto;right:18px;text-align:right}
+html.is-ar .badge{left:auto;right:14px}
+html.is-ar .features>div{text-align:right}
+html.is-ar .sale-art small{margin-left:0;margin-right:4px}
+html.is-ar .info-page,html.is-ar .product .desc,html.is-ar .crumbs{text-align:start}
+html.is-ar .toast{direction:rtl}
+@media(max-width:820px){
+  html.is-ar .float-card{right:auto}
+  html.is-ar .lk-cap{right:12px;left:12px}
+  html.is-ar .features>div{text-align:center}
+}
+@media(max-width:700px){html.is-ar .features>div{text-align:right}}
+
+/* ---- keep the animated strips running left→right internally, text inside stays RTL ---- */
+html.is-ar .bar.ann{direction:ltr}
+html.is-ar .ann-item{direction:rtl}
+@media(max-width:1000px){
+  html.is-ar .cats{direction:ltr}
+  html.is-ar .cats .ccard{direction:rtl}
+}
+/* price lines and numbers read naturally */
+html.is-ar .price,html.is-ar .subtotal span:last-child{direction:rtl;unicode-bidi:plaintext}
+html.is-ar .qty,html.is-ar .mini-qty{direction:ltr}
+html.is-ar input,html.is-ar textarea,html.is-ar select{text-align:start}

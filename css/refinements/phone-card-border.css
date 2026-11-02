@@ -1,0 +1,4 @@
+/* css/refinements/phone-card-border.css — phone only: a light, visible border on product cards. */
+@media(max-width:700px){
+  html:not([data-theme="dark"]) .card{border:1px solid rgba(31,33,27,.16);box-shadow:0 1px 3px rgba(31,33,27,.05)}
+}

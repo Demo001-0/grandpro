@@ -1,0 +1,42 @@
+/* css/motion/typewriter.css — Typewriter headings */
+/* ---- typewriter headings: letters ink in, caret glows and fades out ---- */
+.tw .tww{display:inline-block;white-space:nowrap}
+.tw .c{position:relative;display:inline-block;opacity:0}
+.tw .c.on{opacity:1;animation:twin .7s var(--ease,ease) both}
+@keyframes twin{
+  0%{opacity:0;transform:translateY(.45em) scale(.7);filter:blur(4px);color:var(--accent,#497900)}
+  60%{filter:blur(0)}
+  100%{opacity:1;transform:none;filter:none}
+}
+.tw .c.last::after{content:"";position:absolute;left:calc(100% + 1px);top:8%;width:2px;height:84%;border-radius:2px;
+  background:linear-gradient(180deg,#cdf395,#497900);box-shadow:0 0 10px rgba(178,248,72,.75);animation:twblink .9s steps(1) infinite}
+.tw-done .c.last::after{animation:twend 2.4s ease forwards}
+@keyframes twblink{50%{opacity:0}}
+@keyframes twend{0%,24%,48%,72%{opacity:1}12%,36%,60%{opacity:0}100%{opacity:0}}
+html[data-theme="dark"] .tw .c.last::after{background:linear-gradient(180deg,#f4f6ee,#b9f832);box-shadow:0 0 12px rgba(230,235,217,.8)}
+html[data-theme="dark"] .tw .c.on{animation-name:twin-d}
+@keyframes twin-d{
+  0%{opacity:0;transform:translateY(.45em) scale(.7);filter:blur(4px);color:#fff}
+  60%{filter:blur(0)}
+  100%{opacity:1;transform:none;filter:none}
+}
+
+
+/* ---- Arabic: keep the letters joined — plain inline spans, fade/blur in (a transform would split the word) ---- */
+.tw-ar{letter-spacing:0!important}
+.tw-ar .tww{display:inline-block;white-space:nowrap;letter-spacing:0}
+.tw-ar .c{display:inline;letter-spacing:0}
+.tw-ar .c.on{animation-name:twin-ar}
+@keyframes twin-ar{
+  0%{opacity:0;filter:blur(5px);color:var(--accent,#497900)}
+  60%{filter:blur(0)}
+  100%{opacity:1;filter:none}
+}
+html[data-theme="dark"] .tw-ar .c.on{animation-name:twin-ar-d}
+@keyframes twin-ar-d{
+  0%{opacity:0;filter:blur(5px);color:#fff}
+  60%{filter:blur(0)}
+  100%{opacity:1;filter:none}
+}
+/* caret sits on the left of the newest letter (the next one appears to its left) */
+.tw-ar .c.last::after{left:auto;right:auto;left:-3px}

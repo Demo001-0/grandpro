@@ -1,0 +1,77 @@
+/* css/refinements/category-hover-and-slider.css — Category hover, icon animations, slider */
+/* category hover: softer rose instead of the deep pink */
+.cat:hover{background:linear-gradient(135deg,#d9f6ad 0%,#c8f28a 55%,#b8f956 100%);color:#fff;text-shadow:0 1px 6px rgba(77,83,68,.25);
+  box-shadow:0 16px 30px rgba(179,248,75,.28),0 0 34px rgba(201,242,139,.4)}
+.cat:hover .ci{color:#aaf835}
+
+
+@keyframes ci-drop{0%,100%{transform:translateY(0) scale(1)}30%{transform:translateY(-3px) scale(.94,1.08)}60%{transform:translateY(1.2px) scale(1.08,.92)}80%{transform:translateY(0) scale(1)}}
+@keyframes ci-arc{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes ci-blink{0%,38%,52%,100%{transform:scaleY(1)}45%{transform:scaleY(.08)}}
+@keyframes ci-smile{0%,100%{transform:scale(1)}50%{transform:scale(1.14,1.06) translateY(.4px)}}
+@keyframes ci-look{0%,100%{transform:translateX(0)}25%{transform:translateX(-2.4px)}75%{transform:translateX(2.4px)}}
+@keyframes ci-lid{0%,55%,70%,100%{transform:scaleY(1)}62%{transform:scaleY(.18)}}
+@keyframes ci-kiss{0%,100%{transform:scale(1) rotate(0)}40%{transform:scale(1.12,.9) rotate(-5deg)}70%{transform:scale(.96,1.08) rotate(3deg)}}
+@keyframes ci-pump{0%,100%{transform:translateY(0)}35%{transform:translateY(2px)}60%{transform:translateY(0)}}
+
+
+/* ---- category icons: tiny animations on hover (always on, slower, for touch) ---- */
+.ccard:nth-child(1) .ci svg path:nth-of-type(1),.ccard:nth-child(1) .ci svg path:nth-of-type(2),.ccard:nth-child(2) .ci svg circle:nth-of-type(2),.ccard:nth-child(2) .ci svg circle:nth-of-type(3),.ccard:nth-child(2) .ci svg path,.ccard:nth-child(3) .ci svg circle,.ccard:nth-child(3) .ci svg path,.ccard:nth-child(4) .ci svg path,.ccard:nth-child(5) .ci svg path:nth-of-type(2){transform-box:fill-box;transform-origin:center}
+@media(hover:hover){
+.ccard:nth-child(1):hover .ci svg path:nth-of-type(1){animation:ci-drop 1.5s ease-in-out infinite}
+.ccard:nth-child(1):hover .ci svg path:nth-of-type(2){animation:ci-arc 1.5s ease-in-out infinite}
+.ccard:nth-child(2):hover .ci svg circle:nth-of-type(2),.ccard:nth-child(2):hover .ci svg circle:nth-of-type(3){animation:ci-blink 2s ease-in-out infinite}
+.ccard:nth-child(2):hover .ci svg path{animation:ci-smile 2s ease-in-out infinite}
+.ccard:nth-child(3):hover .ci svg circle{animation:ci-look 2.2s ease-in-out infinite}
+.ccard:nth-child(3):hover .ci svg path{animation:ci-lid 2.2s ease-in-out infinite}
+.ccard:nth-child(4):hover .ci svg path{animation:ci-kiss 1.6s ease-in-out infinite}
+.ccard:nth-child(5):hover .ci svg path:nth-of-type(2){animation:ci-pump 1.5s ease-in-out infinite}
+}
+@media(hover:none){
+.ccard:nth-child(1) .ci svg path:nth-of-type(1){animation:ci-drop 3.2s ease-in-out infinite}
+.ccard:nth-child(1) .ci svg path:nth-of-type(2){animation:ci-arc 3.2s ease-in-out infinite}
+.ccard:nth-child(2) .ci svg circle:nth-of-type(2),.ccard:nth-child(2) .ci svg circle:nth-of-type(3){animation:ci-blink 3.6s ease-in-out infinite}
+.ccard:nth-child(2) .ci svg path{animation:ci-smile 3.6s ease-in-out infinite}
+.ccard:nth-child(3) .ci svg circle{animation:ci-look 4s ease-in-out infinite}
+.ccard:nth-child(3) .ci svg path{animation:ci-lid 4s ease-in-out infinite}
+.ccard:nth-child(4) .ci svg path{animation:ci-kiss 3.4s ease-in-out infinite}
+.ccard:nth-child(5) .ci svg path:nth-of-type(2){animation:ci-pump 3.2s ease-in-out infinite}
+}
+@media(prefers-reduced-motion:reduce){.ccard:nth-child(1) .ci svg path:nth-of-type(1),.ccard:nth-child(1) .ci svg path:nth-of-type(2),.ccard:nth-child(2) .ci svg circle:nth-of-type(2),.ccard:nth-child(2) .ci svg circle:nth-of-type(3),.ccard:nth-child(2) .ci svg path,.ccard:nth-child(3) .ci svg circle,.ccard:nth-child(3) .ci svg path,.ccard:nth-child(4) .ci svg path,.ccard:nth-child(5) .ci svg path:nth-of-type(2){animation:none!important}}
+
+/* ---- category cards: same look as product cards ---- */
+.ccard{display:block;border:0;border-radius:24px;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s;position:relative;color:#fff;text-align:center;isolation:isolate;box-shadow:0 12px 28px rgba(179,248,75,.28)}
+.ccard:hover{box-shadow:0 18px 36px rgba(179,248,75,.38);transform:translateY(-6px)}
+.cc-img{position:relative;aspect-ratio:1/1.15;overflow:hidden;background:#e7f9cc}
+.cc-img>img,.cc-img>svg{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ccard:hover .cc-img>img,.ccard:hover .cc-img>svg{transform:scale(1.04)}
+.ccard .ci{position:absolute;left:12px;top:12px;z-index:1;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.93);color:#477700;box-shadow:0 4px 12px rgba(77,83,68,.18);transition:transform .35s var(--ease)}
+.ccard .ci svg{width:22px;height:22px}
+.ccard:hover .ci{transform:scale(1.08) rotate(-6deg)}
+.cc-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(217,246,173,.12) 0%,rgba(178,248,73,.10) 45%,rgba(80,86,71,.55) 100%)}
+.cc-info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px 12px 22px}
+.cc-info h3{font-family:var(--font-head);font-weight:400;font-size:15px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px;text-shadow:0 1px 10px rgba(27,29,24,.4)}
+.cc-info h3::after{content:"";display:block;width:26px;height:1px;background:#fff;margin:9px auto 0;transition:width .4s}
+.ccard:hover .cc-info h3::after{width:52px}
+.cc-count{font-size:13px;color:#fff;opacity:.9;letter-spacing:.06em}
+html[data-theme="dark"] .ccard{box-shadow:0 14px 34px rgba(0,0,0,.45)}
+html[data-theme="dark"] .cc-img{background:#1e201a}
+html[data-theme="dark"] .cc-info h3{color:#f4f6ee}
+html[data-theme="dark"] .cc-count{color:#f4f6ee}
+html[data-theme="dark"] .cc-img>img{filter:brightness(.92) saturate(1.05)}
+@media(hover:none){.ccard:hover{transform:none;box-shadow:none}.ccard:hover .cc-img>img,.ccard:hover .cc-img>svg,.ccard:hover .ci{transform:none}}
+
+/* ---- category slider (tablet + mobile) ---- */
+@media(max-width:1000px){
+  .cats{--pad:clamp(16px,4vw,64px);display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pad);
+    margin:-18px calc(var(--pad)*-1) -20px;padding:30px var(--pad) 40px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .cats::-webkit-scrollbar{display:none}
+  .ccard{flex:0 0 clamp(150px,44vw,230px);scroll-snap-align:start}
+  .ccard{border-radius:20px}
+  .cc-info{padding:16px 8px 16px}
+  .cc-info h3{font-size:12.5px;letter-spacing:.16em}
+  .cc-count{font-size:12px}
+  .ccard .ci{width:36px;height:36px;left:10px;top:10px}.ccard .ci svg{width:19px;height:19px}
+}
+

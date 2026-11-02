@@ -1,0 +1,26 @@
+/* css/refinements/ticker-and-splash.css — Announcement ticker, home splash, splash scroll */
+/* announcement ticker */
+.bar.ann{padding:0;min-height:40px;display:flex;align-items:center;overflow:hidden;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;font-family:var(--font-head);font-weight:400;background:linear-gradient(115deg,#dcf7b4,#d7f5a9,#e2f8c2,#dcf7b4);color:var(--ink)}
+.ann-track{display:flex;width:max-content;animation:annscroll 38s linear infinite}
+.bar.ann:hover .ann-track{animation-play-state:paused}
+.ann-group{display:flex;align-items:center;flex-shrink:0}
+.ann-item{padding:0 18px}
+.ann-dot{font-size:10px;color:var(--accent)}
+@keyframes annscroll{to{transform:translateX(-50%)}}
+@media(max-width:560px){.bar.ann{min-height:36px;font-size:12px}.ann-track{animation-duration:30s}}
+@media (prefers-reduced-motion:reduce){.ann-track{animation:none;width:100%;justify-content:center}.ann-group:nth-child(2){display:none}.ann-group{overflow:hidden}}
+.bar.ann + .hero{border-top:0!important}
+
+/* home: sun + logo become their own full screen under the header icons */
+.home-splash .header{min-height:calc(100svh - 40px);display:flex;flex-direction:column;padding-bottom:0}
+.home-splash .header>.container{flex:1;display:flex;flex-direction:column;width:100%}
+.home-splash .header .logo{flex:1;justify-content:center;margin:0 0 40px}
+.home-splash .header .logo svg{width:clamp(130px,26vw,220px);height:auto;aspect-ratio:1}
+.home-splash .header .logo img{width:min(460px,80vw)}
+@media(max-width:560px){.home-splash .header{min-height:calc(100svh - 36px)}.home-splash .header .logo svg{width:150px}.home-splash .header .logo{margin-bottom:56px}}
+
+/* splash scroll: logo recedes (shrinks, fades, drifts slower) while the ticker + hero slide over it like a curtain */
+/* the splash content (logo, sun, tagline, cards) stays fully visible while scrolling; the ticker + hero simply slide over it */
+.home-splash .bar.ann,.home-splash .hero{position:relative;z-index:2}
+.home-splash .hero{box-shadow:0 -18px 40px rgba(31,33,27,.18)}
+

@@ -1,0 +1,17 @@
+/* css/base/tokens-and-reset.css — Design tokens (colours, fonts), reset, container */
+
+:root{
+  --bg:#f8fbf3; --card:#fbfdf9; --ink:#1d1f19; --brand:#b1f846; --hero:#dcf7b4;
+  --bar:#d7f5a8; --dark:#4f5546; --accent:#497900; --line:#e2f8c1; --white:#fff;
+  --font-head:'DIN Next Arabic','Marcellus','Cormorant Garamond',serif;
+  --font-logo:'DIN Next Arabic','Cormorant Garamond',serif;
+  --font-body:'DIN Next Arabic','Assistant',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1400px;margin:0 auto;padding:0 clamp(16px,4vw,64px)}
+

@@ -1,0 +1,20 @@
+/* css/components/footer-info.css — Footer and info pages */
+/* footer + info */
+.footer{background:var(--dark);color:#e7f9cc;padding:60px 0 26px;margin-top:0}
+.footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer h5{font-family:var(--font-head);font-weight:400;font-size:18px;letter-spacing:.1em;margin-bottom:14px;color:#fff}
+.footer li{list-style:none;margin:6px 0}
+.footer a:hover{text-decoration:underline}
+.footer form{display:flex;margin-top:12px}
+.footer input{flex:1;padding:12px;border:1px solid #505747;background:transparent;color:#fff;font-family:inherit}
+.footer form button{padding:0 20px;border:1px solid #e7f9cc;background:#e7f9cc;color:var(--dark)}
+.copy{text-align:center;font-size:14px;opacity:.7;margin-top:40px;border-top:1px solid #4c5243;padding-top:20px}
+.info-page{max-width:760px;margin:0 auto;padding:60px 0 90px}
+.info-page h2{font-family:var(--font-head);font-weight:400;font-size:20px;margin:28px 0 8px}
+.info-page p{margin-bottom:12px}
+.contact-form{display:grid;gap:14px;margin-top:20px}
+.contact-form input,.contact-form textarea{padding:14px;border:1px solid var(--line);background:#fff;font-family:inherit;font-size:16px}
+.toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,30px);background:var(--dark);color:#fff;padding:12px 26px;opacity:0;transition:.3s;z-index:200;font-family:var(--font-head)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.hero .container,.product{grid-template-columns:1fr}.cats{grid-template-columns:repeat(2,1fr)}.features,.footer .cols{grid-template-columns:1fr}}

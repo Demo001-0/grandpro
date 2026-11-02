@@ -1,0 +1,16 @@
+/* css/components/product-page.css — Product page */
+/* product page */
+.product{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:60px 0 90px}
+.product .gallery{border-radius:4px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5}
+.product .gallery svg,.product .gallery img{width:100%;height:100%}
+.product h1{font-family:var(--font-head);font-weight:400;font-size:clamp(28px,3.5vw,42px);margin-bottom:10px}
+.product .price{font-size:22px;margin:10px 0 24px}
+.crumbs{font-size:14px;letter-spacing:.08em;opacity:.75;padding-top:26px}
+.qty{display:inline-flex;border:1px solid var(--ink);margin:0 0 20px}
+.qty button{width:46px;height:46px;background:none;border:0;font-size:20px;color:var(--ink)}
+.qty span{width:50px;display:grid;place-items:center}
+.product .desc{margin-top:28px;line-height:1.8}
+.product .desc{font-family:var(--font-body);font-size:18px;line-height:2.05;font-weight:400;text-align:start;unicode-bidi:plaintext}
+.product .desc:lang(ar),.product .desc[dir=rtl]{letter-spacing:0}
+.product ul{margin:16px 0 0 20px}
+

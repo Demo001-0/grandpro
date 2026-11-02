@@ -1,0 +1,11 @@
+/* css/refinements/serif-copy.css — Hero copy centring, sale note and splash subtitle in serif */
+/* ---- hero copy: true centring (paragraph box + buttons) ---- */
+.hero2 p{margin-left:auto;margin-right:auto}
+.hero2 .btn{margin-left:5px;margin-right:5px}
+
+/* sale note: same serif voice as the tag, title and button */
+.sale p{font-family:var(--font-head);font-size:16px;letter-spacing:.04em;opacity:.85}
+
+/* splash subtitle: same serif voice as the tagline above it */
+.sp-sub{font-family:var(--font-head);letter-spacing:.04em;opacity:.8}
+

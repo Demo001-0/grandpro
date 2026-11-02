@@ -1,0 +1,51 @@
+/* Hero products.
+   PHONE (<700px): slow marquee under the logo (.hero-marquee), the announcement ticker stays as it was.
+   DESKTOP (>=700px): .hero-strip replaces the ticker under the splash — products fly in on first scroll, then scroll slowly.
+   Both are built by js/features/hero3d.js. */
+.hero-marquee,.hero-strip{display:none}
+
+/* ---------- phone ---------- */
+@media(max-width:699px){
+  .hero-marquee{display:block;position:relative;z-index:1;overflow:hidden;width:100vw;padding:18px 0;margin:calc(var(--G, 24px) * 1.3 - 18px) calc(50% - 50vw);direction:ltr}
+  .hero-marquee .hm-track{display:flex;width:max-content;animation:hmscroll 30s linear infinite}
+  .hero-marquee .hm-group{display:flex;align-items:center;flex-shrink:0}
+  .hero-marquee .hm-group img{height:clamp(66px,20vw,88px);width:auto;margin:0 14px;flex:none;user-select:none;pointer-events:none;transform-origin:50% 80%;animation:hmwobble 2.2s ease-in-out infinite}
+  .hero-marquee .hm-group img:nth-child(2n){animation-duration:2.7s;animation-delay:-.7s}
+  .hero-marquee .hm-group img:nth-child(3n){animation-duration:1.9s;animation-delay:-1.2s}
+
+  /* even rhythm: emblem → wordmark → tagline → products → headline → text all share one gap (G) */
+  .home-splash .header{--G:clamp(20px,3.4vh,30px)}
+  .home-splash .header>.container{gap:var(--G)}
+  .home-splash .header .logo{flex:0 0 auto!important;margin:auto 0 0!important;padding-top:0!important}
+  .home-splash .header .logo svg{margin-bottom:var(--G)!important}
+  .home-splash .header .logo .sub{margin-top:calc(var(--G) * .6)!important}
+  .splash-copy{margin-bottom:auto;padding-bottom:30px;gap:0}
+  .splash-copy .sp-sub{margin-top:calc(var(--G) * .7)}
+}
+
+/* ---------- desktop / tablet ---------- */
+@media(min-width:700px){
+  body.has-strip .bar.ann{display:none}                       /* the ticker gives way to the products strip */
+  html:root body .hero-strip{
+    display:block;position:relative;z-index:2;overflow:hidden;width:100%;
+    padding:clamp(14px,2.4vw,30px) 0;background:var(--bg);direction:ltr;
+  }
+  .hero-strip + .lookbook,.hero-strip + .hero{border-top:0!important}
+  html:root body.has-strip.home-splash .lookbook,html:root body.has-strip.home-splash .hero{box-shadow:none}   /* no shadow cast up onto the products */
+  .hero-strip .hm-track{display:flex;width:max-content;animation:hmscroll 70s linear infinite}
+  .hero-strip:not(.in) .hm-track{animation-play-state:paused}
+  .hero-strip .hm-group{display:flex;align-items:center;flex-shrink:0}
+  .hero-strip .hm-item{display:block;flex:none;margin:0 clamp(20px,2.4vw,38px);perspective:900px;
+    opacity:0;transform:translateY(-70px) scale(.2) rotateY(-143deg)}
+  .hero-strip.in .hm-item{opacity:1;transform:none;transition:transform 1.3s cubic-bezier(.215,.61,.355,1) var(--d,0s),opacity .6s ease var(--d,0s)}
+  .hero-strip .hm-item img{display:block;height:clamp(96px,10vw,150px);width:auto;user-select:none;pointer-events:none;transform-origin:50% 80%;animation:hmwobble 2.2s ease-in-out infinite}
+  .hero-strip .hm-item:nth-child(2n) img{animation-duration:2.7s;animation-delay:-.7s}
+  .hero-strip .hm-item:nth-child(3n) img{animation-duration:1.9s;animation-delay:-1.2s}
+}
+
+@keyframes hmscroll{to{transform:translateX(-50%)}}
+@keyframes hmwobble{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-5px) rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){
+  .hero-marquee .hm-track,.hero-marquee .hm-group img,.hero-strip .hm-track,.hero-strip .hm-item img{animation:none}
+  .hero-strip .hm-item{opacity:1;transform:none;transition:none}
+}

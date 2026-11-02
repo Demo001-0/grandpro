@@ -1,0 +1,24 @@
+/* css/refinements/features-strip-v2.css — Features strip v2 (responsive) */
+/* ---- features strip v2: works on desktop, tablet and phone ---- */
+.features,html[data-theme="dark"] .features{grid-template-columns:repeat(3,1fr);padding:0}
+.features>div,html[data-theme="dark"] .features>div{width:100%;margin:0;padding:26px 20px;grid-template-columns:auto minmax(0,max-content);justify-content:center;column-gap:16px;text-align:left}
+.features>div+div{border-left:1px solid var(--line);border-top:0}
+.features .fi,html[data-theme="dark"] .features .fi,html[data-theme="dark"] .features>div:nth-child(n) .fi{width:46px;height:46px}
+.features .fi svg{width:22px;height:22px}
+.features h4,html[data-theme="dark"] .features h4{font-size:17px}
+/* tablet: icon on top, centred, three across */
+@media(max-width:1000px){
+  .features,html[data-theme="dark"] .features{grid-template-columns:repeat(3,1fr)}
+  .features>div,html[data-theme="dark"] .features>div{grid-template-columns:1fr;justify-items:center;text-align:center;row-gap:6px;padding:22px 12px}
+  .features .fi,html[data-theme="dark"] .features .fi{grid-row:auto;margin:0 auto 4px}
+  .features p,html[data-theme="dark"] .features p{max-width:22ch}
+}
+/* phone: one per row, each row centred as a group */
+@media(max-width:700px){
+  .features,html[data-theme="dark"] .features{grid-template-columns:1fr}
+  .features>div,html[data-theme="dark"] .features>div{grid-template-columns:auto minmax(0,max-content);justify-items:start;text-align:left;row-gap:0;padding:18px 16px}
+  .features .fi,html[data-theme="dark"] .features .fi{grid-row:1 / span 2;margin:0}
+  .features p,html[data-theme="dark"] .features p{max-width:none}
+  .features>div+div{border-left:0;border-top:1px solid var(--line)}
+}
+

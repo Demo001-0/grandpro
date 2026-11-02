@@ -1,0 +1,61 @@
+/* css/refinements/hero-slider.css — Hero 2: arch frame, floating card, slider */
+/* ---- hero 2: colour-matched photos, arch frame, floating product card, slider ---- */
+.hero-img{position:relative;isolation:isolate}
+.hero-img img{object-position:50% 40%}
+.hero-img::after{content:"";position:absolute;inset:0;background:#ccf391;mix-blend-mode:color;opacity:.5;pointer-events:none}
+
+.hero2{padding:56px 0 64px;color:var(--ink)}
+.hero2 .container{grid-template-columns:1.05fr .95fr;gap:56px}
+.hero-sun{position:absolute;right:-150px;top:-170px;width:640px;height:640px;opacity:.16;animation:spin 160s linear infinite;z-index:0;pointer-events:none}
+.hero-sun svg{width:100%;height:100%;fill:#fff}
+.hero-sun svg line{stroke:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-copy{display:grid}
+.hero-copy .copy{grid-area:1/1;opacity:0;visibility:hidden;will-change:transform,opacity}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.7);color:var(--accent);padding:6px 16px;border-radius:999px;font-family:var(--font-head);letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin-bottom:18px}
+.hero2 h1::after{content:"";display:block;width:72px;height:2px;background:var(--accent);margin-top:18px}
+.hero2 p{color:var(--ink);opacity:.85}
+.hero2 .btn{color:var(--ink);margin-right:10px;margin-bottom:8px}
+.hero2 .btn.solid{color:#fff}
+.hero2 .btn.solid:hover{background:var(--dark);color:#fff}
+.hero2 .btn.ghost:hover{background:#fff;color:var(--ink)}
+
+.hero-stage{position:relative;justify-self:center;width:min(440px,100%)}
+.arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px 28px 28px;overflow:hidden;isolation:isolate;background:#e4f9c6;box-shadow:0 30px 60px rgba(78,85,69,.22)}
+.arch-slide{position:absolute;inset:0;will-change:transform;overflow:hidden}
+.arch-slide img,.arch-slide svg{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.arch::after{content:"";position:absolute;inset:0;background:#ccf391;mix-blend-mode:color;opacity:.5;pointer-events:none;z-index:2}
+.float-card{position:absolute;left:-40px;bottom:36px;z-index:3;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:16px 20px;border-radius:14px;box-shadow:0 14px 36px rgba(78,85,69,.22);min-width:220px;max-width:260px;display:grid;animation:float 7s ease-in-out infinite}
+.float-card .fc{grid-area:1/1;display:grid;gap:4px;will-change:transform,opacity}
+.float-card h4{font-family:var(--font-head);font-weight:400;font-size:15px;letter-spacing:.04em;line-height:1.3}
+.float-card .price{font-size:15px}
+.float-card .btn{padding:9px 18px;font-size:12px;margin:8px 0 0;justify-self:start}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:22px}
+.dots button{width:9px;height:9px;padding:0;border:0;border-radius:6px;background:rgba(73,121,0,.3);transition:.35s}
+.dots button.active{width:28px;background:var(--accent)}
+@media(max-width:820px){
+  .hero2{padding:36px 0 44px}
+  .hero2 .container{grid-template-columns:1fr;gap:34px}
+  .hero-stage{width:min(340px,86%)}
+  /* card sits under the photo (only overlaps its bottom edge) so it never hides the product */
+  .float-card{position:relative;left:auto;bottom:auto;width:calc(100% - 24px);max-width:none;min-width:0;margin:-30px auto 0;padding:12px 16px}
+  .float-card .fc{grid-template-columns:1fr auto;column-gap:12px;align-items:center}
+  .float-card .fc a,.float-card .fc .price{grid-column:1}
+  .float-card .fc .btn{grid-column:2;grid-row:1/3;margin:0;align-self:center}
+  .dots{margin-top:18px}
+  .hero-sun{width:420px;height:420px;right:-120px;top:-110px}
+}
+@media (prefers-reduced-motion:reduce){.hero-sun,.float-card{animation:none}}
+
+/* swipe: allow vertical page scroll, capture horizontal drags */
+.hero2{touch-action:pan-y}
+.hero-stage,.hero-copy{user-select:none;-webkit-user-select:none}
+.arch img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+
+
+/* roll-up photo: show the whole stand (top bar to base) above the floating card instead of cropping it to the arch */
+.arch-slide:has(img[src*="hero-rollup"]){background:#e5e9ca}
+.arch-slide img[src*="hero-rollup"]{object-fit:contain;object-position:50% 0;box-sizing:border-box;padding:34px 0 96px;
+  -webkit-mask-image:linear-gradient(to right,transparent 10%,#000 18%,#000 82%,transparent 90%),linear-gradient(to bottom,#000 81%,transparent 84%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent 10%,#000 18%,#000 82%,transparent 90%),linear-gradient(to bottom,#000 81%,transparent 84%);mask-composite:intersect}
+@media(max-width:820px){.arch-slide img[src*="hero-rollup"]{object-fit:cover;object-position:50% 45%;padding:0;-webkit-mask-image:none;mask-image:none}}

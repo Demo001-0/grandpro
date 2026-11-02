@@ -1,0 +1,9 @@
+/* css/components/buttons.css — Buttons (base) */
+/* buttons */
+.btn{display:inline-block;border:1px solid currentColor;background:transparent;color:inherit;padding:14px 34px;font-family:var(--font-head);letter-spacing:.12em;text-transform:uppercase;font-size:14px;transition:.25s}
+.btn:hover{background:#fff;color:var(--hero)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{background:var(--dark);color:#fff}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btn.full{width:100%;text-align:center}
+

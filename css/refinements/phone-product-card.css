@@ -1,0 +1,6 @@
+/* css/refinements/phone-product-card.css — hero product card on phones: position only */
+/* keeps the original mirror / glass look (shine, blur); only the placement is phone-specific:
+   directly under the arch, same width as the arch, no overlap */
+@media(max-width:820px){
+  .float-card{position:relative;width:100%;margin:14px 0 0;animation:none}   /* fixed in place: no floating (the mirror shine still sweeps) */
+}

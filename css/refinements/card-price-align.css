@@ -1,0 +1,6 @@
+/* Product cards: price always sits at the bottom, so prices line up across every card in a row
+   (cards with an old/compare price no longer push their price lower than the others). */
+.grid .card,.card{height:100%}
+.card .info{flex:1 1 auto;display:flex;flex-direction:column}
+.card .info .price{margin-top:auto;padding-top:6px}
+.card .info h3{margin-bottom:6px}

@@ -1,0 +1,69 @@
+/* css/motion/hero-pro.css — "advanced" hero: 3D pointer tilt, cursor spotlight + glare, depth-parallax layers,
+   floating info chips, magnetic buttons, drag cursor, autoplay progress on the dots.
+   Pointer effects only run on mouse devices (js/features/hero-pro.js adds html.hp); everything is off with "reduce motion". */
+
+/* ---- cursor spotlight behind the content ---- */
+.hero2{position:relative}
+.hero2 .container{position:relative;z-index:1}
+.hp-spot{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:radial-gradient(520px circle at var(--sx,50%) var(--sy,50%),rgba(185,248,50,.17),rgba(185,248,50,0) 62%)}
+.hero2.hp-on .hp-spot{opacity:1}
+
+/* ---- stage: 3D tilt that follows the pointer ---- */
+html.hp .hero-stage{transform:perspective(1100px) rotateY(calc(var(--tx,0) * 9deg)) rotateX(calc(var(--ty,0) * -7deg));
+  transition:transform .12s linear;will-change:transform}
+html.hp .hero2:not(.hp-on) .hero-stage{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+/* glare sweeping over the arch */
+.hp-glare{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .4s;mix-blend-mode:soft-light;
+  background:radial-gradient(380px circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.75),rgba(255,255,255,0) 60%)}
+.hero2.hp-on .hp-glare{opacity:1}
+
+/* ---- depth parallax: layers move against the tilt ---- */
+html.hp .float-card{translate:calc(var(--tx,0) * -20px) calc(var(--ty,0) * -14px)}
+html.hp .hero-sun{translate:calc(var(--tx,0) * 34px) calc(var(--ty,0) * 24px)}
+html.hp .hp-chip{translate:calc(var(--tx,0) * var(--z,-26) * 1px) calc(var(--ty,0) * var(--z,-26) * .7px)}
+
+/* ---- floating info chips ---- */
+.hp-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:9px;max-width:230px;padding:9px 14px 9px 10px;border-radius:999px;
+  background:rgba(15,16,12,.78);color:#f4f6ea;border:1px solid rgba(185,248,50,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  font-family:var(--font-body);font-size:13px;line-height:1.35;box-shadow:0 12px 30px rgba(0,0,0,.35);
+  animation:hp-bob 5.5s ease-in-out infinite;opacity:0;transform:translateY(14px) scale(.9)}
+.hero2.hp-in .hp-chip{opacity:1;transform:none;transition:opacity .7s,transform .7s cubic-bezier(.2,.9,.3,1.2)}
+.hp-chip svg{flex:none;width:26px;height:26px;padding:5px;border-radius:50%;background:#b9f832;color:#0b0b0b;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hp-chip b{font-weight:700}
+.hp-chip.hpc1{top:9%;right:-34px;--z:-34;animation-delay:-.5s}
+.hp-chip.hpc2{top:46%;right:-58px;--z:-48;animation-delay:-2.2s}
+.hp-chip.hpc3{top:-3%;left:-26px;--z:22;animation-delay:-3.6s}
+.hero2.hp-in .hp-chip.hpc2{transition-delay:.15s}.hero2.hp-in .hp-chip.hpc3{transition-delay:.3s}
+@keyframes hp-bob{0%,100%{margin-top:0}50%{margin-top:-9px}}
+@media(max-width:1100px){.hp-chip.hpc2{display:none}}
+@media(max-width:820px){.hp-chip{display:none}}
+
+/* ---- magnetic buttons ---- */
+html.hp .hero2 .btn{transition:translate .25s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,border-color .3s,box-shadow .3s,transform .2s}
+
+/* ---- drag cursor over the arch ---- */
+html.hp .hero2 .arch{cursor:none}
+.hp-cursor{position:fixed;left:0;top:0;z-index:10001;pointer-events:none;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;
+  display:grid;place-items:center;font-family:var(--font-head);font-weight:700;font-size:14px;letter-spacing:0;color:#0b0b0b;
+  background:rgba(185,248,50,.92);box-shadow:0 0 0 8px rgba(185,248,50,.22),0 10px 30px rgba(0,0,0,.35);
+  opacity:0;scale:.4;transition:opacity .25s,scale .35s cubic-bezier(.2,.9,.3,1.3)}
+.hp-cursor.on{opacity:1;scale:1}
+.hp-cursor.down{scale:.78}
+.hp-cursor span{display:flex;align-items:center;gap:4px}
+.hp-cursor svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- dots: the active one fills while the slide autoplays ---- */
+html:root .hero2 .dots button{position:relative;overflow:hidden}
+html:root .hero2 .dots button.active{background:rgba(185,248,50,.28)}
+html:root .hero2 .dots button.active::after{content:"";position:absolute;inset:0;background:#b9f832;transform-origin:0 50%;
+  transform:scaleX(0);animation:hp-fill 5.5s linear forwards}
+html[dir="rtl"]:root .hero2 .dots button.active::after{transform-origin:100% 50%}
+html:root .hero2:hover .dots button.active::after{animation-play-state:paused}
+@keyframes hp-fill{to{transform:scaleX(1)}}
+
+@media(prefers-reduced-motion:reduce){
+  html.hp .hero-stage,html.hp .float-card,html.hp .hero-sun,html.hp .hp-chip{translate:none;transform:none}
+  .hp-chip{animation:none;opacity:1}
+  html:root .hero2 .dots button.active::after{animation:none;transform:scaleX(1)}
+}

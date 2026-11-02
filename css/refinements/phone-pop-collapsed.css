@@ -1,0 +1,10 @@
+/* css/refinements/phone-pop-collapsed.css — phone: the "A quick trip through GrandPro" pop-up is collapsed to just the orb.
+   Tap once → it expands (description + arrow + close). Tap again → the dive opens. (JS: dive.js, "phone: the pop-up starts collapsed") */
+@media(max-width:700px){
+  .dv-pop:not(.ex) .dv-pop-txt,
+  .dv-pop:not(.ex) .dv-pop-go-arrow,
+  .dv-pop:not(.ex) .dv-pop-x{display:none}
+  .dv-pop:not(.ex) .dv-pop-go{padding:6px;gap:0}
+  .dv-pop.ex .dv-pop-txt,.dv-pop.ex .dv-pop-go-arrow,.dv-pop.ex .dv-pop-x{animation:dvp-ex .35s ease both}
+}
+@keyframes dvp-ex{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}

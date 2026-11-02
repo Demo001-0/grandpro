@@ -1,0 +1,5 @@
+/* css/refinements/cutout-products.css — transparent cut-out product photos (the hero.* webp files):
+   show the WHOLE product on a light card instead of cropping it like a normal photo. */
+.card .img img[src*="/hero-"],.product .gallery img[src*="/hero-"]{object-fit:contain;padding:14px;box-sizing:border-box;background:#f1f4ea}
+.card:hover .img img[src*="/hero-"]{transform:scale(1.03)}
+html[data-theme="dark"] .card .img img[src*="/hero-"]{background:#ebeee0}

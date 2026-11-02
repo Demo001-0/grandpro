@@ -1,0 +1,14 @@
+/* css/refinements/product-card-type.css — slightly larger type on product cards (title, price, old price). Loaded last. */
+html:root body .card h3{font-size:19px;line-height:1.5}
+html:root body .card .price{font-size:20px}
+html:root body .card .price s{font-size:14px}
+@media(max-width:1000px){
+  html:root body .card h3{font-size:17px}
+  html:root body .card .price{font-size:18px}
+  html:root body .card .price s{font-size:13px}
+}
+@media(max-width:560px){
+  html:root body .card h3{font-size:15.5px}
+  html:root body .card .price{font-size:16px}
+  html:root body .card .price s{font-size:12.5px}
+}

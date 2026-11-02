@@ -1,0 +1,41 @@
+/* css/theme/dark-base.css — Dark tokens, scrollbar, aurora, cursor spotlight */
+/* =====================================================================
+   DARK THEME
+   ===================================================================== */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1b1d18; --card:#1e201a; --ink:#f4f6ee; --brand:#b9f832; --hero:#1f211b;
+  --bar:#10110e; --dark:#1f211b; --accent:#b9f832; --line:rgba(185,248,50,0.08); --white:#fff;
+  --glow:224,123,154;
+  background:#1b1d18;
+}
+html[data-theme="dark"] body{background:transparent;color:var(--ink)}
+html[data-theme="dark"] ::selection{background:#b9f832;color:#f4f6ee}
+html[data-theme="dark"] input[type=checkbox]{accent-color:#b9f832}
+
+/* scrollbar */
+html[data-theme="dark"]{scrollbar-color:#262821 #1b1d18}
+html[data-theme="dark"] ::-webkit-scrollbar{width:11px;height:11px}
+html[data-theme="dark"] ::-webkit-scrollbar-track{background:#1b1d18}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:linear-gradient(#b9f832,#24261f);border-radius:9px;border:2px solid #1b1d18}
+
+/* aurora + cursor spotlight (behind everything) */
+html[data-theme="dark"] body::before{
+  content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(38vmax 28vmax at 12% 8%,rgba(185,248,50,0.13),transparent 62%),
+    radial-gradient(44vmax 34vmax at 88% 22%,rgba(185,248,50,0.13),transparent 62%),
+    radial-gradient(40vmax 30vmax at 55% 98%,rgba(185,248,50,0.07),transparent 62%);
+  animation:aurora 26s ease-in-out infinite alternate;
+}
+@keyframes aurora{
+  0%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}
+  50%{transform:translate3d(4%,3%,0) rotate(6deg) scale(1.08)}
+  100%{transform:translate3d(-3%,5%,0) rotate(-5deg) scale(1.02)}
+}
+html[data-theme="dark"] body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(520px circle at var(--mx,50%) var(--my,30%),rgba(185,248,50,0.065),transparent 62%);
+  mix-blend-mode:screen;
+}
+

@@ -1,0 +1,5 @@
+/* css/refinements/riyal.css — new Saudi riyal sign (U+20C1) as an SVG mask, so it renders everywhere and follows the text colour.
+   Glyph path: Lucide "saudi-riyal" icon (ISC licence). Replace it with the official SAMA SVG whenever you have it. */
+.riyal{display:inline-block;width:.85em;height:.9em;margin-inline-start:.28em;vertical-align:-.08em;background-color:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0.5 0 22 23' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m20 19.5l-5.5 1.2m0-16.7v11.22a1 1 0 0 0 1.242.97L20 15.2M2.978 19.351l5.549-1.363A2 2 0 0 0 10 16V2m10 8L4 13.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0.5 0 22 23' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m20 19.5l-5.5 1.2m0-16.7v11.22a1 1 0 0 0 1.242.97L20 15.2M2.978 19.351l5.549-1.363A2 2 0 0 0 10 16V2m10 8L4 13.5'/%3E%3C/svg%3E") center/contain no-repeat}
+.price s .riyal{opacity:.85}

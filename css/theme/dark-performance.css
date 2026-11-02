@@ -1,0 +1,55 @@
+/* css/theme/dark-performance.css — Smooth-scroll pass (compositor-friendly effects) */
+/* =====================================================================
+   SMOOTH-SCROLL PASS — swap repaint-heavy effects for compositor-friendly ones
+   ===================================================================== */
+/* cursor glow: a single small layer moved with transform (no full-screen blend, no root var updates) */
+html[data-theme="dark"] body::after{content:none}
+#cursorglow{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;z-index:-1;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle,rgba(185,248,50,0.075),transparent 62%);will-change:transform;display:none;transform:translate3d(-999px,-999px,0)}
+html[data-theme="dark"] #cursorglow{display:block}
+
+/* aurora: translate only, on its own layer */
+html[data-theme="dark"] body::before{inset:-10%;animation:aurora2 32s ease-in-out infinite alternate;will-change:transform}
+@keyframes aurora2{to{transform:translate3d(3%,4%,0)}}
+
+/* no per-frame repaint of big gradients / shadows / filters */
+html[data-theme="dark"] .hero,html[data-theme="dark"] .banner,
+html[data-theme="dark"] .bar.one,html[data-theme="dark"] .cat .ci,
+html[data-theme="dark"] .header .logo svg,html[data-theme="dark"] #mini .msun svg{animation:none}
+html[data-theme="dark"] .hero,html[data-theme="dark"] .banner{background-size:100% 100%,100% 100%,100% 100%}
+html[data-theme="dark"] .hero-stage::before{animation:none;filter:blur(18px);opacity:.75}
+html[data-theme="dark"] .hero h1{filter:none}
+html[data-theme="dark"] .hero-tag{-webkit-backdrop-filter:none;backdrop-filter:none}
+html[data-theme="dark"] .hero-sun svg{filter:none}
+html[data-theme="dark"] .header .logo svg,html[data-theme="dark"] #mini .msun svg{filter:drop-shadow(0 0 14px rgba(185,248,50,0.45))}
+html[data-theme="dark"] .cat .ci{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 4px rgba(185,248,50,0.08),0 0 26px rgba(185,248,50,0.3)}
+
+/* photos: a tint overlay instead of CSS filters (filters re-rasterise on every scroll-linked transform) */
+html[data-theme="dark"] .card .img img,html[data-theme="dark"] .card .img svg,
+html[data-theme="dark"] .card:hover .img img,
+html[data-theme="dark"] .arch img,html[data-theme="dark"] .arch svg,
+html[data-theme="dark"] .hero-img img,html[data-theme="dark"] .product .gallery img,
+html[data-theme="dark"] .product .gallery svg,html[data-theme="dark"] .line .thumb svg,
+html[data-theme="dark"] .search-results .t svg{filter:none}
+html[data-theme="dark"] .card .img::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(27,29,24,.12),rgba(27,29,24,.32));transition:opacity .35s}
+html[data-theme="dark"] .card:hover .img::after{opacity:.2}
+html[data-theme="dark"] .card .img .badge{z-index:1}
+html[data-theme="dark"] .product .gallery{position:relative}
+html[data-theme="dark"] .product .gallery::after{content:"";position:absolute;inset:0;pointer-events:none;background:rgba(27,29,24,.2)}
+
+/* keep layout/paint of off-screen cards cheap */
+html[data-theme="dark"] .card{contain:layout paint}
+html[data-theme="dark"] .float-card{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+/* ---- gentle pass: calmer glow, softer contrast ---- */
+html[data-theme="dark"] .hero-stage::before{opacity:.35}
+html[data-theme="dark"] .btn.solid{background:linear-gradient(135deg,#b9f832 0%,#262921 55%,#21231c 100%)}
+html[data-theme="dark"] .btn.solid:hover{background:linear-gradient(135deg,#b9f832 0%,#262921 55%,#1c1e18 100%)}
+html[data-theme="dark"] .cat:hover{background:linear-gradient(135deg,#262921,#21231c)}
+html[data-theme="dark"] .badge{background:#262921}
+html[data-theme="dark"] #prog{background:#b9f832;box-shadow:none}
+html[data-theme="dark"] .card .img::after{background:linear-gradient(180deg,rgba(27,29,24,.28),rgba(27,29,24,.5))}
+html[data-theme="dark"] .card:hover .img::after{opacity:.55}
+html[data-theme="dark"] .product .gallery::after{background:rgba(27,29,24,.35)}
+

@@ -1,0 +1,7 @@
+/* css/refinements/serif-lookbook-hero.css — Lookbook subtitle and hero paragraph in serif */
+/* lookbook subtitle: same serif voice as the headings */
+.lk-sub{font-family:var(--font-head);letter-spacing:.04em;opacity:.8}
+
+/* hero paragraph: same serif voice as the headline */
+.hero2 p{font-family:var(--font-head);letter-spacing:.04em}
+

@@ -1,0 +1,12 @@
+/* css/refinements/features-no-lines.css — Features strip: no dividers */
+/* features strip: no divider lines on any screen */
+.features,html[data-theme="dark"] .features{border:0}
+.features>div,.features>div+div,html[data-theme="dark"] .features>div{border:0!important}
+@media(max-width:700px){.features>div+div{border:0!important}}
+
+
+/* phone: stack the three features in one aligned column (icons line up, whole block centred) */
+@media(max-width:700px){
+  .features,html[data-theme="dark"] .features{grid-template-columns:minmax(0,max-content);justify-content:center;gap:4px}
+  .features>div,html[data-theme="dark"] .features>div{justify-content:start;width:100%;padding:14px 0}
+}

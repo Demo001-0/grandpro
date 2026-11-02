@@ -1,0 +1,13 @@
+/* css/refinements/logo-layout.css — Sun above wordmark, header logo size */
+/* sun above the wordmark + "Cosmetics" under it */
+.logo svg{width:110px;height:110px}
+.logo img{margin:-4px 0 0}
+.logo .sub{font-size:clamp(14px,2vw,20px);margin-top:8px}
+@media(max-width:820px){.logo svg{width:72px;height:72px}.logo .sub{font-size:13px;margin-top:6px}}
+
+/* header logo at its original (large) size */
+.logo svg{width:150px;height:150px}
+.logo img{width:min(430px,88vw);margin:6px 0 0}
+.logo .sub{font-size:clamp(20px,3vw,34px);letter-spacing:.35em;margin-top:14px}
+@media(max-width:820px){.logo svg{width:100px;height:100px}.logo img{width:min(290px,76vw)}.logo .sub{font-size:clamp(16px,5vw,20px);margin-top:10px}}
+

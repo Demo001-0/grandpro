@@ -1,0 +1,111 @@
+/* css/theme/dark-pink-pass.css — Pink pass: pink-mauve surfaces */
+/* =====================================================================
+   PINK PASS — pink-mauve surfaces (no black / brown), soft contrast
+   ===================================================================== */
+html[data-theme="dark"]{--bg:#1b1d18;--card:#1e201a;--ink:#f4f6ee;--brand:#b9f832;--hero:#21231c;--bar:#23251e;--dark:#1f211b;--accent:#b9f832;background:#1b1d18}
+html[data-theme="dark"] .bar.one{background:linear-gradient(90deg,#23251e,#262921,#23251e);background-size:100% 100%;color:#f2f4eb;border-bottom:1px solid rgba(227,232,213,.22)}
+html[data-theme="dark"] .bar.two{background:#1e201a;color:#eaeede;border-bottom:1px solid rgba(227,232,213,.16)}
+html[data-theme="dark"] body::before{background:
+  radial-gradient(38vmax 28vmax at 12% 8%,rgba(185,248,50,.16),transparent 62%),
+  radial-gradient(44vmax 34vmax at 88% 22%,rgba(227,232,213,.10),transparent 62%),
+  radial-gradient(40vmax 30vmax at 55% 98%,rgba(185,248,50,.13),transparent 62%)}
+
+/* hero: pink gradient, no black */
+html[data-theme="dark"] .hero,html[data-theme="dark"] .banner{
+  background:
+    radial-gradient(60% 90% at 78% 40%,rgba(185,248,50,.22),transparent 70%),
+    radial-gradient(50% 70% at 10% 0%,rgba(232,236,219,.10),transparent 70%),
+    linear-gradient(180deg,rgba(36,38,31,.82),rgba(32,34,28,.7));
+  border-color:rgba(227,232,213,.18)}
+html[data-theme="dark"] .hero-sun{opacity:.38}
+html[data-theme="dark"] .hero-sun svg{fill:#262921}
+html[data-theme="dark"] .hero-sun svg line{stroke:#b9f832}
+html[data-theme="dark"] .hero-sun svg circle{fill:#262821;stroke:#e0e5cf;stroke-width:1.5}
+/* logo eclipse disc: pink-mauve instead of black */
+html[data-theme="dark"] .header .logo svg circle,html[data-theme="dark"] #mini .msun svg circle{fill:#22241e;stroke:#e0e5cf}
+/* moon's shadow side + arch vignette: pink */
+html[data-theme="dark"] .hero2::before{box-shadow:inset -20px -8px 0 0 #f2f4eb,0 0 36px rgba(232,236,219,.4)}
+html[data-theme="dark"] .arch::before{background:linear-gradient(180deg,rgba(32,34,28,0) 52%,rgba(32,34,28,.6)),radial-gradient(circle at 50% 32%,transparent 45%,rgba(32,34,28,.35))}
+/* cards / categories / footer / panels */
+html[data-theme="dark"] .card{background:linear-gradient(165deg,#20221c,#1e1f1a);border-color:rgba(227,232,213,.2)}
+html[data-theme="dark"] .cat{background:linear-gradient(160deg,#21231c,#1e201a);border-color:rgba(227,232,213,.24)}
+html[data-theme="dark"] .cat .ci{background:linear-gradient(135deg,#24261f,#1f211b);color:#e0e5cf}
+html[data-theme="dark"] .footer{background:linear-gradient(180deg,rgba(36,38,31,.5),#1d1f19 70%)}
+html[data-theme="dark"] .drawer,html[data-theme="dark"] .nav{background:linear-gradient(180deg,#1e201a,#1b1d18)}
+html[data-theme="dark"] .search-panel{background:rgba(27,29,24,.96)}
+html[data-theme="dark"] .dropdown,html[data-theme="dark"] .arch,html[data-theme="dark"] .hero-img{background:#1e201a}
+html[data-theme="dark"] #mini{background:rgba(27,29,24,.85)}
+html[data-theme="dark"] .float-card{background:linear-gradient(115deg,rgba(255,255,255,.2),rgba(255,255,255,.05) 40%,rgba(255,255,255,.14)),linear-gradient(160deg,rgba(38,41,33,.78),rgba(34,36,30,.8))}
+html[data-theme="dark"] .features>div{background:rgba(255,255,255,.06)}
+html[data-theme="dark"] .overlay{background:rgba(25,26,22,.65)}
+html[data-theme="dark"] .theme-toggle{background:linear-gradient(135deg,#22241e,#262921)}
+html[data-theme="dark"] ::-webkit-scrollbar-track{background:#1b1d18}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:#262921;border-color:#1b1d18}
+html[data-theme="dark"]{scrollbar-color:#262921 #1b1d18}
+html[data-theme="dark"] .nav{background:transparent}
+@media(max-width:820px){html[data-theme="dark"] .nav{background:linear-gradient(180deg,#1e201a,#1b1d18)}}
+
+/* hero sun (the big one under the hero) — fainter; header logo sun untouched */
+html[data-theme="dark"] .hero-sun{opacity:.14}
+@media(max-width:820px){html[data-theme="dark"] .hero-sun{opacity:.1}}
+html[data-theme="dark"]{--bg:#1b1d18;--card:#1e201a;--hero:#21231c;--bar:#23251e;--dark:#1f211b;background:#1b1d18}
+html[data-theme="dark"] .bar.one{background:linear-gradient(90deg,#23251e,#262921,#23251e)}
+html[data-theme="dark"] .bar.two{background:#1e201a}
+html[data-theme="dark"] .hero,html[data-theme="dark"] .banner{background:
+  radial-gradient(60% 90% at 78% 40%,rgba(221,227,203,.22),transparent 70%),
+  radial-gradient(50% 70% at 10% 0%,rgba(236,239,226,.12),transparent 70%),
+  linear-gradient(180deg,rgba(33,35,28,.85),rgba(27,29,24,.75))}
+html[data-theme="dark"] .footer{background:linear-gradient(180deg,rgba(33,35,28,.5),#181a15 70%)}
+html[data-theme="dark"] .nav,html[data-theme="dark"] .drawer{background:linear-gradient(180deg,#1e201a,#1b1d18)}
+@media(max-width:820px){html[data-theme="dark"] .nav{background:linear-gradient(180deg,#1e201a,#1b1d18)}}
+html[data-theme="dark"] .nav{background:transparent}
+@media(max-width:820px){html[data-theme="dark"] .nav{background:linear-gradient(180deg,#1e201a,#1b1d18)}}
+html[data-theme="dark"] .search-panel{background:rgba(27,29,24,.96)}
+html[data-theme="dark"] #mini{background:rgba(27,29,24,.88)}
+html[data-theme="dark"] ::-webkit-scrollbar-track{background:#1b1d18}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb{border-color:#1b1d18}
+html[data-theme="dark"]{scrollbar-color:#b9f832 #1b1d18}
+
+/* mobile: tuck the little moon into the corner so it never sits on the headline */
+@media(max-width:820px){
+  html[data-theme="dark"] .hero2::before{width:26px;height:26px;left:12px;top:10px;
+    box-shadow:inset -8px -3px 0 0 #f2f4eb,0 0 16px rgba(240,243,232,.4);animation:none}
+}
+
+/* crescent moon removed */
+html[data-theme="dark"] .hero2::before{content:none;display:none}
+
+/* hero photo: the white product-shot backdrop melts into soft pink (multiply) instead of a white slab */
+html[data-theme="dark"] .arch-slide{background:#b9f832}
+html[data-theme="dark"] .arch-slide img,html[data-theme="dark"] .arch-slide svg{mix-blend-mode:multiply}
+html[data-theme="dark"] .arch::after{opacity:.12}
+html[data-theme="dark"] .arch::before{background:linear-gradient(180deg,rgba(27,29,24,0) 55%,rgba(27,29,24,.35))}
+html[data-theme="dark"] .hero-img{background:#b9f832}
+html[data-theme="dark"] .hero-img img,html[data-theme="dark"] .hero-img svg{mix-blend-mode:multiply}
+
+/* logo keeps its own pink: lift it off the pink surface with a soft shadow instead of a pink glow */
+html[data-theme="dark"] .logo img,html[data-theme="dark"] #mini .mlogo img{filter:drop-shadow(0 3px 8px rgba(8,8,7,.45))}
+
+/* category cards (dark): no border on the card, no ring around the icon */
+html[data-theme="dark"] .cat,html[data-theme="dark"] .cat:hover{border:0}
+html[data-theme="dark"] .cat{box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 30px rgba(185,248,50,0.08)}
+html[data-theme="dark"] .cat:hover{box-shadow:0 20px 44px rgba(185,248,50,0.225),0 0 54px rgba(185,248,50,0.3)}
+html[data-theme="dark"] .cat .ci{box-shadow:0 0 26px rgba(185,248,50,0.3)}
+html[data-theme="dark"] .cat:hover .ci{box-shadow:0 0 34px rgba(255,255,255,.9)}
+@keyframes ci-glow-d{from{box-shadow:0 0 12px rgba(185,248,50,0.175)}to{box-shadow:0 0 34px rgba(185,248,50,0.425)}}
+
+/* category icons (dark): stronger circle + icon, no glow */
+html[data-theme="dark"] .cat .ci{animation:none;box-shadow:none;background:linear-gradient(135deg,#eaeede,#b9f832);color:#12130f}
+html[data-theme="dark"] .cat:hover .ci{animation:none;box-shadow:none;background:#fff;color:#24261f}
+
+/* hero shares the header's background (dark mode); a thin line separates them */
+html[data-theme="dark"] .hero{background:transparent;border-top:1px solid rgba(232,236,219,.35)}
+
+/* announcement bars (dark only): lighter pink */
+html[data-theme="dark"] .bar.one{background:linear-gradient(90deg,#b9f832,#b9f832,#b9f832);background-size:100% 100%;animation:none;color:#fff;border-bottom:1px solid rgba(242,244,235,.35)}
+html[data-theme="dark"] .bar.two{background:#31342a;color:#fff;border-bottom:1px solid rgba(242,244,235,.28)}
+
+/* nav (dark): brighter text so the bigger links stand out */
+html[data-theme="dark"] .nav a{color:#f1f4ea}
+html[data-theme="dark"] .nav a:hover,html[data-theme="dark"] .nav a.active{color:#fff;border-color:#e0e5cf}
+

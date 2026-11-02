@@ -1,0 +1,52 @@
+/* css/theme/dark-depth.css — Dark mode: depth + glow (dark only, loaded last).
+   Soft lime light behind each section, a faint dot texture, glowing hairlines between sections, richer cards / buttons / titles. */
+
+/* 1) every section gets its own soft light + faint dots (alternating sides so the page doesn't feel flat) */
+html[data-theme="dark"] main>section{position:relative;isolation:isolate;
+  background-image:linear-gradient(90deg,transparent,rgba(185,248,50,.38) 50%,transparent);background-size:min(560px,70%) 1px;background-position:50% 0;background-repeat:no-repeat}
+html[data-theme="dark"] main>section::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(46% 55% at 12% 30%,rgba(185,248,50,.075),transparent 70%),radial-gradient(40% 50% at 92% 85%,rgba(120,200,60,.05),transparent 70%)}
+html[data-theme="dark"] main>section:nth-of-type(even)::before{
+  background:radial-gradient(46% 55% at 88% 30%,rgba(185,248,50,.075),transparent 70%),radial-gradient(40% 50% at 8% 85%,rgba(120,200,60,.05),transparent 70%)}
+html[data-theme="dark"] main>section::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(185,248,50,.16) 1px,transparent 1.3px);background-size:30px 30px;
+  -webkit-mask-image:radial-gradient(60% 55% at 50% 45%,#000 0,transparent 100%);mask-image:radial-gradient(60% 55% at 50% 45%,#000 0,transparent 100%);opacity:.5}
+
+/* 2) section titles: glowing underline */
+html[data-theme="dark"] .section-title::after{box-shadow:0 0 16px rgba(185,248,50,.65),0 0 4px rgba(185,248,50,.9)}
+
+/* 3) cards: lifted glass look — light top edge, lime-tinted border, deeper shadow, glow on hover */
+html[data-theme="dark"] .card,html[data-theme="dark"] .ccard,html[data-theme="dark"] .lk-tile{
+  border-color:rgba(185,248,50,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 18px 44px rgba(0,0,0,.5)}
+html[data-theme="dark"] .card:hover,html[data-theme="dark"] .ccard:hover{
+  border-color:rgba(185,248,50,.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 26px 60px rgba(0,0,0,.65),0 0 46px rgba(185,248,50,.2)}
+html[data-theme="dark"] .card .info{background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 60%)}
+html[data-theme="dark"] .card .price{text-shadow:0 0 18px rgba(185,248,50,.45)}
+
+/* 4) buttons: lime glow */
+html[data-theme="dark"] .btn.solid{box-shadow:0 0 0 1px rgba(185,248,50,.5),0 8px 28px rgba(185,248,50,.32)}
+html[data-theme="dark"] .btn.solid:hover{box-shadow:0 0 0 1px rgba(185,248,50,.8),0 10px 40px rgba(185,248,50,.55)}
+html[data-theme="dark"] .btn:not(.solid):hover{border-color:#b9f832;box-shadow:0 0 24px rgba(185,248,50,.28)}
+
+/* 5) sale banner: stronger light behind the big 30% */
+html[data-theme="dark"] .sale{position:relative;overflow:hidden;background:radial-gradient(60% 120% at 82% 50%,rgba(185,248,50,.16),transparent 65%),linear-gradient(160deg,#14150d,#0b0b08);border-color:rgba(185,248,50,.28)}
+html[data-theme="dark"] .sale-art b{text-shadow:0 0 38px rgba(185,248,50,.55)}
+
+/* 6) feature chips + footer */
+html[data-theme="dark"] .features .fi{box-shadow:0 0 22px rgba(185,248,50,.4)}
+html[data-theme="dark"] .footer{background:linear-gradient(180deg,rgba(185,248,50,.05),transparent 160px),#0b0b08;border-top:1px solid rgba(185,248,50,.22)}
+
+/* 7) header: frosted glass with a lime hairline */
+html[data-theme="dark"] .header-top{backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
+
+/* 8) small touches */
+html[data-theme="dark"] ::selection{background:#b9f832;color:#0b0b0b}
+html[data-theme="dark"]{scrollbar-color:#3b4a14 #0b0b08}
+html[data-theme="dark"] ::-webkit-scrollbar{width:10px;height:10px}
+html[data-theme="dark"] ::-webkit-scrollbar-track{background:#0b0b08}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:linear-gradient(#b9f832,#5f7f12);border-radius:8px;border:2px solid #0b0b08}
+
+@media(max-width:700px){html[data-theme="dark"] main>section::after{opacity:.35}}
+@media (prefers-reduced-motion:reduce){html[data-theme="dark"] .btn{transition:none}}

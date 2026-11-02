@@ -1,0 +1,6 @@
+/* css/components/announcement-bar.css — Announcement bars */
+/* announcement bars */
+.bar{text-align:center;padding:12px 16px;font-family:var(--font-head);letter-spacing:.08em;font-size:15px;color:#fff}
+.bar.one{background:var(--bar);text-transform:lowercase}
+.bar.two{background:var(--dark);text-transform:uppercase;font-size:14px;letter-spacing:.12em}
+

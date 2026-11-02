@@ -1,0 +1,9 @@
+/* css/refinements/photos-logo-colour.css — Product photos, logo colour */
+/* real product photos */
+.hero-img img,.card .img img,.product .gallery img,.line .thumb img,.search-results .t img{width:100%;height:100%;object-fit:cover}
+
+/* header logo colour (lighter pink) – flat sun + 3D wordmark share it */
+.logo{color:#b8f956}
+.header .logo svg{fill:#b8f956}
+.header .logo svg line{stroke:#b8f956}
+

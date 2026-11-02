@@ -1,0 +1,16 @@
+/* css/refinements/features-strip.css — Features strip v1 (slim) */
+/* ---- features: simple slim strip (icon + text inline, no cards) ---- */
+.features,html[data-theme="dark"] .features{gap:0;text-align:left;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0}
+.features>div,html[data-theme="dark"] .features>div{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center;justify-content:center;
+  background:none;border:0;border-radius:0;box-shadow:none;padding:22px 18px;width:fit-content;margin:0 auto}
+.features>div+div{border-left:0}
+.features .fi,html[data-theme="dark"] .features .fi,html[data-theme="dark"] .features>div:nth-child(n) .fi{grid-row:1 / span 2;width:42px;height:42px;margin:0;background:#f9d3df;color:#b84a6c;box-shadow:none}
+.features .fi svg{width:21px;height:21px}
+.features h4,html[data-theme="dark"] .features h4{font-size:16px;margin:0;color:var(--ink);letter-spacing:.05em}
+.features p,html[data-theme="dark"] .features p{font-size:13.5px;margin:2px 0 0;opacity:.75;color:var(--ink)}
+@media(max-width:1000px){
+  .features{grid-template-columns:1fr}
+  .features>div{margin:0;width:auto;padding:16px 4px}
+  .features>div+div{border-top:1px solid var(--line)}
+}
+

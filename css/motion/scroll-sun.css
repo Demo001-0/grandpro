@@ -1,0 +1,20 @@
+/* css/motion/scroll-sun.css — Scroll sun / back-to-top */
+/* ---- signature scroll sun: turns with scroll, ring shows progress, tap = back to top ---- */
+#sunTop{position:fixed;right:clamp(14px,2.4vw,30px);bottom:clamp(14px,2.4vw,30px);z-index:70;width:54px;height:54px;padding:0;border:0;border-radius:50%;
+  background:rgba(251,253,249,.92);box-shadow:0 8px 24px rgba(73,121,0,.28);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;
+  opacity:0;transform:translateY(20px) scale(.7);pointer-events:none;transition:opacity .45s var(--ease,ease),transform .45s var(--ease,ease),box-shadow .3s}
+#sunTop.show{opacity:1;transform:none;pointer-events:auto}
+#sunTop:hover{box-shadow:0 12px 30px rgba(73,121,0,.42)}
+#sunTop .ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+#sunTop .ring circle{fill:none;stroke-width:2}
+#sunTop .trk{stroke:#e2f8c1}
+#sunTop .bar{stroke:#497900;stroke-linecap:round;stroke-dasharray:131.95;stroke-dashoffset:calc(131.95 * (1 - var(--pg,0)))}
+#sunTop .sn{position:absolute;inset:11px;display:block;transform:rotate(var(--turn,0deg))}
+#sunTop .sn svg{width:100%;height:100%;fill:#b2f849;display:block}
+#sunTop .sn svg line{stroke:#b2f849}
+html[data-theme="dark"] #sunTop{background:rgba(12,13,11,.92)}
+html[data-theme="dark"] #sunTop .trk{stroke:rgba(227,232,213,.25)}
+html[data-theme="dark"] #sunTop .bar,html[data-theme="dark"] #sunTop .sn svg line{stroke:#e6ebd9}
+html[data-theme="dark"] #sunTop .sn svg{fill:#e6ebd9}
+@media(max-width:700px){#sunTop{width:46px;height:46px;bottom:76px}#sunTop .sn{inset:9px}}
+

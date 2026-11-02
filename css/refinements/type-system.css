@@ -1,0 +1,101 @@
+/* css/refinements/type-system.css — ONE type scale + ONE text-colour palette for the whole site.
+   Loaded LAST in main.css so it unifies the sizes/colours scattered across older layers.
+   To change a size or colour site-wide, edit the tokens below — not the individual components. */
+
+/* ------------------------------------------------------------------ tokens */
+:root{
+  /* size scale */
+  --fs-xs:12px;                          /* tags, badges, captions, counts            */
+  --fs-sm:14px;                          /* secondary text, footer, breadcrumbs       */
+  --fs-btn:13px;                         /* every button                              */
+  --fs-base:16px;                        /* body text, card titles, form fields       */
+  --fs-lead:clamp(15px,1.3vw,18px);      /* intro / hero / description paragraphs     */
+  --fs-h4:clamp(16px,1.4vw,18px);        /* small headings: features, footer, drawer  */
+  --fs-h3:22px;                          /* sub-headings, product price               */
+  --fs-h2:clamp(28px,3.6vw,40px);        /* section titles                            */
+  --fs-h1:clamp(34px,4.6vw,54px);        /* page / hero titles                        */
+  --fs-nav:clamp(13px,1.12vw,17px);      /* header navigation                         */
+  --fs-card:16px;                        /* product card title + price (same size)    */
+
+  /* weights */
+  --fw-text:400;
+  --fw-strong:500;
+
+  /* text colours (light theme) */
+  --tx:#1d1f19;          /* headings + main text          */
+  --tx-soft:#4f5546;     /* secondary / descriptive text  */
+  --tx-accent:#497900;   /* tags, hover, highlights       */
+  --tx-on-fill:#fff;     /* text on buttons / photos      */
+}
+html[data-theme="dark"]{
+  --tx:#fbe9ef;
+  --tx-soft:#f4d8e1;
+  --tx-accent:#f7cdd9;
+}
+/* cards that stay light inside the dark theme keep the light palette */
+html[data-theme="dark"] :is(.card,.cat,.banner){
+  --tx:#5a3a44; --tx-soft:#85505f; --tx-accent:#be5873;
+}
+@media(max-width:560px){
+  :root{ --fs-card:14px; --fs-h3:20px }
+}
+
+/* ------------------------------------------------------------------ base */
+html:root body{font-size:var(--fs-base);font-weight:var(--fw-text)}
+
+/* ------------------------------------------------------------------ headings */
+html:root :is(.hero h1,.hero2 h1,.collection-hero h1){font-size:var(--fs-h1);font-weight:var(--fw-text)}
+html:root :is(.section-title,.sale h2,.banner h2,.product h1){font-size:var(--fs-h2);font-weight:var(--fw-text)}
+html:root .info-page h2{font-size:var(--fs-h3);font-weight:var(--fw-text)}
+html:root :is(.features h4,.footer h5){font-size:var(--fs-h4);font-weight:var(--fw-text)}
+html:root .section-title{color:var(--tx);-webkit-text-fill-color:currentColor}
+html:root :is(.sale h2,.banner h2,.product h1,.features h4,.footer h5,.info-page h2){color:var(--tx)}
+html[data-theme="dark"] .banner h2{-webkit-text-fill-color:currentColor}
+
+/* ------------------------------------------------------------------ paragraphs */
+html:root :is(.hero p,.hero2 p,.sale p,.banner p,.lk-sub,.sp-sub){font-size:var(--fs-lead)}
+/* Arabic product description: never below 16px (Tajawal reads small) */
+html:root .product .desc{font-size:max(var(--fs-lead),16px)}
+html:root :is(.hero p,.hero2 p,.sale p,.banner p,.lk-sub,.sp-sub,.product .desc,.features p){color:var(--tx-soft);opacity:1}
+html:root .features p{font-size:var(--fs-sm)}
+
+/* ------------------------------------------------------------------ header / nav / announcement */
+html:root .bar,html:root .bar.ann,html:root .bar.two{font-size:clamp(12px,3.3vw,var(--fs-sm))}
+html:root :is(.nav a,#mini nav a){font-size:var(--fs-nav);color:var(--tx)}
+html:root :is(.nav a:hover,.nav a.active,#mini nav a:hover){color:var(--tx-accent)}
+@media(max-width:820px){html:root :is(.nav a,#mini nav a){font-size:var(--fs-base)}}
+
+/* ------------------------------------------------------------------ buttons */
+html:root :is(.btn,.hero2 .btn,.hero-copy .copy .btn,.hero-actions .btn,.float-card .btn,.footer form button){font-size:var(--fs-btn)}
+
+/* ------------------------------------------------------------------ tags, badges, captions */
+html:root :is(.hero-tag,.sale-tag){font-size:var(--fs-xs);color:var(--tx-accent)}
+html:root .badge{font-size:var(--fs-xs)}
+html:root .lk-cap{font-size:var(--fs-xs)}
+html:root .cc-count{font-size:var(--fs-xs)}
+html:root .cc-info h3{font-size:var(--fs-sm)}
+html:root .crumbs{font-size:var(--fs-sm);color:var(--tx-soft)}
+
+/* ------------------------------------------------------------------ cards + prices */
+html:root .card h3{font-size:var(--fs-card);color:var(--tx)}
+html:root .card .price{font-size:var(--fs-card);color:var(--tx-accent)}
+html:root .card .price s{font-size:var(--fs-xs);color:var(--tx-soft);opacity:1}
+html:root .product .price{font-size:var(--fs-h3);color:var(--tx-accent)}
+html:root .product .price s{color:var(--tx-soft);opacity:1}
+
+/* hero floating product card */
+html:root .float-card h4{font-size:var(--fs-base);font-weight:var(--fw-strong);color:var(--tx)}
+html:root .float-card .price{font-size:var(--fs-base);font-weight:var(--fw-strong);color:var(--tx-accent)}
+html:root .float-card .price s{font-size:var(--fs-sm);color:var(--tx-soft)}
+
+/* ------------------------------------------------------------------ toolbar, forms, footer */
+html:root :is(.toolbar,select.sort){font-size:var(--fs-base)}
+html:root :is(input,select,textarea,.contact-form input,.contact-form textarea){font-size:var(--fs-base)}
+html:root .footer .copy{font-size:var(--fs-sm);color:var(--tx-soft)}
+html:root .footer a{font-size:var(--fs-base);color:var(--tx-soft)}
+html:root .footer a:hover{color:var(--tx-accent)}
+
+/* cart drawer */
+html:root .line h4{font-size:var(--fs-base);color:var(--tx)}
+html:root .drawer-head{font-size:var(--fs-h3)}
+html:root .subtotal{font-size:var(--fs-h4)}

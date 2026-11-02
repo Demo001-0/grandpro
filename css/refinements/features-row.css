@@ -1,0 +1,6 @@
+/* css/refinements/features-row.css — Features: one line */
+/* features: all three columns on one line */
+.features{align-items:start}
+.features>div,.banner h2{translate:none!important}
+
+

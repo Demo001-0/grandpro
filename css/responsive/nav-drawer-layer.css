@@ -1,0 +1,6 @@
+/* Mobile menu drawer sat UNDER the dark overlay: .header .container (position:relative; z-index:1) is a stacking context, so the
+   drawer's z-index:100 only counted inside it while .overlay (z-index:90) painted over it. Lift that container above the overlay while the menu is open. */
+@media(max-width:820px){
+  .header .container:has(> .header-top > .nav.open),
+  .header .container:has(.nav.open){z-index:101}
+}

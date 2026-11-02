@@ -1,0 +1,23 @@
+/* css/refinements/surfaces-dropdowns-footer.css — Pastel surfaces, dropdown stacking, footer */
+/* soft pink: dark text on pastel surfaces */
+.hero,.banner{color:var(--ink)}
+.bar.one{color:var(--ink)}
+.btn:not(.solid):hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cat:hover{background:var(--hero);color:var(--ink)}
+
+/* filter dropdowns must sit above the product cards */
+.toolbar{position:relative;z-index:30}
+
+/* ---- footer ---- */
+.footer{background:var(--hero);color:var(--ink);border-top:1px solid #d2f49e;padding:64px 0 28px}
+.footer h5{color:var(--ink)}
+.footer form{max-width:420px}
+.footer input{background:#fff;border:1px solid #cdf395;color:var(--ink)}
+.footer input::placeholder{color:#a8f830}
+.footer input:focus{outline:none;border-color:var(--accent)}
+.footer form button{background:var(--accent);border:1px solid var(--accent);color:#fff;transition:.25s}
+.footer form button:hover{background:var(--ink);border-color:var(--ink)}
+.footer a{transition:color .2s}
+.footer a:hover{text-decoration:none;color:var(--accent)}
+.footer .copy{border-top:1px solid #cdf395;opacity:.75}
+

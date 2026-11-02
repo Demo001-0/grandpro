@@ -1,0 +1,14 @@
+/* css/components/toolbar.css — Shop toolbar and filter dropdowns */
+/* toolbar */
+.toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;padding:36px 0 28px;font-size:17px}
+.toolbar .left,.toolbar .right{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+details.filter{position:relative}
+details.filter summary{list-style:none;cursor:pointer;display:flex;gap:8px;align-items:center}
+details.filter summary::-webkit-details-marker{display:none}
+details.filter summary::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px}
+.dropdown{position:absolute;top:34px;left:0;background:#fff;border:1px solid var(--line);padding:16px 18px;z-index:20;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.dropdown label{display:flex;gap:10px;align-items:center;padding:5px 0;cursor:pointer}
+.dropdown input[type=number]{width:90px;padding:6px;border:1px solid var(--line);font-family:inherit}
+.dropdown .row{display:flex;gap:10px;align-items:center}
+select.sort{background:transparent;border:0;font:inherit;color:inherit;padding:4px;cursor:pointer}
+

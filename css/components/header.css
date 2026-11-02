@@ -1,0 +1,16 @@
+/* css/components/header.css — Header and logo */
+/* header */
+.header{background:var(--bg);padding:24px 0 20px;position:relative}
+.header-top{display:flex;justify-content:space-between;align-items:center;min-height:56px}
+.icon-btn{background:none;border:0;color:var(--ink);padding:8px;display:grid;place-items:center;position:relative}
+.icon-btn svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.5}
+.cart-count{position:absolute;top:0;right:-2px;background:var(--accent);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center}
+.logo{display:flex;flex-direction:column;align-items:center;color:var(--brand);margin:6px 0 18px}
+.logo svg{width:150px;height:150px}
+.logo .word{font-family:var(--font-logo);font-weight:400;font-size:clamp(64px,10vw,110px);line-height:1;letter-spacing:.02em;margin-top:-6px}
+.logo .sub{font-family:var(--font-logo);font-weight:300;font-size:clamp(20px,3vw,34px);letter-spacing:.35em;text-transform:uppercase;margin-top:4px}
+.header-actions{display:flex;gap:8px}
+.nav{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:6px}
+.nav a{font-size:17px;color:#525949;padding:4px 0;border-bottom:1px solid transparent;transition:.2s}
+.nav a:hover,.nav a.active{color:var(--ink);border-color:var(--ink)}
+

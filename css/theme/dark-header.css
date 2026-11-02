@@ -1,0 +1,30 @@
+/* css/theme/dark-header.css — Dark: bars, header, nav, logo */
+/* announcement bars */
+html[data-theme="dark"] .bar.one{background:linear-gradient(90deg,#10110e,#262821,#10110e);background-size:200% 100%;color:#eaeede;animation:barflow 9s linear infinite;border-bottom:1px solid rgba(185,248,50,0.125)}
+@keyframes barflow{to{background-position:200% 0}}
+html[data-theme="dark"] .bar.two{background:#191a16;color:#dfe5ce;border-bottom:1px solid rgba(185,248,50,0.075)}
+
+/* header, nav */
+html[data-theme="dark"] .header{background:transparent}
+html[data-theme="dark"] .nav a{color:#b9f832}
+html[data-theme="dark"] .nav a:hover,html[data-theme="dark"] .nav a.active{color:#f4f6ee;border-color:#b9f832;text-shadow:0 0 14px rgba(185,248,50,0.4)}
+html[data-theme="dark"] .icon-btn{color:#f4f6ee}
+html[data-theme="dark"] .icon-btn:hover{color:#b9f832;filter:drop-shadow(0 0 8px rgba(185,248,50,0.4))}
+html[data-theme="dark"] .cart-count{box-shadow:0 0 12px rgba(185,248,50,0.45)}
+html[data-theme="dark"] #prog{background:linear-gradient(90deg,#b9f832,#b9f832,#b9f832);box-shadow:0 0 14px #b9f832}
+.header-actions{align-items:center}
+
+/* ---- logo: the sun becomes a solar eclipse with a living corona ---- */
+html[data-theme="dark"] .logo img,
+html[data-theme="dark"] #mini .mlogo img{filter:drop-shadow(0 0 14px rgba(185,248,50,0.275)) brightness(1.08)}
+html[data-theme="dark"] .header .logo svg,
+html[data-theme="dark"] #mini .msun svg{filter:drop-shadow(0 0 12px rgba(185,248,50,0.425));animation:corona 4.5s ease-in-out infinite alternate}
+html[data-theme="dark"] .header .logo svg circle,
+html[data-theme="dark"] #mini .msun svg circle{fill:#191a16;stroke:#e6ebd9;stroke-width:2}
+html[data-theme="dark"] .header .logo svg line,
+html[data-theme="dark"] #mini .msun svg line{stroke:#b9f832}
+@keyframes corona{
+  from{filter:drop-shadow(0 0 8px rgba(185,248,50,0.3))}
+  to{filter:drop-shadow(0 0 26px rgba(185,248,50,0.5))}
+}
+

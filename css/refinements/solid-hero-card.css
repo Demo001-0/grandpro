@@ -1,0 +1,18 @@
+/* css/refinements/solid-hero-card.css — the hero product-info card (.float-card) is ONE flat colour:
+   no mirror gloss, no light streak, no gradient / inner glow. White in light mode, near-black in dark mode. */
+.float-card::before,.float-card::after{content:none!important;display:none!important;animation:none!important}
+.float-card{background-image:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+html:not([data-theme="dark"]) .float-card{background-color:#fff!important;box-shadow:0 14px 36px rgba(78,85,69,.22)!important}
+html[data-theme="dark"] .float-card{background-color:#16170f!important;box-shadow:0 18px 44px rgba(0,0,0,.6)!important}
+
+/* ---------- desktop: the info card sits UNDER the product, it no longer covers it ---------- */
+@media(min-width:821px){
+  html:root .hero2{padding-bottom:72px}                /* room for the slider dots under the card */
+  html .hero2 .float-card{
+    position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;
+    width:calc(100% - 28px);max-width:none;min-width:0;margin:-34px auto 0!important;padding:14px 18px;
+  }
+  html .hero2 .float-card .fc{grid-template-columns:1fr auto;column-gap:14px;align-items:center}
+  html .hero2 .float-card .fc a,html .hero2 .float-card .fc .price{grid-column:1}
+  html .hero2 .float-card .fc .btn{grid-column:2;grid-row:1/3;margin:0;align-self:center;justify-self:end}
+}

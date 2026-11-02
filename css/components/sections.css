@@ -1,0 +1,12 @@
+/* css/components/sections.css — Sections, titles, categories, features, banner */
+/* sections */
+.section{padding:70px 0}
+.section-title{font-family:var(--font-head);font-weight:400;font-size:clamp(28px,3.5vw,40px);text-align:center;margin-bottom:40px}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.cat{background:var(--card);border:1px solid var(--line);padding:34px 10px;text-align:center;font-family:var(--font-head);letter-spacing:.1em;transition:.25s}
+.cat:hover{background:var(--brand);color:#fff}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+.features h4{font-family:var(--font-head);font-weight:400;font-size:20px;margin-bottom:8px;letter-spacing:.06em}
+.banner{background:var(--hero);color:#fff;text-align:center;padding:70px 20px}
+.banner h2{font-family:var(--font-head);font-weight:400;font-size:clamp(28px,4vw,44px);margin-bottom:16px}
+

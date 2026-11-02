@@ -1,0 +1,9 @@
+/* css/components/search.css — Search panel */
+/* search */
+.search-panel{position:fixed;top:0;left:0;right:0;background:var(--bg);z-index:100;padding:26px 0 30px;transform:translateY(-110%);transition:.35s;max-height:80vh;overflow:auto}
+.search-panel.open{transform:none}
+.search-panel input{width:100%;padding:16px 4px;font-size:20px;border:0;border-bottom:1px solid var(--ink);background:transparent;font-family:inherit;outline:none}
+.search-results{margin-top:18px;display:grid;gap:10px}
+.search-results a{display:grid;grid-template-columns:50px 1fr auto;gap:14px;align-items:center;padding:6px 0}
+.search-results .t{width:50px;aspect-ratio:4/5;overflow:hidden;border-radius:3px}
+

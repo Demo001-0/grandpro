@@ -1,0 +1,4 @@
+/* css/refinements/header-divider.css — thin divider line under the nav bar */
+.header-top{padding-bottom:14px;border-bottom:1px solid var(--line)}
+html[data-theme="dark"] .header-top{border-bottom-color:rgba(232,236,219,.28)}
+@media(max-width:820px){.header-top{padding-bottom:8px}}

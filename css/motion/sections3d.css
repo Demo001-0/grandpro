@@ -1,0 +1,64 @@
+/* css/motion/sections3d.css — light 3D for the home sections (see js/features/sections3d.js). Loaded last.
+   Everything is scoped to html.s3d (added by the script), so nothing changes if the script does not run. */
+
+/* ---------- shared: scroll lean + mouse tilt (lookbook tiles, category cards, sale banner) ---------- */
+html:root body [data-s3d]:not([data-s3d=flat]).s3d-on{
+  transform:perspective(1100px) translateY(var(--ty,0px)) rotateX(calc(var(--sx,0deg) + var(--rx,0deg))) rotateY(var(--ry,0deg));
+  transition:transform .16s ease-out,box-shadow .35s,border-color .25s;
+}
+html:root body .ccard.s3d-hot{--ty:-6px}
+.s3d-glare{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.3),rgba(255,255,255,.07) 40%,transparent 64%)}
+.s3d-hot>.s3d-glare{opacity:1}
+html[data-theme="dark"] .s3d-glare{background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.18),rgba(185,248,50,.06) 40%,transparent 64%)}
+/* the lookbook caption slides a little against the photo = depth */
+html.s3d .lk-cap{transition:translate .3s ease-out}
+html.s3d .lk-tile.s3d-hot .lk-cap{translate:calc(var(--nx,0) * -9px) calc(var(--ny,0) * -6px)}
+
+/* category cards: they tip up and settle into place when they scroll in (replaces the flat zoom) */
+html.s3d .ccard[data-r=zoom]{transition:opacity 1.1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1),filter .9s ease,box-shadow .35s}
+html.s3d .ccard[data-r=zoom]:not(.in){transform:perspective(900px) rotateX(42deg) translateY(44px) scale(.96)}
+
+/* ---------- sale banner: the turning 3D box ---------- */
+html.s3d .sale-art>b,html.s3d .sale-art>em{z-index:1}
+.s3d-scene{--s:clamp(104px,12vw,158px);position:absolute;left:50%;top:50%;width:var(--s);height:var(--s);margin:calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  z-index:0;pointer-events:none;perspective:900px}
+.s3d-rig{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(var(--ox,0deg) + var(--sy,0deg))) rotateY(var(--oy,0deg));transition:transform .35s ease-out}
+.s3d-cube{position:absolute;inset:0;transform-style:preserve-3d;animation:s3d-spin 22s linear infinite;will-change:transform}
+.s3d-idle .s3d-cube,.s3d-idle .s3d-core{animation-play-state:paused}
+.s3d-cube>i{position:absolute;inset:0;border:1px solid rgba(185,248,50,.6);border-radius:3px;
+  background:
+    linear-gradient(90deg,transparent 41%,rgba(185,248,50,.26) 41% 59%,transparent 59%),         /* packing tape */
+    linear-gradient(145deg,rgba(185,248,50,.13),rgba(185,248,50,.03));
+  box-shadow:inset 0 0 22px rgba(185,248,50,.16)}
+.s3d-cube>i.t,.s3d-cube>i.u{background:linear-gradient(145deg,rgba(185,248,50,.16),rgba(185,248,50,.05))}
+.s3d-cube>i.f{transform:translateZ(calc(var(--s) / 2))}
+.s3d-cube>i.b{transform:rotateY(180deg) translateZ(calc(var(--s) / 2))}
+.s3d-cube>i.r{transform:rotateY(90deg) translateZ(calc(var(--s) / 2))}
+.s3d-cube>i.l{transform:rotateY(-90deg) translateZ(calc(var(--s) / 2))}
+.s3d-cube>i.t{transform:rotateX(90deg) translateZ(calc(var(--s) / 2))}
+.s3d-cube>i.u{transform:rotateX(-90deg) translateZ(calc(var(--s) / 2))}
+/* small glowing core turning the other way (translucent, so the big number stays readable) */
+.s3d-core{position:absolute;left:25%;top:25%;width:50%;height:50%;transform-style:preserve-3d;animation:s3d-spin-rev 14s linear infinite}
+.s3d-core>i{position:absolute;inset:0;border-radius:2px;background:rgba(185,248,50,.16);border:1px solid rgba(185,248,50,.85);box-shadow:0 0 14px rgba(185,248,50,.35)}
+.s3d-core>i.f{transform:translateZ(calc(var(--s) / 4))}
+.s3d-core>i.b{transform:rotateY(180deg) translateZ(calc(var(--s) / 4))}
+.s3d-core>i.r{transform:rotateY(90deg) translateZ(calc(var(--s) / 4))}
+.s3d-core>i.l{transform:rotateY(-90deg) translateZ(calc(var(--s) / 4))}
+.s3d-core>i.t{transform:rotateX(90deg) translateZ(calc(var(--s) / 4))}
+.s3d-core>i.u{transform:rotateX(-90deg) translateZ(calc(var(--s) / 4))}
+@keyframes s3d-spin{from{transform:rotateX(-22deg) rotateY(0)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+@keyframes s3d-spin-rev{from{transform:rotateX(18deg) rotateY(0) rotateZ(0)}to{transform:rotateX(18deg) rotateY(-360deg) rotateZ(0)}}
+@media(max-width:820px){.s3d-scene{--s:clamp(92px,26vw,120px)}}
+
+/* ---------- testimonials: coverflow ---------- */
+html.s3d .tm-track{perspective:1400px}
+html.s3d .tm-card{transform:translateZ(var(--cz,0px)) rotateY(var(--cr,0deg)) scale(var(--cs,1))}
+html.s3d .tm-card:hover{transform:translateY(-4px) translateZ(var(--cz,0px)) rotateY(var(--cr,0deg)) scale(var(--cs,1))}
+
+/* ---------- features: the icon flips like a coin on hover ---------- */
+@media(hover:hover) and (pointer:fine){
+  html.s3d .features>div:hover .fi{transform:perspective(420px) rotateY(360deg);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+}
+
+@media (prefers-reduced-motion:reduce){.s3d-scene{display:none}}

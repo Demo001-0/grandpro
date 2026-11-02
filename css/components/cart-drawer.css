@@ -1,0 +1,22 @@
+/* css/components/cart-drawer.css — Cart drawer */
+/* cart drawer */
+.overlay{position:fixed;inset:0;background:rgba(20,20,15,.45);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bg);z-index:100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line);font-family:var(--font-head);font-size:22px}
+.drawer-body{flex:1;overflow:auto;padding:20px 24px}
+.progress{font-size:14px;margin-bottom:18px}
+.progress .track{height:5px;background:var(--line);margin-top:8px;border-radius:3px;overflow:hidden}
+.progress .fill{height:100%;background:var(--accent);transition:.4s}
+.line{display:grid;grid-template-columns:80px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.line .thumb{width:80px;aspect-ratio:4/5;overflow:hidden;border-radius:3px}
+.line h4{font-family:var(--font-head);font-weight:400;font-size:15px;letter-spacing:.05em}
+.line .mini-qty{display:inline-flex;border:1px solid var(--line);margin-top:6px}
+.line .mini-qty button{width:28px;height:28px;border:0;background:none}
+.line .mini-qty span{width:30px;display:grid;place-items:center;font-size:14px}
+.line .rm{background:none;border:0;font-size:13px;text-decoration:underline;color:var(--ink);opacity:.7}
+.drawer-foot{padding:20px 24px;border-top:1px solid var(--line)}
+.subtotal{display:flex;justify-content:space-between;font-family:var(--font-head);font-size:19px;margin-bottom:6px}
+.drawer-foot small{display:block;margin-bottom:14px;opacity:.7}
+
