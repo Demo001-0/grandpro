@@ -58,7 +58,7 @@
   addEventListener("resize", buildDots);
   setTimeout(buildDots, 0); setTimeout(buildDots, 600);
   let sx = null;
-  track.addEventListener("pointerdown", e => { sx = e.clientX; });
+  track.addEventListener("pointerdown", e => { sx = e.pointerType === "mouse" ? e.clientX : null; });   // touch swipes scroll natively; mouse drags are handled here
   addEventListener("pointerup", e => {
     if (sx === null) return;
     const dx = e.clientX - sx; sx = null;

@@ -67,3 +67,15 @@ html:root .hero2:hover .dots button.active::after{animation-play-state:paused}
   .hp-chip{animation:none;opacity:1}
   html:root .hero2 .dots button.active::after{animation:none;transform:scaleX(1)}
 }
+
+/* ---- chips no longer cover the product ----
+   At rest each chip is just its icon, centred on the arch's outer edge (mostly outside the product photo).
+   The text slides open only on hover / keyboard focus. Positions: hpc1/hpc2 = right edge, hpc3 = left edge. */
+.hp-chip{gap:0;padding:5px;max-width:38px;overflow:hidden;white-space:nowrap;
+  transition:max-width .45s cubic-bezier(.2,.8,.2,1),gap .3s,padding .3s,opacity .7s,transform .7s cubic-bezier(.2,.9,.3,1.2)}
+.hp-chip span{display:block;max-width:0;opacity:0;transition:max-width .45s cubic-bezier(.2,.8,.2,1),opacity .25s}
+.hp-chip:hover,.hp-chip:focus-within{max-width:270px;gap:9px;padding:6px 14px 6px 6px;z-index:6}
+.hp-chip:hover span,.hp-chip:focus-within span{max-width:220px;opacity:1}
+.hp-chip.hpc1{top:8%;right:-19px}
+.hp-chip.hpc2{top:44%;right:-19px}
+.hp-chip.hpc3{top:8%;left:-19px}

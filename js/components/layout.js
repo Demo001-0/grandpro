@@ -44,7 +44,7 @@ function layout() {
     const group = msgs.map(([ic, txt]) => `<span class="ann-item"><span class="ann-ico">${ic}</span>${txt}</span><span class="ann-dot" aria-hidden="true"></span>`).join("").repeat(3);
     const track = document.getElementById("annTrack");
     track.innerHTML = `<div class="ann-group">${group}</div><div class="ann-group" aria-hidden="true">${group}</div>`;
-    const hero = document.querySelector(".lookbook, .hero");           // on pages with a hero, the strip replaces the divider line above it
+    const hero = document.querySelector(".orbit, .lookbook, .hero");           // on pages with a hero, the strip replaces the divider line above it
     if (hero) {
       hero.before(document.getElementById("annBar")); document.body.classList.add("home-splash");
       const hc = document.querySelector(".header > .container");

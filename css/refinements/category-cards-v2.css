@@ -1,0 +1,19 @@
+/* css/refinements/category-cards-v2.css — clean category cards: photo on top, solid info bar below (no text over artwork) */
+html:root .ccard{display:flex;flex-direction:column;background:#fff;color:var(--ink);border-radius:22px;
+  box-shadow:0 10px 26px rgba(77,83,68,.12),0 0 0 1px rgba(77,83,68,.06)}
+html:root .ccard:hover{box-shadow:0 16px 34px rgba(77,83,68,.18),0 0 0 2px #b9f832;transform:translateY(-5px)}
+html:root .cc-img{aspect-ratio:1/1;background:#f1f6e6}
+html:root .cc-img>img,html:root .cc-img>svg{object-fit:contain;padding:10px;box-sizing:border-box}
+html:root .cc-img::after{display:none}
+html:root .ccard .ci{left:auto;right:12px;top:12px;width:38px;height:38px;background:#b9f832;color:#2f3a12;box-shadow:0 4px 10px rgba(77,83,68,.18)}
+html:root .cc-info{position:static;padding:14px 12px 16px;background:#fff;display:flex;flex-direction:column;align-items:center;gap:8px}
+html:root .cc-info h3{color:var(--ink);text-shadow:none;letter-spacing:0;text-transform:none;font-weight:700;font-size:16px;margin:0}
+html:root .cc-info h3::after{display:none}
+html:root .cc-count{color:#4d5344;opacity:1;letter-spacing:0;font-size:12.5px;background:#eef8d6;border-radius:999px;padding:3px 12px}
+html:root .cc-count.soon{background:#f0f0ea;color:#8a8f80}
+html[data-theme="dark"] .ccard{background:#16170f}
+html[data-theme="dark"] .cc-info{background:#16170f}
+html[data-theme="dark"] .cc-info h3{color:#fff}
+html[data-theme="dark"] .cc-count{background:rgba(185,248,50,.14);color:#e6f5b8}
+html[data-theme="dark"] .cc-count.soon{background:rgba(255,255,255,.08);color:#9a9f90}
+html[data-theme="dark"] .cc-img{background:#1b1d15}

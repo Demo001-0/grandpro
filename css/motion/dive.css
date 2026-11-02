@@ -108,7 +108,7 @@ html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
 /* ---------- tablet / phone ---------- */
 @media(max-width:820px){
   .dv-enter{left:auto;right:16px;bottom:14px}
-  .dv-scene{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;justify-items:center;text-align:center;gap:14px;padding:76px 6vw 110px}
+  .dv-scene{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;justify-items:center;text-align:center;gap:14px;padding:76px 6vw 96px}
   .dv-cards{order:-1;width:100%;height:36vh;max-height:300px}
   .dv-card{width:clamp(104px,29vw,150px);border-radius:14px}
   .dv-card span{font-size:11px;padding:22px 8px 8px}
@@ -118,13 +118,13 @@ html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
   .dv-btns{justify-content:center}
   .dv-cta,.dv-ghost{padding:12px 20px;font-size:14px}
   .dv-big{font-size:62vw}
-  .dv-nav{left:50%;top:auto;bottom:22px;translate:-50% 0;flex-direction:row;gap:10px}
+  .dv-nav{left:50%;top:auto;bottom:calc(8px + env(safe-area-inset-bottom,0px));translate:-50% 0;flex-direction:row;gap:10px}
   .dv-nav button{padding:8px 6px}
   .dv-nav button b{display:none}
   .dv-nav button span{display:none}
   .dv-nav button::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
   .dv-nav button.active::before{width:26px;border-radius:6px}
-  .dv-hint{bottom:58px}
+  .dv-hint{bottom:calc(40px + env(safe-area-inset-bottom,0px))}
   .dv-count{right:18px;top:26px}
   .dv-close{left:14px;top:14px;width:42px;height:42px}
 }

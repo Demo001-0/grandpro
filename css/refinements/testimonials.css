@@ -1,9 +1,9 @@
 /* css/refinements/testimonials.css — customer reviews slider (home). Loaded last. */
 .testimonials{padding-top:0}
 .tm-sub{text-align:center;margin:-22px auto 34px;max-width:46ch;opacity:.75}
-.tm-track{display:flex;gap:22px;overflow-x:hidden;touch-action:pan-y;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:10px 2px 44px;margin-bottom:-30px;overscroll-behavior-x:contain}
+.tm-track{display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:10px 2px 44px;margin-bottom:-30px;overscroll-behavior-x:contain}
 .tm-track::-webkit-scrollbar{display:none}
-.tm-card{flex:0 0 calc((100% - 44px) / 3);scroll-snap-align:start;margin:0;position:relative;display:flex;flex-direction:column;gap:14px;
+.tm-card{flex:0 0 calc((100% - 44px) / 3);scroll-snap-align:start;scroll-snap-stop:always;margin:0;position:relative;display:flex;flex-direction:column;gap:14px;
   background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 28px 24px;box-shadow:0 10px 30px rgba(31,33,27,.06);
   transition:transform .3s,box-shadow .3s}
 .tm-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,33,27,.12)}
@@ -46,3 +46,13 @@ html[data-theme="dark"] .tm-card figcaption{border-color:rgba(255,255,255,.12)}
   .tm-sub{margin-top:-6px}
 }
 @media (prefers-reduced-motion:reduce){.testimonials .tm-card{opacity:1;translate:none;transition:none}}
+
+/* easy sliding: native finger-follow swipe on touch, drag on mouse, bigger tap targets */
+.tm-track{scroll-behavior:smooth}
+@media(hover:none){.tm-track{cursor:auto}}
+@media(max-width:700px){
+  .tm-track{padding-inline:2px;scroll-padding-inline:2px}
+  .tm-btn{width:52px;height:52px}
+  .tm-dot{width:11px;height:11px}.tm-dot.on{width:30px}
+  .tm-nav{gap:16px;margin-top:14px}
+}

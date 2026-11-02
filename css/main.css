@@ -110,4 +110,7 @@
 /* 3D lens navigation */
 @import url("refinements/nav3d.css");
 @import url("responsive/nav-drawer-layer.css");
-@import url("responsive/lookbook-phone-photos.css");
+@import url("refinements/category-cards-v2.css");
+@import url("refinements/product-cards-motion.css");
+@import url("refinements/sale-box-v2.css");
+@import url("refinements/hero-arch-v2.css");

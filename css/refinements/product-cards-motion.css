@@ -1,0 +1,12 @@
+/* css/refinements/product-cards-motion.css — best-seller cards: slow, gentle floating in place (all screens) */
+@keyframes pc-float{
+  0%{translate:0 0;rotate:0deg}
+  50%{translate:0 -10px;rotate:.4deg}
+  100%{translate:0 0;rotate:-.4deg}
+}
+#featured .card{animation:pc-float 7s ease-in-out infinite;will-change:translate,rotate}
+#featured .card:nth-child(2){animation-delay:-1.8s;animation-duration:8s}
+#featured .card:nth-child(3){animation-delay:-3.6s;animation-duration:7.5s}
+#featured .card:nth-child(4){animation-delay:-5.4s;animation-duration:8.5s}
+#featured .card:hover{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){#featured .card{animation:none}}

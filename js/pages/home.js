@@ -9,7 +9,7 @@ window.pageInit = () => {
     const items = PRODUCTS.filter(p => p.cat === cat);
     const ci = a.querySelector(".ci") ? a.querySelector(".ci").outerHTML : "";
     a.innerHTML = `<div class="cc-img">${items[0] ? productVisual(items[0]) : ""}${ci}</div>
-      <div class="cc-info"><h3>${catName(cat)}</h3><div class="cc-count">${num(items.length)} ${t(items.length === 1 ? "product" : "products")}</div></div>`;
+      <div class="cc-info"><h3>${catName(cat)}</h3><div class="cc-count${items.length ? "" : " soon"}">${items.length ? num(items.length) + " " + t(items.length === 1 ? "product" : "products") : t("Coming soon")}</div></div>`;
   } catch (e) { console.error(e); } });
 
   /* ---- category slider: auto-advance every 5s on phones/tablets ---- */
@@ -22,31 +22,42 @@ window.pageInit = () => {
     ["pointerdown", "touchstart", "wheel", "keydown"].forEach(ev => cats.addEventListener(ev, touch, { passive: true }));
     new IntersectionObserver(es => { visible = es[0].isIntersecting; }, { threshold: 0.35 }).observe(cats);
     const left = el => el.getBoundingClientRect().left - cats.getBoundingClientRect().left + cats.scrollLeft - (parseFloat(getComputedStyle(cats).scrollPaddingLeft) || 0);
+    /* phones/tablets: cards rotate on their own — the first card slides to the back and every other card shifts into its place */
+    const reduce = matchMedia("(prefers-reduced-motion:reduce)");
     setInterval(() => {
       if (!isSlider() || !visible || document.hidden || Date.now() - last < 6000) return;
       const cards = [...cats.querySelectorAll(".ccard")];
       if (cards.length < 2) return;
-      const max = cats.scrollWidth - cats.clientWidth;
-      let target;
-      if (cats.scrollLeft >= max - 4) target = 0;
-      else {
-        const pos = cards.map(left);
-        const cur = pos.reduce((b, p, i) => Math.abs(p - cats.scrollLeft) < Math.abs(pos[b] - cats.scrollLeft) ? i : b, 0);
-        target = pos[Math.min(cur + 1, cards.length - 1)];
-      }
-      cats.scrollTo({ left: target, behavior: "smooth" });
-    }, 5000);
+      if (Math.abs(cats.scrollLeft) > 2) cats.scrollTo({ left: 0, behavior: "auto" });
+      const before = cards.map(c => c.getBoundingClientRect().left);
+      const first = cards[0];
+      cats.appendChild(first);
+      if (reduce.matches || !first.animate) return;
+      [...cats.querySelectorAll(".ccard")].forEach(c => {
+        const i = cards.indexOf(c), dx = before[i] - c.getBoundingClientRect().left;
+        if (!dx) return;
+        const wrap = c === first;
+        c.animate(
+          wrap ? [{ transform: `translateX(${dx}px) scale(.9)`, opacity: 0 }, { transform: "none", opacity: 1 }]
+               : [{ transform: `translateX(${dx}px)` }, { transform: "none" }],
+          { duration: wrap ? 700 : 600, easing: "cubic-bezier(.22,1,.36,1)" });
+      });
+    }, 3200);
   })();
 
   /* ---- hero slider ---- */
   const SLIDES = [
-    { tag:"Best seller", title:"Cards that get kept", text:"Double-sided thank-you cards that bring customers back. Make every order a little more personal.",
-      id:"thankyou-card", cta:["Shop now","shop.html"], cta2:["View product","product.html?id=thankyou-card"] },
-    { tag:"Sale · up to 30% off", title:"Be seen from across the street", text:"Roll-ups, banners and posters in big, bold colour — now at special prices for a limited time.",
-      id:"rollup-85", cta:["Shop sale","shop.html?sale=1"], cta2:["View product","product.html?id=rollup-85"] },
     { tag:"New in", title:"Packaging with presence", text:"Custom mailer boxes and paper bags printed with your brand, inside and out.",
-      id:"bag-kraft-set", cta:["Shop packaging","shop.html?cat=Packaging"], cta2:["View product","product.html?id=bag-kraft-set"] }
+      id:"bags-paper", art:"assets/images/hero/riyadh-bags.webp", cover:true, cta:["Shop packaging","shop.html?cat=Packaging"], cta2:["View product","product.html?id=bags-paper"] },
+    { tag:"Best seller", title:"Bags that carry your brand", text:"Kraft and black paper bags with your logo, printed in one colour for a clean, simple look.",
+      id:"bag-kraft-set", art:"assets/images/hero/jahez-bags.webp", cta:["Shop now","shop.html"], cta2:["View product","product.html?id=bag-kraft-set"] },
+    { tag:"Popular", title:"Cups and carriers, branded", text:"Paper cups and cup carriers in your colours, so every coffee on the go is an ad for you.",
+      id:"double-cup-carrier", art:"assets/images/hero/keeta-cups.webp", cta:["Shop packaging","shop.html?cat=Packaging"], cta2:["View product","product.html?id=double-cup-carrier"] }
   ];
+  /* hero arch: supplied cut-out artwork per slide */
+  const archVisual = (p, s) => s.art
+    ? `<img class="${s.cover?"art-cover":""}" src="${s.art}" alt="${pName(p)}" decoding="async">`
+    : productVisual(p);
   document.getElementById("heroSun").innerHTML = sunLogo;
   document.getElementById("heroCopy").innerHTML = SLIDES.map(s => `
     <div class="copy">
@@ -61,7 +72,7 @@ window.pageInit = () => {
       <a class="btn solid" href="${s.cta[1]}">${t(s.cta[0])}</a>
       <a class="btn ghost" href="${s.cta2[1]}">${t(s.cta2[0])}</a>
     </div>`).join("");
-  document.getElementById("arch").innerHTML = SLIDES.map(s => `<div class="arch-slide">${productVisual(byId(s.id))}</div>`).join("");
+  document.getElementById("arch").innerHTML = SLIDES.map(s => `<div class="arch-slide">${archVisual(byId(s.id), s)}</div>`).join("");
   document.getElementById("floatCard").innerHTML = SLIDES.map(s => {
     const p = byId(s.id);
     return `<div class="fc">
