@@ -1,8 +1,8 @@
 /* css/refinements/nav-type-and-rhythm.css — Nav type scale, section rhythm, ticker type */
 /* ---- nav on top: one type scale shared with the ticker / badges (Marcellus, small caps look) ---- */
 .nav a,#mini nav a{font-family:var(--font-head);font-weight:400;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
-.nav a{padding:6px 0;color:#4c5243}
-.nav a:hover,.nav a.active{color:#141612;border-color:currentColor}
+.nav a{padding:6px 0;color:#435244}
+.nav a:hover,.nav a.active{color:#26272a;border-color:currentColor}
 #mini nav{gap:26px}
 @media(min-width:821px){
   .header-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}

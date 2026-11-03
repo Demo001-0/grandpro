@@ -1,4 +1,4 @@
-/* GrandPro 3D logo — Three.js + the real Cormorant Garamond outlines (via opentype.js).
+/* Riyadh Print 3D logo — Three.js + the real Cormorant Garamond outlines (via opentype.js).
    Replaces the flat header logo with a lit, extruded 3D version that follows the cursor.
    If WebGL or the CDN is unavailable, the original flat logo stays as is. */
 (function () {
@@ -53,7 +53,7 @@
     return { geo, scale: s };
   }
 
-  window.__grandproLogo = { buildText, extrude };
+  window.__riyadhLogo = { buildText, extrude };
   if (typeof document === "undefined" || !document.querySelector || !document.querySelector(".logo")) return;
 
   /* ---------- helpers ---------- */
@@ -103,13 +103,13 @@
       const content = new T.Group(); content.position.y = 3.15; pivot.add(content);
 
       // the sun stays the original flat SVG; only the wordmark + subtitle are 3D (real font outlines)
-      const w = extrude(T, buildText(T, fonts[0], "GrandPro"), 5.7, 0.32, 0.012);
+      const w = extrude(T, buildText(T, fonts[0], "Riyadh Print"), 5.7, 0.32, 0.012);
       const word = new T.Mesh(w.geo, mat); word.scale.setScalar(w.scale); word.position.y = -3.32; content.add(word);
       const s = extrude(T, buildText(T, fonts[1], "PRINT SHOP", { spacing: 0.35 }), 5.8, 0.12, 0.006);
       const sub = new T.Mesh(s.geo, mat); sub.scale.setScalar(s.scale); sub.position.y = -4.62; content.add(sub);
 
       // show the 3D logo, hide the flat one
-      logo.classList.add("is3d"); logo.setAttribute("aria-label", "GrandPro"); logo.appendChild(canvas);
+      logo.classList.add("is3d"); logo.setAttribute("aria-label", "Riyadh Print"); logo.appendChild(canvas);
 
       const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
       const tgt = { x: 0, y: 0 }, cur = { x: 0, y: 0 }; let lastMove = -1e9, visible = true;

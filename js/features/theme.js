@@ -1,4 +1,4 @@
-/* GRANDPRO — dark mode controller
+/* RIYADH PRINT — dark mode controller
    - remembers the choice (defaults to light)
    - sun/moon toggle in the header + sticky mini bar
    - circular reveal from the toggle (View Transitions API, graceful fallback)
@@ -6,7 +6,7 @@
    - cursor spotlight on the page and on cards/categories                      */
 (function () {
   const root = document.documentElement;
-  const KEY = "grandpro_theme_v2"; // v2: resets old saved choices so the site opens in light mode
+  const KEY = "riyadhprint_theme_v2"; // v2: resets old saved choices so the site opens in light mode
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- 1. apply saved theme immediately (this script sits in <head>, so no flash) ---- */
@@ -16,13 +16,13 @@
   const metaTheme = () => {
     let m = document.querySelector('meta[name="theme-color"]');
     if (!m) { m = document.createElement("meta"); m.name = "theme-color"; document.head.appendChild(m); }
-    m.content = root.dataset.theme === "dark" ? "#0b0b0b" : "#f7f8f2";
+    m.content = root.dataset.theme === "dark" ? "#0d1210" : "#f4f7f3";
   };
 
   /* ---- 2. stars ---- */
   let canvas, ctx, W = 0, H = 0, dpr = 1, stars = [], shooters = [], raf = 0, running = false, nextShot = 0;
   let mx = 0, my = 0, sy = 0, glow = null;
-  const TINTS = ["255,255,255", "236,248,200", "205,248,110", "255,236,200"];
+  const TINTS = ["255,255,255", "214,236,206", "140,194,123", "236,222,160"];
 
   function makeStars() {
     const n = Math.min(170, Math.round((W * H) / 12000));
@@ -73,8 +73,8 @@
         if (s.life <= 0) { shooters.splice(i, 1); continue; }
         const g = ctx.createLinearGradient(s.x, s.y, s.x - s.vx * 9, s.y - s.vy * 9);
         g.addColorStop(0, `rgba(255,255,255,${s.life})`);
-        g.addColorStop(0.3, `rgba(205,248,110,${s.life * 0.6})`);
-        g.addColorStop(1, "rgba(185,248,50,0.0)");
+        g.addColorStop(0.3, `rgba(190,225,170,${s.life * 0.6})`);
+        g.addColorStop(1, "rgba(140,194,123,0.0)");
         ctx.strokeStyle = g; ctx.lineWidth = 1.8; ctx.lineCap = "round";
         ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(s.x - s.vx * 9, s.y - s.vy * 9); ctx.stroke();
       }

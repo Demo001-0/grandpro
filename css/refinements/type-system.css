@@ -22,9 +22,9 @@
   --fw-strong:500;
 
   /* text colours (light theme) */
-  --tx:#1d1f19;          /* headings + main text          */
-  --tx-soft:#4f5546;     /* secondary / descriptive text  */
-  --tx-accent:#497900;   /* tags, hover, highlights       */
+  --tx:#191f19;          /* headings + main text          */
+  --tx-soft:#465547;     /* secondary / descriptive text  */
+  --tx-accent:#375d2e;   /* tags, hover, highlights       */
   --tx-on-fill:#fff;     /* text on buttons / photos      */
 }
 html[data-theme="dark"]{

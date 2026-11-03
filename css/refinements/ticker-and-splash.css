@@ -1,6 +1,6 @@
 /* css/refinements/ticker-and-splash.css — Announcement ticker, home splash, splash scroll */
 /* announcement ticker */
-.bar.ann{padding:0;min-height:40px;display:flex;align-items:center;overflow:hidden;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;font-family:var(--font-head);font-weight:400;background:linear-gradient(115deg,#dcf7b4,#d7f5a9,#e2f8c2,#dcf7b4);color:var(--ink)}
+.bar.ann{padding:0;min-height:40px;display:flex;align-items:center;overflow:hidden;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;font-family:var(--font-head);font-weight:400;background:linear-gradient(115deg,#d0dfcc,#c9dac4,#d9e4d6,#d0dfcc);color:var(--ink)}
 .ann-track{display:flex;width:max-content;animation:annscroll 38s linear infinite}
 .bar.ann:hover .ann-track{animation-play-state:paused}
 .ann-group{display:flex;align-items:center;flex-shrink:0}
@@ -22,5 +22,5 @@
 /* splash scroll: logo recedes (shrinks, fades, drifts slower) while the ticker + hero slide over it like a curtain */
 /* the splash content (logo, sun, tagline, cards) stays fully visible while scrolling; the ticker + hero simply slide over it */
 .home-splash .bar.ann,.home-splash .hero{position:relative;z-index:2}
-.home-splash .hero{box-shadow:0 -18px 40px rgba(31,33,27,.18)}
+.home-splash .hero{box-shadow:0 -18px 40px rgba(27,33,27,.18)}
 

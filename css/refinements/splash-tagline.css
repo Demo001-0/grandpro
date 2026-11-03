@@ -21,16 +21,16 @@
   .sp-tag,.sp-sub{animation:none}
 }
 
-/* sun takes the exact pink of the GRANDPRO wordmark */
-.logo{color:#b2f849}
-.header .logo svg,#mini .msun svg{fill:#b2f849}
-.header .logo svg line,#mini .msun svg line{stroke:#b2f849}
+/* sun takes the exact pink of the Riyadh Print logo */
+.logo{color:#e8c43c}
+.header .logo svg,#mini .msun svg{fill:#375d2e}
+.header .logo svg line,#mini .msun svg line{stroke:#4c7245}
 
 /* lookbook on phones: taller tiles, lighter overlay, captions that wrap */
 @media(max-width:820px){
   .lk-grid{grid-auto-rows:clamp(210px,62vw,340px);gap:10px}
   .lk-tile.t1{grid-column:span 2;grid-row:span 1}
-  .lk-tile::before{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(75,80,66,.5) 100%)}
+  .lk-tile::before{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(66,80,67,.5) 100%)}
   .lk-cap{left:12px;right:10px;bottom:12px;font-size:11px;letter-spacing:.13em;line-height:1.4}
   .lk-cap::before{width:20px;margin-bottom:7px}
   .lk-sub{padding:0 6px}

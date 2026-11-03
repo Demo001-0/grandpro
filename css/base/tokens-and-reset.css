@@ -1,8 +1,8 @@
 /* css/base/tokens-and-reset.css — Design tokens (colours, fonts), reset, container */
 
 :root{
-  --bg:#f8fbf3; --card:#fbfdf9; --ink:#1d1f19; --brand:#b1f846; --hero:#dcf7b4;
-  --bar:#d7f5a8; --dark:#4f5546; --accent:#497900; --line:#e2f8c1; --white:#fff;
+  --bg:#f6f9f5; --card:#fafcfa; --ink:#191f19; --brand:#375d2e; --hero:#d0dfcc;
+  --bar:#c8d9c4; --dark:#465547; --accent:#375d2e; --line:#d8e4d5; --white:#fff;
   --font-head:'DIN Next Arabic','Marcellus','Cormorant Garamond',serif;
   --font-logo:'DIN Next Arabic','Cormorant Garamond',serif;
   --font-body:'DIN Next Arabic','Assistant',sans-serif;

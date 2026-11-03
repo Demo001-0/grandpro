@@ -1,7 +1,7 @@
 /* css/refinements/dive-real-products.css — the dive uses only real product photos.
    Pages with fewer than 3 photos centre their cards; transparent cut-out photos (hero-*.webp) fit whole instead of being cropped. */
-.dv-card img[src*="/hero-"]{object-fit:contain;padding:14px;box-sizing:border-box;background:#f1f4ea}
-.dv-card img{background:#f1f4ea}
+.dv-card img[src*="/hero-"]{object-fit:contain;padding:14px;box-sizing:border-box;background:#edf3eb}
+.dv-card img{background:#edf3eb}
 .dv-cards.n1 .c1{left:36%;top:12%}
 .dv-cards.n2 .c1{left:14%;top:10%}.dv-cards.n2 .c2{left:46%;top:26%}
 @media(max-width:820px){

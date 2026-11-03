@@ -1,3 +1,3 @@
 /* css/refinements/dark-card-info-solid.css — dark mode: the text/price/button area of a product card is one flat colour
    (same as the card, #16170f). Colour lives in --card-info; change it here. */
-html[data-theme="dark"] .card .info{--card-info:#16170f;background:var(--card-info);background-image:none;position:relative;z-index:1}
+html[data-theme="dark"] .card .info{--card-info:#101610;background:var(--card-info);background-image:none;position:relative;z-index:1}

@@ -11,7 +11,7 @@ html:root body .lang-btn .lang-code{
   font-family:var(--font-head);font-size:12.5px;font-weight:500;letter-spacing:.16em;line-height:1;
   transition:color .25s;
 }
-html:root body .lang-btn:hover,html:root body .lang-btn:focus-visible{background:#b9f832;border-color:#b9f832;color:#0b0b0b}
-html:root body .lang-btn:hover .lang-code,html:root body .lang-btn:focus-visible .lang-code{background:none;color:#0b0b0b;border-color:rgba(11,11,11,.3)}
+html:root body .lang-btn:hover,html:root body .lang-btn:focus-visible{background:#375d2e;border-color:#4c7245;color:#fff}
+html:root body .lang-btn:hover .lang-code,html:root body .lang-btn:focus-visible .lang-code{background:none;color:#26272a;border-color:rgba(11,11,11,.3)}
 html:root body .lang-btn:hover svg{transform:rotate(25deg)}
 @media(max-width:560px){html:root body .lang-btn{padding:5px 10px;gap:6px}html:root body .lang-btn svg{width:17px;height:17px}html:root body .lang-btn .lang-code{font-size:12px;padding-inline-start:6px}}

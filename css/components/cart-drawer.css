@@ -1,6 +1,6 @@
 /* css/components/cart-drawer.css — Cart drawer */
 /* cart drawer */
-.overlay{position:fixed;inset:0;background:rgba(20,20,15,.45);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+.overlay{position:fixed;inset:0;background:rgba(15,20,15,.45);opacity:0;pointer-events:none;transition:.3s;z-index:90}
 .overlay.open{opacity:1;pointer-events:auto}
 .drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--bg);z-index:100;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column}
 .drawer.open{transform:none}

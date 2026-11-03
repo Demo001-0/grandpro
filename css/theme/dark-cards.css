@@ -1,56 +1,56 @@
 /* css/theme/dark-cards.css — Dark: section titles, category and product cards */
 /* ---- section titles ---- */
 /* solid colour (not background-clip:text): the typewriter letters animate with transform/blur and break a clipped gradient */
-html[data-theme="dark"] .section-title{color:#edf0e4;-webkit-text-fill-color:currentColor}
-html[data-theme="dark"] .section-title::after{background:linear-gradient(90deg,transparent,#b9f832,transparent);width:96px;height:2px;box-shadow:0 0 12px #b9f832}
+html[data-theme="dark"] .section-title{color:#e7eee6;-webkit-text-fill-color:currentColor}
+html[data-theme="dark"] .section-title::after{background:linear-gradient(90deg,transparent,#8cc27b,transparent);width:96px;height:2px;box-shadow:0 0 12px #8cc27b}
 
 /* ---- category cards: lit from within ---- */
 html[data-theme="dark"] .cat{
-  background:linear-gradient(160deg,#22241d 0%,#1c1e18 100%);
-  border:1px solid rgba(185,248,50,0.11);color:#f4f6ee;
-  box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 30px rgba(185,248,50,0.08),inset 0 1px 0 rgba(255,255,255,.1);
+  background:linear-gradient(160deg,#1d241e 0%,#181e18 100%);
+  border:1px solid rgba(140,194,123,0.11);color:#f0f5ef;
+  box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 30px rgba(140,194,123,0.08),inset 0 1px 0 rgba(255,255,255,.1);
 }
 html[data-theme="dark"] .cat::before{background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,0))}
-html[data-theme="dark"] .cat::after{background:linear-gradient(100deg,transparent,rgba(185,248,50,0.2),transparent)}
+html[data-theme="dark"] .cat::after{background:linear-gradient(100deg,transparent,rgba(140,194,123,0.2),transparent)}
 html[data-theme="dark"] .cat .ci{
-  color:#b9f832;background:linear-gradient(135deg,#22241e,#1e201a);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 3px rgba(185,248,50,0.07),0 0 22px rgba(185,248,50,0.275);
+  color:#8cc27b;background:linear-gradient(135deg,#1e241e,#1a201a);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 3px rgba(140,194,123,0.07),0 0 22px rgba(140,194,123,0.275);
   animation:ci-glow-d 3.4s ease-in-out infinite alternate;
 }
 @keyframes ci-glow-d{
-  from{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 3px rgba(185,248,50,0.06),0 0 12px rgba(185,248,50,0.175)}
-  to{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 6px rgba(185,248,50,0.1),0 0 34px rgba(185,248,50,0.425)}
+  from{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 3px rgba(140,194,123,0.06),0 0 12px rgba(140,194,123,0.175)}
+  to{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 6px rgba(140,194,123,0.1),0 0 34px rgba(140,194,123,0.425)}
 }
 html[data-theme="dark"] .cat:hover{
-  background:linear-gradient(135deg,#b9f832 0%,#24261f 55%,#24261f 100%);color:#f4f6ee;border-color:rgba(185,248,50,0.3);
-  box-shadow:0 20px 44px rgba(185,248,50,0.225),0 0 54px rgba(185,248,50,0.3),inset 0 1px 0 rgba(255,255,255,.4);
+  background:linear-gradient(135deg,#8cc27b 0%,#1f2620 55%,#1f2620 100%);color:#f0f5ef;border-color:rgba(140,194,123,0.3);
+  box-shadow:0 20px 44px rgba(140,194,123,0.225),0 0 54px rgba(140,194,123,0.3),inset 0 1px 0 rgba(255,255,255,.4);
 }
-html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#24261f;animation:none;box-shadow:0 0 34px rgba(255,255,255,.9)}
+html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#1f2620;animation:none;box-shadow:0 0 34px rgba(255,255,255,.9)}
 
 /* ---- product cards: cursor-tracking spotlight + neon edge ---- */
 html[data-theme="dark"] .card{
-  position:relative;background:linear-gradient(165deg,#20221c,#1a1b16);
-  border:1px solid rgba(185,248,50,0.075);border-radius:14px;
+  position:relative;background:linear-gradient(165deg,#1c221c,#161b16);
+  border:1px solid rgba(140,194,123,0.075);border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.45);
 }
 html[data-theme="dark"] .card::before{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .35s;
-  background:radial-gradient(360px circle at var(--x,50%) var(--y,50%),rgba(185,248,50,0.1),transparent 55%);
+  background:radial-gradient(360px circle at var(--x,50%) var(--y,50%),rgba(140,194,123,0.1),transparent 55%);
 }
 html[data-theme="dark"] .card::after{
   content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;padding:1px;opacity:0;transition:opacity .35s;
-  background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),#b9f832,transparent 60%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
-  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),#8cc27b,transparent 60%);
+  -webkit-mask:linear-gradient(#0d1210 0 0) content-box,linear-gradient(#0d1210 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#0d1210 0 0) content-box exclude,linear-gradient(#0d1210 0 0);
 }
-html[data-theme="dark"] .card:hover{box-shadow:0 22px 54px rgba(0,0,0,.6),0 0 40px rgba(185,248,50,0.14);border-color:rgba(185,248,50,0.15)}
+html[data-theme="dark"] .card:hover{box-shadow:0 22px 54px rgba(0,0,0,.6),0 0 40px rgba(140,194,123,0.14);border-color:rgba(140,194,123,0.15)}
 html[data-theme="dark"] .card:hover::before,html[data-theme="dark"] .card:hover::after{opacity:1}
-html[data-theme="dark"] .card .img{background:#1e201a}
+html[data-theme="dark"] .card .img{background:#1a201a}
 html[data-theme="dark"] .card .img img,html[data-theme="dark"] .card .img svg{filter:brightness(.9) saturate(1.08)}
 html[data-theme="dark"] .card:hover .img img{filter:brightness(1.02) saturate(1.15)}
-html[data-theme="dark"] .card h3{color:#f4f6ee}
-html[data-theme="dark"] .price{color:#e0e5cf}
-html[data-theme="dark"] .price s{color:#b9f832}
-html[data-theme="dark"] .badge{background:linear-gradient(135deg,#b9f832,#24261f);box-shadow:0 0 16px rgba(185,248,50,0.35)}
-html[data-theme="dark"] .badge.sold{background:#22241e;color:#b9f832;box-shadow:none}
+html[data-theme="dark"] .card h3{color:#f0f5ef}
+html[data-theme="dark"] .price{color:#d5e2d2}
+html[data-theme="dark"] .price s{color:#8cc27b}
+html[data-theme="dark"] .badge{background:linear-gradient(135deg,#8cc27b,#1f2620);box-shadow:0 0 16px rgba(140,194,123,0.35)}
+html[data-theme="dark"] .badge.sold{background:#1e241e;color:#8cc27b;box-shadow:none}
 

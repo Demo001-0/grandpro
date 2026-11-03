@@ -1,4 +1,4 @@
-# GrandPro
+# Riyadh Print
 
 Static storefront (no build step) — open `home.html` directly or serve the folder with any static server.
 
@@ -53,11 +53,11 @@ grandpro/
 
 ## Extra liveliness
 
-- `css/motion/alive.css` (last `@import`) + `js/features/alive.js` (loaded by `bootstrap.js`): scroll progress bar, dark-mode-only drifting lime glows, badge pulse, button light sweep, hero card bobbing, card hover glow, and a fly-to-cart + sparkle effect on every Add to cart. All disabled by "reduce motion". To remove: delete the two files, the `@import` and the loader line in `bootstrap.js`.
+- `css/motion/alive.css` (last `@import`) + `js/features/alive.js` (loaded by `bootstrap.js`): scroll progress bar, dark-mode-only drifting green glows, badge pulse, button light sweep, hero card bobbing, card hover glow, and a fly-to-cart + sparkle effect on every Add to cart. All disabled by "reduce motion". To remove: delete the two files, the `@import` and the loader line in `bootstrap.js`.
 
 ## Advanced hero
 
-- `css/motion/hero-pro.css` (last `@import`) + `js/features/hero-pro.js` (loaded by `bootstrap.js` when a `.hero2` exists): pointer-driven 3D tilt, glare and lime spotlight, depth parallax (card, chips, emblem), floating info chips, magnetic buttons, a "Drag" cursor over the arch, and an autoplay progress fill on the active dot. Pointer effects are mouse-only (`html.hp`); chips and the dot progress also work on touch. Everything is off with "reduce motion".
+- `css/motion/hero-pro.css` (last `@import`) + `js/features/hero-pro.js` (loaded by `bootstrap.js` when a `.hero2` exists): pointer-driven 3D tilt, glare and green spotlight, depth parallax (card, chips, emblem), floating info chips, magnetic buttons, a "Drag" cursor over the arch, and an autoplay progress fill on the active dot. Pointer effects are mouse-only (`html.hp`); chips and the dot progress also work on touch. Everything is off with "reduce motion".
 
 ## Hero cut-out products in the shop
 
@@ -77,7 +77,7 @@ grandpro/
 
 ## Dive intro on site open
 
-- `dive.js` now opens by itself ~1.4 s after the home page loads, growing out of the big splash logo — **once per browser session** (`sessionStorage` key `gp_intro_seen`; clear it or open a new tab/session to see it again). Not shown with "reduce motion".
+- `dive.js` now opens by itself ~1.4 s after the home page loads, growing out of the big splash logo — **once per browser session** (`sessionStorage` key `rp_intro_seen`; clear it or open a new tab/session to see it again). Not shown with "reduce motion".
 - No close/skip button, no Esc, and no page dots / counter / progress bar. The way out is to keep scrolling (wheel, swipe, ↓ / → keys): scrolling past the last page pulls the camera back and lands on the home page. The "Shop now" / "All products" buttons on each page also leave to the shop.
 - Clicking the splash logo or the "Enter the experience" pill still replays it (same exit by scrolling).
 - To turn the auto-open off: delete the block at the end of `dive.js` under "opens by itself".
@@ -91,14 +91,14 @@ grandpro/
 
 - The intro dive now opens **immediately** on every load of the home page (no delay, no once-per-session limit). Remove the `if (!reduce) {...}` block at the end of `dive.js` to turn it off.
 
-- Pop-up update: the "Dive with me" title was removed; it now shows only the short line "A quick trip through GrandPro", in a smaller pill.
+- Pop-up update: the "Dive with me" title was removed; it now shows only the short line "A quick trip through Riyadh Print", in a smaller pill.
 
 - Hero update: the "Enter the experience" pill was removed from the hero (click the big logo instead); the hero product card is a single flat colour (`css/refinements/solid-hero-card.css`, last `@import`).
 
 - Desktop hero: the info card now sits under the product (overlapping only its bottom edge by 34px, like on mobile) instead of covering it; see the `@media(min-width:821px)` block in `css/refinements/solid-hero-card.css`.
 
-- Intro update: the dive opens by itself only the first time the site is opened in a browser session (`sessionStorage` key `gp_intro_seen`) — a refresh does not replay it; a new tab/session does. On refresh the \"quick trip\" pop-up shows after 2.2 s instead. Clicking the big logo or the pop-up still runs it any time.
+- Intro update: the dive opens by itself only the first time the site is opened in a browser session (`sessionStorage` key `rp_intro_seen`) — a refresh does not replay it; a new tab/session does. On refresh the \"quick trip\" pop-up shows after 2.2 s instead. Clicking the big logo or the pop-up still runs it any time.
 
 ## 3D lens navigation (desktop)
 
-- `js/features/nav3d.js` + `css/refinements/nav3d.css` (loaded by `bootstrap.js`). The top nav and the sticky bar become a glass capsule that tilts toward the pointer (with a light that follows the cursor); a lime lens glides and squashes to the hovered link and rests on the current page; link text is a 3D cube that rolls over on hover; links drop in with a staggered flip on load. Phones keep the slide-in menu (all 3D CSS is inside `@media(min-width:821px)`). Remove: delete the two files, the `@import` and the loader line in `bootstrap.js`.
+- `js/features/nav3d.js` + `css/refinements/nav3d.css` (loaded by `bootstrap.js`). The top nav and the sticky bar become a glass capsule that tilts toward the pointer (with a light that follows the cursor); a green lens glides and squashes to the hovered link and rests on the current page; link text is a 3D cube that rolls over on hover; links drop in with a staggered flip on load. Phones keep the slide-in menu (all 3D CSS is inside `@media(min-width:821px)`). Remove: delete the two files, the `@import` and the loader line in `bootstrap.js`.

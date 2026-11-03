@@ -1,5 +1,5 @@
 /* js/features/hero3d.js — 3D hero for the home splash (Three.js, self-hosted in js/vendor/)
-   - The GrandPro emblem is rebuilt as a real extruded 3D object (black disc + raised lime mark) exactly where the flat logo sits.
+   - The Riyadh Print emblem is rebuilt as a real extruded 3D object (10 coloured layered pieces) exactly where the flat logo sits.
    - Real product photos (js/features/hero-photos.js — transparent cut-outs inlined as data URIs, ~150 KB) float around it as flat textured
      planes with unlit materials (cheap to render). Each one is loaded in parallel with Three.js; a photo that fails to load is skipped.
    - Motion: slow idle float, pointer parallax (touch-drag on phones), and a light scroll effect (objects drift apart + spin).
@@ -27,7 +27,7 @@
 
   const start = async () => {
     const header = document.querySelector(".home-splash .header");
-    const emblemEl = header && header.querySelector(".logo svg");
+    const emblemEl = header && header.querySelector(".logo svg.emblem");
     if (!header || !emblemEl || typeof sunLogo !== "string") return;
 
     /* products — two separate pieces, CSS decides which one shows:
@@ -80,33 +80,32 @@
     const T = window.THREE;
     const isPhone = () => innerWidth < 700;
 
-    /* ---------- emblem geometry (from the same SVG the flat logo uses) ---------- */
+    /* ---------- emblem geometry (from the same SVG the flat logo uses) ----------
+       Riyadh Print emblem = 10 coloured pieces. Each piece is extruded on its own and stacked in painter's order,
+       so the 3D object looks like layered paper sheets in the real logo colours. */
     const svgText = sunLogo.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"');
     const data = new T.SVGLoader().parse(svgText);
-    const VB = 1098, HALF = VB / 2;
-    const shapesOf = p => data.paths[p].subPaths ? T.SVGLoader.createShapes(data.paths[p]) : [];
-    const DISC_DEPTH = 120, MARK_DEPTH = 46;
-
-    const discGeo = new T.ExtrudeGeometry(shapesOf(0), { depth: DISC_DEPTH, curveSegments: 40, bevelEnabled: true, bevelThickness: 10, bevelSize: 8, bevelSegments: 3 });
-    discGeo.translate(-HALF, -HALF, -DISC_DEPTH / 2);
-    const markGeo = new T.ExtrudeGeometry(shapesOf(1), { depth: MARK_DEPTH, curveSegments: 28, bevelEnabled: true, bevelThickness: 4, bevelSize: 2.5, bevelSegments: 2 });
-    markGeo.translate(-HALF, -HALF, 0);
-
-    const discMat = new T.MeshStandardMaterial({ color: 0x0a0a0a, roughness: 0.32, metalness: 0.35 });
-    const markMat = new T.MeshStandardMaterial({ color: 0xb9f832, roughness: 0.38, metalness: 0.05, emissive: 0x1d2b00, emissiveIntensity: 0.25 });
-
-    const emblem = new T.Group();                       // outer: position / tilt
-    const emblemInner = new T.Group();                  // inner: flips SVG's y-down into y-up
+    const VB = 590, HALF = VB / 2;
+    const DISC_DEPTH = 60;                                   // used for the glow offset below
+    const emblem = new T.Group();                            // outer: position / tilt
+    const emblemInner = new T.Group();                       // inner: flips SVG's y-down into y-up
     emblemInner.scale.set(1, -1, 1);
-    const disc = new T.Mesh(discGeo, discMat);
-    const mark = new T.Mesh(markGeo, markMat); mark.position.z = DISC_DEPTH / 2 - 4;
-    emblemInner.add(disc, mark); emblem.add(emblemInner);
+    data.paths.forEach((p, i) => {
+      const shapes = T.SVGLoader.createShapes(p);
+      if (!shapes.length) return;
+      const geo = new T.ExtrudeGeometry(shapes, { depth: 10, curveSegments: 24, bevelEnabled: true, bevelThickness: 2.5, bevelSize: 1.6, bevelSegments: 2 });
+      geo.translate(-HALF, -HALF, 0);
+      const mat = new T.MeshStandardMaterial({ color: p.color, roughness: 0.42, metalness: 0.08, emissive: p.color, emissiveIntensity: 0.12 });
+      const m = new T.Mesh(geo, mat); m.position.z = (i - 5) * 7;
+      emblemInner.add(m);
+    });
+    emblem.add(emblemInner);
 
-    /* soft lime glow behind the emblem */
+    /* soft green glow behind the emblem */
     const glowTex = (() => {
       const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d");
       const g = x.createRadialGradient(128, 128, 0, 128, 128, 128);
-      g.addColorStop(0, "rgba(185,248,50,.55)"); g.addColorStop(.45, "rgba(185,248,50,.16)"); g.addColorStop(1, "rgba(185,248,50,0)");
+      g.addColorStop(0, "rgba(76,114,69,.40)"); g.addColorStop(.45, "rgba(84,141,173,.12)"); g.addColorStop(1, "rgba(76,114,69,0)");
       x.fillStyle = g; x.fillRect(0, 0, 256, 256); return new T.CanvasTexture(c);
     })();
     const glow = new T.Sprite(new T.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, opacity: 0.0 }));
@@ -145,7 +144,7 @@
     const camera = new T.PerspectiveCamera(30, 1, 50, 6000);
     scene.add(new T.AmbientLight(0xffffff, 0.62));
     const key = new T.DirectionalLight(0xffffff, 0.62); key.position.set(-300, 500, 900); scene.add(key);
-    const fill = new T.DirectionalLight(0xdfffa0, 0.22); fill.position.set(700, -250, 500); scene.add(fill);
+    const fill = new T.DirectionalLight(0xdfeeff, 0.22); fill.position.set(700, -250, 500); scene.add(fill);
     const rim = new T.DirectionalLight(0xffffff, 0.3); rim.position.set(0, 200, -700); scene.add(rim);
     scene.add(glow, emblem);
 

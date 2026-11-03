@@ -3,8 +3,8 @@ html .sale-art{--bs:clamp(150px,19vw,250px);min-height:calc(var(--bs) + 36px)}
 html .s3d-scene{--s:var(--bs)}
 /* no inner spinning core and no tape stripe behind the digits: they fought with the number */
 html .s3d-core{display:none}
-html .s3d-cube>i{background:linear-gradient(145deg,rgba(185,248,50,.14),rgba(185,248,50,.04));box-shadow:inset 0 0 26px rgba(185,248,50,.14)}
-html .s3d-cube>i.t,html .s3d-cube>i.u{background:linear-gradient(145deg,rgba(185,248,50,.18),rgba(185,248,50,.06))}
+html .s3d-cube>i{background:linear-gradient(145deg,rgba(55,93,46,.14),rgba(55,93,46,.04));box-shadow:inset 0 0 26px rgba(55,93,46,.14)}
+html .s3d-cube>i.t,html .s3d-cube>i.u{background:linear-gradient(145deg,rgba(55,93,46,.18),rgba(55,93,46,.06))}
 /* slightly smaller number so it clearly sits inside the box, with a soft shadow for contrast */
 html .sale-art b{font-size:calc(var(--bs) * .52);text-shadow:0 2px 14px rgba(0,0,0,.28)}
 html .sale-art em{margin-top:6px}

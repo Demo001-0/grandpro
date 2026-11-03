@@ -1,10 +1,10 @@
 /* js/core/i18n.js — English / Arabic switch (loaded first, in <head>, so the page never flashes the wrong direction)
-   - The visitor's choice is saved in localStorage ("grandpro_lang"); ?lang=ar or ?lang=en also works.
+   - The visitor's choice is saved in localStorage ("riyadhprint_lang"); ?lang=ar or ?lang=en also works.
    - t("English text") returns the Arabic text from AR below when the site is in Arabic, otherwise the same text.
    - translateDOM() translates the static HTML (anything whose text matches a key of AR).
    - To change the default language of the shop, edit DEFAULT_LANG. */
 const DEFAULT_LANG = "ar";
-const LANG_KEY = "grandpro_lang";
+const LANG_KEY = "riyadhprint_lang";
 let LANG = DEFAULT_LANG;
 try {
   const q = new URLSearchParams(location.search).get("lang");
@@ -32,7 +32,7 @@ const AR = {
   "Print that makes people look twice.": "طباعة تخلّي الناس تبص مرتين.",
   "Business cards, flyers, posters, stickers and packaging — printed sharp and delivered fast.": "كروت وفلايرز وبوسترات وستيكرز وعلب — بطباعة احترافية وتسليم سريع.",
   /* footer */
-  "GrandPro": "GrandPro", "Email address": "البريد الإلكتروني", "Join": "اشترك", "Help": "مساعدة",
+  "Riyadh Print": "مطابع الرياض", "Email address": "البريد الإلكتروني", "Join": "اشترك", "Help": "مساعدة",
   "All products": "كل المنتجات", "All rights reserved.": "جميع الحقوق محفوظة.", "Thanks for subscribing!": "شكراً لاشتراكك!",
   /* home */
   "Sharp prints, fast.": "طباعة احترافية وسريعة.", "Ink, paper and a little sunshine in every order.": "حبر وورق وشوية شمس في كل طلب.",
@@ -70,7 +70,7 @@ const AR = {
   "No results for \"{q}\"": "مفيش نتائج لـ \"{q}\"",
   /* info pages */
   "About": "من نحن", "Contact us": "تواصل معنا",
-  "GrandPro is a print shop built on one idea: sharp prints, delivered fast. We print business cards, flyers, brochures, posters, banners, stickers and packaging for brands of every size.": "GrandPro مطبعة قايمة على فكرة واحدة: طباعة احترافية وتسليم سريع. بنطبع كروت شخصية وفلايرز وبروشورات وبوسترات وبانرات وستيكرز وعلب لبراندات من كل الأحجام.",
+  "Riyadh Print is a print shop built on one idea: sharp prints, delivered fast. We print business cards, flyers, brochures, posters, banners, stickers and packaging for brands of every size.": "مطابع الرياض مطبعة قايمة على فكرة واحدة: طباعة احترافية وتسليم سريع. بنطبع كروت شخصية وفلايرز وبروشورات وبوسترات وبانرات وستيكرز وعلب لبراندات من كل الأحجام.",
   "Every job gets an artwork check, quality paper and a careful finish — so what lands in your hands looks like what you imagined.": "كل شغلانة بتعدّي على مراجعة تصميم وورق جيد وتشطيب متقن — عشان اللي يوصلك يبقى زي اللي تخيلته.",
   "Shipping": "الشحن", "Free shipping on orders over {n}. Orders are delivered within 2–5 working days after the print is approved.": "شحن مجاني للطلبات فوق {n}. بيتم التسليم خلال ٢–٥ أيام عمل بعد اعتماد البروفة.",
   "Returns": "الاسترجاع", "Printed-to-order items can only be returned or reprinted if there is a printing defect, reported within 3 days of delivery.": "المنتجات المطبوعة حسب الطلب بتتبدّل أو بتتعاد طباعتها فقط لو فيها عيب طباعة، وبشرط الإبلاغ خلال ٣ أيام من الاستلام.",

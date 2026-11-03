@@ -3,7 +3,7 @@
 .hero-img img,.card .img img,.product .gallery img,.line .thumb img,.search-results .t img{width:100%;height:100%;object-fit:cover}
 
 /* header logo colour (lighter pink) – flat sun + 3D wordmark share it */
-.logo{color:#b8f956}
-.header .logo svg{fill:#b8f956}
-.header .logo svg line{stroke:#b8f956}
+.logo{color:#e8c43c}
+.header .logo svg{fill:#4c7245}
+.header .logo svg line{stroke:#4c7245}
 

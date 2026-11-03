@@ -20,8 +20,8 @@
 
   /* texts (English key → Arabic) — added to the site dictionary */
   Object.assign(AR, {
-    "Enter the experience": "ادخل التجربة", "Dive into GrandPro": "رحلة داخل GrandPro", "Scroll to continue": "اسكرول للتالي",
-    "Scroll to enter the store": "اسكرول للدخول للموقع", "Dive with me": "اغطس معايا", "A quick trip through GrandPro": "جولة سريعة جوه عالم GrandPro", "Dismiss": "إخفاء",
+    "Enter the experience": "ادخل التجربة", "Dive into Riyadh Print": "رحلة داخل مطابع الرياض", "Scroll to continue": "اسكرول للتالي",
+    "Scroll to enter the store": "اسكرول للدخول للموقع", "Dive with me": "اغطس معايا", "A quick trip through Riyadh Print": "جولة سريعة جوه عالم مطابع الرياض", "Dismiss": "إخفاء",
     "Business cards, thank-you cards and loyalty cards that people keep.": "كروت شخصية وكروت شكر وولاء بيحتفظ بيها الناس.",
     "Roll-ups, banners and posters you can see from across the street.": "رول أب وبانرات وبوسترات تتشاف من آخر الشارع.",
     "Table cards, door hangers and receipt books that work hard for your business.": "كروت طاولة وتاقات أبواب ودفاتر سندات بتشتغل لصالح شغلك.",
@@ -49,7 +49,7 @@
   const build = () => {
     built = true;
     dv = document.createElement("div");
-    dv.className = "dv"; dv.setAttribute("role", "dialog"); dv.tabIndex = -1; dv.setAttribute("aria-modal", "true"); dv.setAttribute("aria-label", t("Dive into GrandPro"));
+    dv.className = "dv"; dv.setAttribute("role", "dialog"); dv.tabIndex = -1; dv.setAttribute("aria-modal", "true"); dv.setAttribute("aria-label", t("Dive into Riyadh Print"));
     dv.innerHTML = `
       <div class="dv-bg" aria-hidden="true">
         <div class="dv-logo">${sunLogo}</div>
@@ -151,7 +151,7 @@
     // background tunnel: rings (drawn on one canvas — cheap) rush toward the camera as we move
     if (RW) {
       const c = ringsCtx, base = Math.min(RW, RH) * .45;
-      c.clearRect(0, 0, RW, RH); c.strokeStyle = "#b9f832"; c.lineWidth = 1.5 * DPR;
+      c.clearRect(0, 0, RW, RH); c.strokeStyle = "#8cc27b"; c.lineWidth = 1.5 * DPR;
       for (let k = 0; k < RINGS; k++) {
         const f = (((k / RINGS) + p * .4) % 1 + 1) % 1;
         c.globalAlpha = Math.sin(Math.PI * f) * .4;
@@ -277,7 +277,7 @@
     if (popDone || isOpen) return;
     popDone = true;
     pop = document.createElement("aside");
-    pop.className = "dv-pop"; pop.setAttribute("aria-label", t("A quick trip through GrandPro"));
+    pop.className = "dv-pop"; pop.setAttribute("aria-label", t("A quick trip through Riyadh Print"));
     pop.style.setProperty("--ms", POP_MS + "ms");
     pop.innerHTML = `
       <button type="button" class="dv-pop-go">
@@ -286,7 +286,7 @@
           <svg class="dv-pop-ring" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/></svg>
           <span class="dv-pop-logo">${sunLogo}</span>
         </span>
-        <span class="dv-pop-txt"><small>${t("A quick trip through GrandPro")}</small></span>
+        <span class="dv-pop-txt"><small>${t("A quick trip through Riyadh Print")}</small></span>
         <span class="dv-pop-go-arrow" aria-hidden="true">${arrow}</span>
       </button>
       <button type="button" class="dv-pop-x" aria-label="${t("Dismiss")}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>`;
@@ -312,9 +312,9 @@
   /* ---------- opens by itself only when the site is first opened (once per browser session — NOT on refresh) ----------
      A new tab / new browser session plays it again. The pop-up and the big logo still replay it any time. */
   let seen = false;
-  try { seen = sessionStorage.getItem("gp_intro_seen") === "1"; } catch (e) {}
+  try { seen = sessionStorage.getItem("rp_intro_seen") === "1"; } catch (e) {}
   if (!reduce && !seen) {
-    try { sessionStorage.setItem("gp_intro_seen", "1"); } catch (e) {}
+    try { sessionStorage.setItem("rp_intro_seen", "1"); } catch (e) {}
     scrollTo(0, 0);
     requestAnimationFrame(() => {                     // one frame, so the logo has its final position — no artificial delay
       if (isOpen) return;

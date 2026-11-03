@@ -10,7 +10,7 @@ html:root body .ccard.s3d-hot{--ty:-6px}
 .s3d-glare{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .25s;
   background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.3),rgba(255,255,255,.07) 40%,transparent 64%)}
 .s3d-hot>.s3d-glare{opacity:1}
-html[data-theme="dark"] .s3d-glare{background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.18),rgba(185,248,50,.06) 40%,transparent 64%)}
+html[data-theme="dark"] .s3d-glare{background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.18),rgba(140,194,123,.06) 40%,transparent 64%)}
 /* the lookbook caption slides a little against the photo = depth */
 html.s3d .lk-cap{transition:translate .3s ease-out}
 html.s3d .lk-tile.s3d-hot .lk-cap{translate:calc(var(--nx,0) * -9px) calc(var(--ny,0) * -6px)}
@@ -26,12 +26,12 @@ html.s3d .sale-art>b,html.s3d .sale-art>em{z-index:1}
 .s3d-rig{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(var(--ox,0deg) + var(--sy,0deg))) rotateY(var(--oy,0deg));transition:transform .35s ease-out}
 .s3d-cube{position:absolute;inset:0;transform-style:preserve-3d;animation:s3d-spin 22s linear infinite;will-change:transform}
 .s3d-idle .s3d-cube,.s3d-idle .s3d-core{animation-play-state:paused}
-.s3d-cube>i{position:absolute;inset:0;border:1px solid rgba(185,248,50,.6);border-radius:3px;
+.s3d-cube>i{position:absolute;inset:0;border:1px solid rgba(55,93,46,.6);border-radius:3px;
   background:
-    linear-gradient(90deg,transparent 41%,rgba(185,248,50,.26) 41% 59%,transparent 59%),         /* packing tape */
-    linear-gradient(145deg,rgba(185,248,50,.13),rgba(185,248,50,.03));
-  box-shadow:inset 0 0 22px rgba(185,248,50,.16)}
-.s3d-cube>i.t,.s3d-cube>i.u{background:linear-gradient(145deg,rgba(185,248,50,.16),rgba(185,248,50,.05))}
+    linear-gradient(90deg,transparent 41%,rgba(55,93,46,.26) 41% 59%,transparent 59%),         /* packing tape */
+    linear-gradient(145deg,rgba(55,93,46,.13),rgba(55,93,46,.03));
+  box-shadow:inset 0 0 22px rgba(55,93,46,.16)}
+.s3d-cube>i.t,.s3d-cube>i.u{background:linear-gradient(145deg,rgba(55,93,46,.16),rgba(55,93,46,.05))}
 .s3d-cube>i.f{transform:translateZ(calc(var(--s) / 2))}
 .s3d-cube>i.b{transform:rotateY(180deg) translateZ(calc(var(--s) / 2))}
 .s3d-cube>i.r{transform:rotateY(90deg) translateZ(calc(var(--s) / 2))}
@@ -40,7 +40,7 @@ html.s3d .sale-art>b,html.s3d .sale-art>em{z-index:1}
 .s3d-cube>i.u{transform:rotateX(-90deg) translateZ(calc(var(--s) / 2))}
 /* small glowing core turning the other way (translucent, so the big number stays readable) */
 .s3d-core{position:absolute;left:25%;top:25%;width:50%;height:50%;transform-style:preserve-3d;animation:s3d-spin-rev 14s linear infinite}
-.s3d-core>i{position:absolute;inset:0;border-radius:2px;background:rgba(185,248,50,.16);border:1px solid rgba(185,248,50,.85);box-shadow:0 0 14px rgba(185,248,50,.35)}
+.s3d-core>i{position:absolute;inset:0;border-radius:2px;background:rgba(55,93,46,.16);border:1px solid rgba(55,93,46,.85);box-shadow:0 0 14px rgba(55,93,46,.35)}
 .s3d-core>i.f{transform:translateZ(calc(var(--s) / 4))}
 .s3d-core>i.b{transform:rotateY(180deg) translateZ(calc(var(--s) / 4))}
 .s3d-core>i.r{transform:rotateY(90deg) translateZ(calc(var(--s) / 4))}

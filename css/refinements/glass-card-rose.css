@@ -3,13 +3,13 @@
 .float-card{
   background:
     linear-gradient(115deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,.12) 30%,rgba(255,255,255,.04) 50%,rgba(255,255,255,.3) 72%,rgba(255,255,255,.6) 100%),
-    linear-gradient(160deg,rgba(242,248,233,.9),rgba(220,247,181,.82));
+    linear-gradient(160deg,rgba(55,93,46,.9),rgba(55,93,46,.82));
   -webkit-backdrop-filter:blur(10px) saturate(1.3);
   backdrop-filter:blur(10px) saturate(1.3);
   border:1px solid rgba(255,255,255,.85);
   box-shadow:0 16px 38px rgba(80,86,71,.28),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(255,255,255,.4),inset 0 0 24px rgba(255,255,255,.4);
 }
-.float-card h4{color:#161813;font-weight:500;text-shadow:0 1px 0 rgba(255,255,255,.55)}
-.float-card .price{color:#505646;font-weight:500;letter-spacing:.04em;text-shadow:0 1px 0 rgba(255,255,255,.55)}
-.float-card .price s{color:#aef83f;font-weight:400}
+.float-card h4{color:#26272a;font-weight:500;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.float-card .price{color:#465647;font-weight:500;letter-spacing:.04em;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.float-card .price s{color:#e8c43c;font-weight:400}
 

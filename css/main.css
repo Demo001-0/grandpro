@@ -1,4 +1,4 @@
-/* GrandPro stylesheet manifest.
+/* Riyadh Print stylesheet manifest.
    ORDER MATTERS: later layers override earlier ones (cascade). Do not reorder.
    Layers: base → components → responsive → motion → refinements → theme (dark) → refinements/motion on top. */
 @import url("base/fonts-din.css");
@@ -114,3 +114,6 @@
 @import url("refinements/product-cards-motion.css");
 @import url("refinements/sale-box-v2.css");
 @import url("refinements/hero-arch-v2.css");
+
+/* Riyadh Print logo lockup + palette — LAST */
+@import url("refinements/brand-riyadh.css");

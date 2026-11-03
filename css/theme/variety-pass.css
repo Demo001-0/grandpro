@@ -1,67 +1,67 @@
 /* css/theme/variety-pass.css — Variety pass: light-mode palette inside dark */
 /* =====================================================================
    VARIETY PASS — uses only the light-mode palette
-   cream #f8f9f5 · blush #e2e7d3 · pink #dde3ca · rose #b9f832 · berry #282b23 · mauve #181914 · ink #080807
+   cream #f8f9f5 · blush #e2e7d3 · pink #dde3ca · rose (legacy) · berry #282b23 · mauve #181914 · ink #080807
    ===================================================================== */
 
 /* --- category cards: icon circles rotate through the light-mode tones --- */
-html[data-theme="dark"] .cat .ci{background:#f8f9f5;color:#282b23;box-shadow:none}
-html[data-theme="dark"] .cat:nth-child(2) .ci{background:#e2e7d3;color:#181914}
-html[data-theme="dark"] .cat:nth-child(3) .ci{background:#b9f832;color:#fff}
-html[data-theme="dark"] .cat:nth-child(4) .ci{background:#282b23;color:#fff}
-html[data-theme="dark"] .cat:nth-child(5) .ci{background:#dde3ca;color:#080807}
-html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#282b23}
+html[data-theme="dark"] .cat .ci{background:#f6f8f6;color:#232b24;box-shadow:none}
+html[data-theme="dark"] .cat:nth-child(2) .ci{background:#d9e4d6;color:#0f1612}
+html[data-theme="dark"] .cat:nth-child(3) .ci{background:#8cc27b;color:#fff}
+html[data-theme="dark"] .cat:nth-child(4) .ci{background:#232b24;color:#fff}
+html[data-theme="dark"] .cat:nth-child(5) .ci{background:#d1dfce;color:#0f1612}
+html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#232b24}
 
 /* --- sections: alternate between the light-mode surfaces --- */
 /* categories band: mauve (light mode's --dark) */
-html[data-theme="dark"] main>.section:nth-of-type(2){background:rgba(185,248,50,.30)}
+html[data-theme="dark"] main>.section:nth-of-type(2){background:rgba(140,194,123,.30)}
 html[data-theme="dark"] main>.section:nth-of-type(3){padding-top:70px!important}
-html[data-theme="dark"] main>.section:nth-of-type(2) .cat{background:#1b1d18}
-html[data-theme="dark"] main>.section:nth-of-type(2) .cat:hover{background:#282b23}
+html[data-theme="dark"] main>.section:nth-of-type(2) .cat{background:#181d18}
+html[data-theme="dark"] main>.section:nth-of-type(2) .cat:hover{background:#232b24}
 /* sale banner: light blush with dark ink, like the light theme's hero */
-html[data-theme="dark"] .banner{background:#e2e7d3;border:0}
-html[data-theme="dark"] .banner h2{background:none;-webkit-text-fill-color:#080807;color:#080807}
-html[data-theme="dark"] .banner p{color:#181914}
-html[data-theme="dark"] .banner .btn{background:#282b23;border-color:#282b23;color:#fff}
-html[data-theme="dark"] .banner .btn:hover{background:#181914;border-color:#181914;color:#fff}
+html[data-theme="dark"] .banner{background:#d9e4d6;border:0}
+html[data-theme="dark"] .banner h2{background:none;-webkit-text-fill-color:#0f1612;color:#0f1612}
+html[data-theme="dark"] .banner p{color:#0f1612}
+html[data-theme="dark"] .banner .btn{background:#232b24;border-color:#232b24;color:#fff}
+html[data-theme="dark"] .banner .btn:hover{background:#0d1210;border-color:#0d1210;color:#fff}
 /* features: cream cards */
-html[data-theme="dark"] .features>div{background:#f8f9f5;border:1px solid #e8ecdc;box-shadow:0 10px 26px rgba(8,8,7,.25)}
-html[data-theme="dark"] .features h4{color:#080807}
-html[data-theme="dark"] .features p{color:#181914}
-html[data-theme="dark"] .features .fi{background:#282b23;color:#fff;box-shadow:none}
-html[data-theme="dark"] .features>div:nth-child(2) .fi{background:#b9f832}
-html[data-theme="dark"] .features>div:nth-child(3) .fi{background:#181914}
+html[data-theme="dark"] .features>div{background:#f6f8f6;border:1px solid #e1eade;box-shadow:0 10px 26px rgba(7,8,7,.25)}
+html[data-theme="dark"] .features h4{color:#0f1612}
+html[data-theme="dark"] .features p{color:#0f1612}
+html[data-theme="dark"] .features .fi{background:#232b24;color:#fff;box-shadow:none}
+html[data-theme="dark"] .features>div:nth-child(2) .fi{background:#8cc27b}
+html[data-theme="dark"] .features>div:nth-child(3) .fi{background:#0d1210}
 /* footer: mauve */
-html[data-theme="dark"] .footer{background:linear-gradient(180deg,rgba(40,43,35,.45),rgba(40,43,35,.6))}
-html[data-theme="dark"] .footer::before{background:#e2e7d3;box-shadow:none;height:1px}
+html[data-theme="dark"] .footer{background:linear-gradient(180deg,rgba(35,43,36,.45),rgba(35,43,36,.6))}
+html[data-theme="dark"] .footer::before{background:#d9e4d6;box-shadow:none;height:1px}
 
-.features .fi{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;background:#eaeede;color:#23251f}
+.features .fi{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;background:#e3ece0;color:#1f251f}
 .features .fi svg{width:27px;height:27px}
 
 /* --- product cards: light cream like light mode (dark mode keeps only the page around them dark) --- */
-html[data-theme="dark"] .card{background:#f8faf5;border:1px solid #e8ecdc;box-shadow:0 10px 30px rgba(8,8,7,.3)}
-html[data-theme="dark"] .card:hover{border-color:#b9f832;box-shadow:0 18px 44px rgba(8,8,7,.4)}
+html[data-theme="dark"] .card{background:#f7f9f6;border:1px solid #e1eade;box-shadow:0 10px 30px rgba(7,8,7,.3)}
+html[data-theme="dark"] .card:hover{border-color:#8cc27b;box-shadow:0 18px 44px rgba(7,8,7,.4)}
 html[data-theme="dark"] .card::before,html[data-theme="dark"] .card::after{display:none}
-html[data-theme="dark"] .card .img{background:#ebeee0}
+html[data-theme="dark"] .card .img{background:#e4ece2}
 html[data-theme="dark"] .card .img::after,html[data-theme="dark"] .card:hover .img::after{display:none}
-html[data-theme="dark"] .card h3{color:#080807}
-html[data-theme="dark"] .card .price{color:#282b23}
-html[data-theme="dark"] .card .price s{color:#2d3027}
-html[data-theme="dark"] .card .badge{background:#282b23;color:#fff}
-html[data-theme="dark"] .card .badge.sold{background:#1d1f19;color:#fff}
+html[data-theme="dark"] .card h3{color:#0f1612}
+html[data-theme="dark"] .card .price{color:#232b24}
+html[data-theme="dark"] .card .price s{color:#273028}
+html[data-theme="dark"] .card .badge{background:#232b24;color:#fff}
+html[data-theme="dark"] .card .badge.sold{background:#191f19;color:#fff}
 
 /* --- category cards: light cream like light mode --- */
 html[data-theme="dark"] main>.section:nth-of-type(2) .cat,
-html[data-theme="dark"] .cat{background:#f8faf5;color:#080807;box-shadow:0 10px 26px rgba(8,8,7,.28)}
+html[data-theme="dark"] .cat{background:#f7f9f6;color:#0f1612;box-shadow:0 10px 26px rgba(7,8,7,.28)}
 html[data-theme="dark"] .cat::before,html[data-theme="dark"] .cat::after{display:none}
 html[data-theme="dark"] main>.section:nth-of-type(2) .cat:hover,
-html[data-theme="dark"] .cat:hover{background:#e2e7d3;color:#080807;box-shadow:0 16px 36px rgba(8,8,7,.38)}
-html[data-theme="dark"] .cat .ci{background:#eaeede;color:#282b23}
-html[data-theme="dark"] .cat:nth-child(2) .ci{background:#e2e7d3;color:#181914}
-html[data-theme="dark"] .cat:nth-child(3) .ci{background:#b9f832;color:#fff}
-html[data-theme="dark"] .cat:nth-child(4) .ci{background:#282b23;color:#fff}
-html[data-theme="dark"] .cat:nth-child(5) .ci{background:#181914;color:#fff}
-html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#282b23}
+html[data-theme="dark"] .cat:hover{background:#d9e4d6;color:#0f1612;box-shadow:0 16px 36px rgba(7,8,7,.38)}
+html[data-theme="dark"] .cat .ci{background:#e3ece0;color:#232b24}
+html[data-theme="dark"] .cat:nth-child(2) .ci{background:#d9e4d6;color:#0f1612}
+html[data-theme="dark"] .cat:nth-child(3) .ci{background:#8cc27b;color:#fff}
+html[data-theme="dark"] .cat:nth-child(4) .ci{background:#232b24;color:#fff}
+html[data-theme="dark"] .cat:nth-child(5) .ci{background:#0d1210;color:#fff}
+html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#232b24}
 
 /* --- big hero sun: fainter --- */
 html[data-theme="dark"] .hero-sun{opacity:.06}
@@ -69,22 +69,22 @@ html[data-theme="dark"] .hero-sun svg circle{stroke-width:1}
 @media(max-width:820px){html[data-theme="dark"] .hero-sun{opacity:.045}}
 
 /* --- cream surfaces: a deeper blush instead of near-white --- */
-html[data-theme="dark"] .card{background:#e1e7d2;border-color:#b9f832}
-html[data-theme="dark"] .card:hover{border-color:#b9f832}
-html[data-theme="dark"] .card .img{background:#b9f832}
-html[data-theme="dark"] .card .price s{color:#1d1f19}
+html[data-theme="dark"] .card{background:#d8e4d5;border-color:#8cc27b}
+html[data-theme="dark"] .card:hover{border-color:#8cc27b}
+html[data-theme="dark"] .card .img{background:#8cc27b}
+html[data-theme="dark"] .card .price s{color:#191f19}
 html[data-theme="dark"] main>.section:nth-of-type(2) .cat,
-html[data-theme="dark"] .cat{background:#e1e7d2}
+html[data-theme="dark"] .cat{background:#d8e4d5}
 html[data-theme="dark"] main>.section:nth-of-type(2) .cat:hover,
-html[data-theme="dark"] .cat:hover{background:#b9f832}
-html[data-theme="dark"] .cat .ci{background:#f8f9f5;color:#282b23}
-html[data-theme="dark"] .cat:nth-child(2) .ci{background:#b9f832;color:#fff}
-html[data-theme="dark"] .cat:nth-child(3) .ci{background:#282b23;color:#fff}
-html[data-theme="dark"] .cat:nth-child(4) .ci{background:#181914;color:#fff}
-html[data-theme="dark"] .cat:nth-child(5) .ci{background:#f8f9f5;color:#181914}
-html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#282b23}
-html[data-theme="dark"] .features>div{background:#e1e7d2;border-color:#b9f832}
-html[data-theme="dark"] .banner{background:#b9f832}
+html[data-theme="dark"] .cat:hover{background:#8cc27b}
+html[data-theme="dark"] .cat .ci{background:#f6f8f6;color:#232b24}
+html[data-theme="dark"] .cat:nth-child(2) .ci{background:#8cc27b;color:#fff}
+html[data-theme="dark"] .cat:nth-child(3) .ci{background:#232b24;color:#fff}
+html[data-theme="dark"] .cat:nth-child(4) .ci{background:#0d1210;color:#fff}
+html[data-theme="dark"] .cat:nth-child(5) .ci{background:#f6f8f6;color:#0f1612}
+html[data-theme="dark"] .cat:hover .ci{background:#fff;color:#232b24}
+html[data-theme="dark"] .features>div{background:#d8e4d5;border-color:#8cc27b}
+html[data-theme="dark"] .banner{background:#8cc27b}
 html[data-theme="dark"] .bar.ann + .hero{border-top:0}
 html[data-theme="dark"] .bar.ann{border-top:1px solid rgba(242,244,235,.28)}
 

@@ -1,4 +1,4 @@
-/* css/refinements/phone-pop-collapsed.css — phone: the "A quick trip through GrandPro" pop-up is collapsed to just the orb.
+/* css/refinements/phone-pop-collapsed.css — phone: the "A quick trip through Riyadh Print" pop-up is collapsed to just the orb.
    Tap once → it expands (description + arrow + close). Tap again → the dive opens. (JS: dive.js, "phone: the pop-up starts collapsed") */
 @media(max-width:700px){
   .dv-pop:not(.ex) .dv-pop-txt,

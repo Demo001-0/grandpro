@@ -1,0 +1,61 @@
+/* css/refinements/brand-riyadh.css — Riyadh Print (مطابع الرياض) logo lockup + brand palette.
+   Loaded LAST on purpose: it wins over every older logo rule (the old logo was a disc + word, the new one is a
+   multicolour emblem + the real vector lettering).
+   Palette (from the logo):  green #375d2e / #4c7245 · navy #2b5e82 · sky #548dad · burgundy #861043 · pink #ed0f75 · orange #c8711c · yellow #e2ba20 · charcoal #434245 */
+:root{
+  --rp-green:#375d2e; --rp-green2:#4c7245; --rp-deep:#1d3318; --rp-navy:#2b5e82; --rp-sky:#548dad;
+  --rp-berry:#861043; --rp-pink:#ed0f75; --rp-orange:#c8711c; --rp-yellow:#e2ba20; --rp-char:#434245;
+  --lg-em:84px;                     /* emblem size; the lettering scales from it */
+  --lg-ar:#434245; --lg-en:#787c7d;
+}
+html[data-theme="dark"]{--lg-ar:#eef3ed; --lg-en:#a9b8a6}
+
+/* ---- lockup: emblem on top, Arabic name, then RIYADH PRINT ---- */
+html body .logo{display:flex;flex-direction:column;align-items:center;gap:0;color:var(--lg-ar)}
+html body .logo svg.emblem{order:0;width:var(--lg-em)!important;height:var(--lg-em)!important;margin:0 0 calc(var(--lg-em) * .08)!important;fill:none;filter:none}
+html body .logo svg.word-ar{order:1;width:calc(var(--lg-em) * 2.1)!important;height:auto!important;aspect-ratio:1236/216;margin:0!important;animation:none!important;transform:none!important;opacity:1}
+html body .logo svg.word-en{order:2;width:calc(var(--lg-em) * 2.1)!important;height:auto!important;aspect-ratio:1236/78;margin:calc(var(--lg-em) * .09) 0 0!important;animation:none!important;transform:none!important;opacity:1}
+html body .logo svg.word-ar path{fill:var(--lg-ar)}
+html body .logo svg.word-en path{fill:var(--lg-en)}
+html body .logo svg circle{animation:none}
+
+/* splash (home): big lockup */
+html body.home-splash .header .logo{--lg-em:clamp(150px,22vw,230px);margin:10px 0 28px}
+@media(max-width:820px){html body .logo{--lg-em:66px} html body.home-splash .header .logo{--lg-em:140px}}
+@media(max-width:520px){html body.home-splash .header .logo{--lg-em:118px}}
+
+/* sticky mini header */
+html body #mini .mlogo{display:flex;align-items:center;gap:10px;color:var(--lg-ar)}
+html body #mini .msun svg{width:36px!important;height:36px!important;transform:none;fill:none;filter:none;animation:none}
+html body #mini .mword{display:inline-flex;font-size:0;letter-spacing:0;padding:0}
+html body #mini .mword svg{width:auto!important;height:22px!important;animation:none!important;margin:0!important;transform:none!important}
+html body #mini .mword svg path{fill:var(--lg-ar)}
+
+/* dark theme: charcoal emblem pieces would vanish, lighten them */
+html[data-theme="dark"] svg.emblem .em-flame-a{fill:#cfd8cd}
+html[data-theme="dark"] svg.emblem .em-flame-b{fill:#eef3ed}
+html[data-theme="dark"] svg.emblem .em-g1{fill:#5d8a50}
+
+/* the flat emblem fades out once the 3D one is on screen — but the lettering must stay */
+html.has-3d body.home-splash .header .logo svg.word-ar,html.has-3d body.home-splash .header .logo svg.word-en{opacity:1}
+
+/* ================= contrast fixes (text on the new green fills) ================= */
+/* hero stage is deep green: its main CTA is brand yellow so it stands out; the product card's button stays green on white */
+html:not([data-theme="dark"]) .hero2 .btn.solid{background:#e2ba20;color:#26272a;border:1.5px solid #e2ba20;box-shadow:0 4px 0 #9c7c10}
+html:not([data-theme="dark"]) .hero2 .btn.solid:hover{background:#fff;color:#1d3318;border-color:#fff;box-shadow:0 6px 0 #9c7c10}
+html:not([data-theme="dark"]) .hero2 .float-card .btn.solid{background:#375d2e;color:#fff;border:1.5px solid #1d3318;box-shadow:0 4px 0 #1d3318}
+html:not([data-theme="dark"]) .hero2 .float-card .btn.solid:hover{background:#1d3318;color:#e8c43c}
+.hp-cursor{color:#fff}
+html:not([data-theme="dark"]) .collection-hero h1,html:not([data-theme="dark"]) .collection-hero p{color:#fff}
+html:not([data-theme="dark"]) .hero-sun{opacity:.14}
+
+/* ================= splash spacing fix =================
+   Older splash rules (ticker-and-splash: aspect-ratio:1, hero-marquee: margin-bottom on every .logo svg, splash-tagline: margin-top:90px)
+   out-ranked the lockup rules above, so the two wordmark SVGs rendered as big squares with huge gaps. Re-assert the lockup with higher
+   specificity + !important so every logo SVG keeps its real proportions and the lockup stays tight. */
+html body .logo svg.emblem{aspect-ratio:1/1!important}
+html body .logo svg.word-ar{aspect-ratio:1236/216!important;height:auto!important;margin:0!important}
+html body .logo svg.word-en{aspect-ratio:1236/78!important;height:auto!important;margin:calc(var(--lg-em) * .09) 0 0!important}
+html body.home-splash .header .logo svg.emblem{aspect-ratio:1/1!important;width:var(--lg-em)!important;height:var(--lg-em)!important;margin:0 0 calc(var(--lg-em) * .08)!important;order:0}
+html body.home-splash .header .logo svg.word-ar{aspect-ratio:1236/216!important;width:calc(var(--lg-em) * 2.1)!important;height:auto!important;margin:0!important;order:1}
+html body.home-splash .header .logo svg.word-en{aspect-ratio:1236/78!important;width:calc(var(--lg-em) * 2.1)!important;height:auto!important;margin:calc(var(--lg-em) * .09) 0 0!important;order:2}

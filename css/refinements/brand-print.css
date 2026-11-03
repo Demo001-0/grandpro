@@ -1,24 +1,23 @@
-/* css/refinements/brand-print.css — Print-shop identity: black + lime, taken from the GrandPro logo.
-   GENERATED-FRIENDLY: every rule here applies to the LIGHT theme only (dark mode is intentionally left untouched for now).
-   Brand tokens:  --lime #b9f832 (fills, highlights)  ·  --black #0b0b0b (text, hero, footer)  ·  --olive #3f6b00 (small accent text on white) */
-html:not([data-theme="dark"]){--lime:#b9f832; --lime-soft:#e9fbb8; --lime-tint:#f3fbd9; --black:#0b0b0b; --olive:#3f6b00;
-  --bg:#f7f8f2; --card:#ffffff; --ink:#0b0b0b; --brand:#0b0b0b; --hero:#e9fbb8;
-  --bar:#0b0b0b; --dark:#0b0b0b; --accent:#3f6b00; --line:#e1e6d2;
-  --tx:#0b0b0b; --tx-soft:#4a4f3f; --tx-accent:#3f6b00; --tx-on-fill:#0b0b0b;}
+/* css/refinements/brand-print.css — Print-shop identity (light theme only), green palette taken from the Riyadh Print logo.
+   Brand tokens:  --lime (legacy variable name) = brand green #375d2e  ·  --black = deep green #1d3318  ·  --olive = #375d2e */
+html:not([data-theme="dark"]){--lime:#375d2e; --lime-soft:#d5e2d1; --lime-tint:#e7efe5; --black:#1d3318; --olive:#375d2e;
+  --bg:#f4f7f3; --card:#ffffff; --ink:#26272a; --brand:#1d3318; --hero:#d5e2d1;
+  --bar:#1d3318; --dark:#1d3318; --accent:#375d2e; --line:#d8e3d5;
+  --tx:#26272a; --tx-soft:#3f4f40; --tx-accent:#375d2e; --tx-on-fill:#26272a;}
 html:not([data-theme="dark"]) body{background:var(--bg)}
 /* ---------- announcement ticker: black strip, lime text ---------- */
-html:not([data-theme="dark"]) .bar.ann{background:#0b0b0b;color:#b9f832;border:0}
+html:not([data-theme="dark"]) .bar.ann{background:#1d3318;color:#e8c43c;border:0}
 html:not([data-theme="dark"]) .bar.ann .ann-ico,
-html:not([data-theme="dark"]) .bar.ann .ann-dot{color:#b9f832}
-html:not([data-theme="dark"]) .ann-dot{width:6px;height:6px;border-radius:50%;background:#b9f832;display:inline-block}
+html:not([data-theme="dark"]) .bar.ann .ann-dot{color:#e8c43c}
+html:not([data-theme="dark"]) .ann-dot{width:6px;height:6px;border-radius:50%;background:#375d2e;display:inline-block}
 /* ---------- header + logo ---------- */
 html:not([data-theme="dark"]) .header{background:var(--bg)}
-html:not([data-theme="dark"]) .logo{color:#0b0b0b;margin:10px 0 18px;gap:0}
+html:not([data-theme="dark"]) .logo{color:#26272a;margin:10px 0 18px;gap:0}
 html:not([data-theme="dark"]) .logo svg{width:96px;height:96px;order:0;margin:0 0 10px;fill:none}
-html:not([data-theme="dark"]) .logo .word{order:1;font-family:'DIN Next Arabic','Marcellus',serif;font-weight:400;font-size:clamp(34px,5vw,52px);letter-spacing:.34em;padding-inline-start:.34em;line-height:1;margin:0;color:#0b0b0b}
-html:not([data-theme="dark"]) .logo .sub{order:2;font-family:var(--font-head);font-weight:400;font-size:clamp(12px,1.5vw,15px);letter-spacing:.5em;padding-inline-start:.5em;margin-top:10px;color:#3f6b00;text-transform:uppercase}
-html:not([data-theme="dark"]) .logo svg .em-disc{fill:#000}
-html:not([data-theme="dark"]) .logo svg .em-mark{fill:#b9f832}
+html:not([data-theme="dark"]) .logo .word{order:1;font-family:'DIN Next Arabic','Marcellus',serif;font-weight:400;font-size:clamp(34px,5vw,52px);letter-spacing:.34em;padding-inline-start:.34em;line-height:1;margin:0;color:#26272a}
+html:not([data-theme="dark"]) .logo .sub{order:2;font-family:var(--font-head);font-weight:400;font-size:clamp(12px,1.5vw,15px);letter-spacing:.5em;padding-inline-start:.5em;margin-top:10px;color:#375d2e;text-transform:uppercase}
+html:not([data-theme="dark"]) .logo svg .em-disc{fill:#1d3318}
+html:not([data-theme="dark"]) .logo svg .em-mark{fill:#375d2e}
 html:not([data-theme="dark"]) .home-splash .header .logo svg{order:0;margin:0 0 26px;width:clamp(150px,22vw,230px);height:auto}
 html:not([data-theme="dark"]) .home-splash .header .logo .word{order:1;font-size:clamp(34px,7vw,84px)}
 html:not([data-theme="dark"]) .home-splash .header .logo .sub{order:2;font-size:clamp(13px,2vw,20px);margin-top:14px}
@@ -29,156 +28,156 @@ html:not([data-theme="dark"]) .logo svg{width:72px;height:72px}
 html:not([data-theme="dark"]) .home-splash .header .logo svg{width:150px;margin-top:0;margin-bottom:20px}
 html:not([data-theme="dark"]) .logo .word{letter-spacing:.28em;padding-inline-start:.28em}
 }
-html:not([data-theme="dark"]) .sp-tag::after{background:#b9f832;height:4px;width:56px;border-radius:2px}
+html:not([data-theme="dark"]) .sp-tag::after{background:#375d2e;height:4px;width:56px;border-radius:2px}
 /* ---------- navigation ---------- */
-html:not([data-theme="dark"]) .nav a{color:#0b0b0b}
+html:not([data-theme="dark"]) .nav a{color:#26272a}
 html:not([data-theme="dark"]) .nav a:hover,
 html:not([data-theme="dark"]) .nav a.active,
-html:not([data-theme="dark"]) #mini nav a:hover{color:#0b0b0b;border-color:transparent;box-shadow:inset 0 -4px 0 #b9f832}
+html:not([data-theme="dark"]) #mini nav a:hover{color:#26272a;border-color:transparent;box-shadow:inset 0 -4px 0 #4c7245}
 html:not([data-theme="dark"]) .nav a.active{font-weight:500}
-html:not([data-theme="dark"]) .icon-btn{color:#0b0b0b}
-html:not([data-theme="dark"]) .icon-btn:hover{color:#3f6b00}
-html:not([data-theme="dark"]) .cart-count{background:#b9f832;color:#0b0b0b;font-weight:600}
+html:not([data-theme="dark"]) .icon-btn{color:#26272a}
+html:not([data-theme="dark"]) .icon-btn:hover{color:#375d2e}
+html:not([data-theme="dark"]) .cart-count{background:#375d2e;color:#fff;font-weight:600}
 html:not([data-theme="dark"]) .lang-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 7px}
 html:not([data-theme="dark"]) .lang-btn svg{width:22px;height:22px}
 html:not([data-theme="dark"]) .lang-code{font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:.04em;line-height:1;border:1.5px solid currentColor;border-radius:6px;padding:3px 6px 4px}
-html:not([data-theme="dark"]) .lang-btn:hover .lang-code{background:#b9f832;border-color:#0b0b0b;color:#0b0b0b}
+html:not([data-theme="dark"]) .lang-btn:hover .lang-code{background:#375d2e;border-color:#1d3318;color:#fff}
 html:not([data-theme="dark"]) #mini{background:rgba(247,248,242,.92)}
-html:not([data-theme="dark"]) #mini .mlogo{color:#0b0b0b;gap:10px}
+html:not([data-theme="dark"]) #mini .mlogo{color:#26272a;gap:10px}
 html:not([data-theme="dark"]) #mini .msun svg{width:34px;height:34px;transform:none}
 html:not([data-theme="dark"]) #mini .mword{font-family:'DIN Next Arabic','Marcellus',serif;font-size:20px;letter-spacing:.28em}
 /* ---------- buttons: lime fill + black text; hover flips to black + lime ---------- */
 html:not([data-theme="dark"]) .btn.solid,
-html:not([data-theme="dark"]) .float-card .btn.solid{background:#b9f832;color:#0b0b0b;border:1.5px solid #0b0b0b;text-shadow:none;
-  box-shadow:0 4px 0 #0b0b0b}
+html:not([data-theme="dark"]) .float-card .btn.solid{background:#375d2e;color:#fff;border:1.5px solid #1d3318;text-shadow:none;
+  box-shadow:0 4px 0 #1d3318}
 html:not([data-theme="dark"]) .btn.solid:hover,
 html:not([data-theme="dark"]) .hero2 .btn.solid:hover,
-html:not([data-theme="dark"]) .float-card .btn.solid:hover{background:#0b0b0b;color:#b9f832;border-color:#0b0b0b;transform:translateY(-2px);box-shadow:0 6px 0 #5f8a00}
+html:not([data-theme="dark"]) .float-card .btn.solid:hover{background:#1d3318;color:#e8c43c;border-color:#1d3318;transform:translateY(-2px);box-shadow:0 6px 0 #375d2e}
 html:not([data-theme="dark"]) .btn.solid:active,
-html:not([data-theme="dark"]) .float-card .btn.solid:active{transform:translateY(3px);box-shadow:0 1px 0 #0b0b0b}
-html:not([data-theme="dark"]) .btn:not(.solid){background:transparent;color:#0b0b0b;border:1.5px solid #0b0b0b;box-shadow:none}
+html:not([data-theme="dark"]) .float-card .btn.solid:active{transform:translateY(3px);box-shadow:0 1px 0 #1d3318}
+html:not([data-theme="dark"]) .btn:not(.solid){background:transparent;color:#26272a;border:1.5px solid #1d3318;box-shadow:none}
 html:not([data-theme="dark"]) .btn:not(.solid):hover,
 html:not([data-theme="dark"]) .hero2 .btn:not(.solid):hover,
-html:not([data-theme="dark"]) .hero2 .btn.ghost:hover{background:#0b0b0b;color:#b9f832;border-color:#0b0b0b;box-shadow:none}
+html:not([data-theme="dark"]) .hero2 .btn.ghost:hover{background:#1d3318;color:#e8c43c;border-color:#1d3318;box-shadow:none}
 html:not([data-theme="dark"]) .btn[disabled],
-html:not([data-theme="dark"]) .btn.solid[disabled]{background:#e4e7d8;color:#7b8070;border-color:#c9cdbd;box-shadow:none;opacity:1}
+html:not([data-theme="dark"]) .btn.solid[disabled]{background:#dce5da;color:#708071;border-color:#c2cbbf;box-shadow:none;opacity:1}
 html:not([data-theme="dark"]) .btn.add::before,
 html:not([data-theme="dark"]) .float-card .btn.solid::before{background:currentColor;
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8h14l-1 12H6L5 8z'/%3E%3Cpath d='M9 8V6.5a3 3 0 016 0V8'/%3E%3C/svg%3E") center/contain no-repeat;
   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8h14l-1 12H6L5 8z'/%3E%3Cpath d='M9 8V6.5a3 3 0 016 0V8'/%3E%3C/svg%3E") center/contain no-repeat}
-html:not([data-theme="dark"]) .qty{border-color:#0b0b0b}
-html:not([data-theme="dark"]) .qty button:hover{background:#b9f832}
+html:not([data-theme="dark"]) .qty{border-color:#1d3318}
+html:not([data-theme="dark"]) .qty button:hover{background:#375d2e}
 /* ---------- section titles ---------- */
-html:not([data-theme="dark"]) .section-title{color:#0b0b0b}
-html:not([data-theme="dark"]) .section-title::after{content:"";display:block;width:56px;height:6px;border-radius:3px;background:#b9f832;margin:16px auto 0}
+html:not([data-theme="dark"]) .section-title{color:#26272a}
+html:not([data-theme="dark"]) .section-title::after{content:"";display:block;width:56px;height:6px;border-radius:3px;background:#375d2e;margin:16px auto 0}
 html:not([data-theme="dark"]) .info-page .section-title::after{margin-inline:0}
 /* ---------- lookbook ---------- */
 html:not([data-theme="dark"]) .lookbook{background:var(--bg)}
-html:not([data-theme="dark"]) .lk-tile{background:#0b0b0b;border-radius:10px}
+html:not([data-theme="dark"]) .lk-tile{background:#1d3318;border-radius:10px}
 html:not([data-theme="dark"]) .lk-tile::before{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.7) 100%)}
 html:not([data-theme="dark"]) .lk-cap{color:#fff;text-shadow:none}
-html:not([data-theme="dark"]) .lk-cap::before{height:3px;background:#b9f832;width:30px}
+html:not([data-theme="dark"]) .lk-cap::before{height:3px;background:#375d2e;width:30px}
 html:not([data-theme="dark"]) .lk-tile:hover .lk-cap::before{width:60px}
 /* ---------- hero (home): black stage, lime accents ---------- */
-html:not([data-theme="dark"]) .hero2{background:#0b0b0b;color:#fff}
+html:not([data-theme="dark"]) .hero2{background:#1d3318;color:#fff}
 html:not([data-theme="dark"]) .hero2 h1,
 html:not([data-theme="dark"]) .hero2 .hero-copy h1{color:#fff}
-html:not([data-theme="dark"]) .hero2 h1::after{background:#b9f832;height:5px;width:72px;border-radius:3px}
+html:not([data-theme="dark"]) .hero2 h1::after{background:#375d2e;height:5px;width:72px;border-radius:3px}
 html:not([data-theme="dark"]) .hero2 p,
 html:not([data-theme="dark"]) .hero2 .hero-copy p{color:rgba(255,255,255,.82)}
-html:not([data-theme="dark"]) .hero-tag{background:#b9f832;color:#0b0b0b;font-weight:600}
+html:not([data-theme="dark"]) .hero-tag{background:#375d2e;color:#fff;font-weight:600}
 html:not([data-theme="dark"]) .hero2 .btn{color:#fff;border-color:#fff}
-html:not([data-theme="dark"]) .hero2 .btn.solid{color:#0b0b0b;border-color:#b9f832;box-shadow:0 4px 0 #5f8a00}
-html:not([data-theme="dark"]) .hero2 .btn.solid:hover{background:#fff;color:#0b0b0b;border-color:#fff}
+html:not([data-theme="dark"]) .hero2 .btn.solid{color:#26272a;border-color:#4c7245;box-shadow:0 4px 0 #375d2e}
+html:not([data-theme="dark"]) .hero2 .btn.solid:hover{background:#fff;color:#26272a;border-color:#fff}
 html:not([data-theme="dark"]) .hero2 .btn.ghost{background:transparent}
-html:not([data-theme="dark"]) .hero2 .btn.ghost:hover{background:#b9f832;color:#0b0b0b;border-color:#b9f832}
+html:not([data-theme="dark"]) .hero2 .btn.ghost:hover{background:#375d2e;color:#fff;border-color:#4c7245}
 html:not([data-theme="dark"]) .hero-sun{opacity:.09;animation:none}
 html:not([data-theme="dark"]) .hero-sun svg .em-disc{fill:none}
-html:not([data-theme="dark"]) .hero-sun svg .em-mark{fill:#b9f832}
-html:not([data-theme="dark"]) .arch{background:#1b1d15;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 0 8px #b9f832}
+html:not([data-theme="dark"]) .hero-sun svg .em-mark{fill:#375d2e}
+html:not([data-theme="dark"]) .arch{background:#151d16;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 0 8px #4c7245}
 html:not([data-theme="dark"]) .arch::after{display:none}
-html:not([data-theme="dark"]) .float-card{background:#fff;color:#0b0b0b}
-html:not([data-theme="dark"]) .float-card h4{color:#0b0b0b}
-html:not([data-theme="dark"]) .float-card .price{color:#0b0b0b}
+html:not([data-theme="dark"]) .float-card{background:#fff;color:#26272a}
+html:not([data-theme="dark"]) .float-card h4{color:#26272a}
+html:not([data-theme="dark"]) .float-card .price{color:#26272a}
 html:not([data-theme="dark"]) .dots button{background:rgba(255,255,255,.35)}
-html:not([data-theme="dark"]) .dots button.active{background:#b9f832}
+html:not([data-theme="dark"]) .dots button.active{background:#375d2e}
 /* ---------- collection hero (shop page) ---------- */
-html:not([data-theme="dark"]) .collection-hero{background:#b9f832;color:#0b0b0b}
+html:not([data-theme="dark"]) .collection-hero{background:#375d2e;color:#fff}
 html:not([data-theme="dark"]) .collection-hero h1,
-html:not([data-theme="dark"]) .collection-hero p{color:#0b0b0b}
+html:not([data-theme="dark"]) .collection-hero p{color:#26272a}
 html:not([data-theme="dark"]) .collection-hero h1::after{display:none}
-html:not([data-theme="dark"]) .hero-img{background:#0b0b0b;box-shadow:0 8px 0 #0b0b0b}
+html:not([data-theme="dark"]) .hero-img{background:#1d3318;box-shadow:0 8px 0 #1d3318}
 html:not([data-theme="dark"]) .hero-img::after{display:none}
 /* ---------- category cards ---------- */
-html:not([data-theme="dark"]) .ccard{border:0;border-radius:14px;background:#0b0b0b;color:#fff;box-shadow:0 10px 24px rgba(11,11,11,.16)}
-html:not([data-theme="dark"]) .ccard:hover{box-shadow:0 0 0 3px #b9f832,0 18px 34px rgba(11,11,11,.28)}
-html:not([data-theme="dark"]) .ccard .ci{background:#b9f832;color:#0b0b0b;box-shadow:none}
+html:not([data-theme="dark"]) .ccard{border:0;border-radius:14px;background:#1d3318;color:#fff;box-shadow:0 10px 24px rgba(11,11,11,.16)}
+html:not([data-theme="dark"]) .ccard:hover{box-shadow:0 0 0 3px #4c7245,0 18px 34px rgba(11,11,11,.28)}
+html:not([data-theme="dark"]) .ccard .ci{background:#375d2e;color:#fff;box-shadow:none}
 html:not([data-theme="dark"]) .ccard .ci svg,
 html:not([data-theme="dark"]) .ccard .ci svg *{animation:none!important}
-html:not([data-theme="dark"]) .cc-img{background:#eaf3cf}
+html:not([data-theme="dark"]) .cc-img{background:#dde8da}
 html:not([data-theme="dark"]) .cc-img::after{background:linear-gradient(180deg,rgba(0,0,0,0) 48%,rgba(0,0,0,.78) 100%)}
 html:not([data-theme="dark"]) .cc-info h3{color:#fff;text-shadow:none;font-weight:500}
-html:not([data-theme="dark"]) .cc-info h3::after{background:#b9f832;height:3px;width:30px;border-radius:2px}
+html:not([data-theme="dark"]) .cc-info h3::after{background:#375d2e;height:3px;width:30px;border-radius:2px}
 html:not([data-theme="dark"]) .ccard:hover .cc-info h3::after{width:60px}
 html:not([data-theme="dark"]) .cc-count{color:rgba(255,255,255,.85)}
 /* ---------- product cards ---------- */
 html:not([data-theme="dark"]) .card{background:#fff;border:1px solid var(--line);border-radius:12px}
 html:not([data-theme="dark"]) .card:hover{box-shadow:0 14px 34px rgba(11,11,11,.16)}
-html:not([data-theme="dark"]) .card h3{color:#0b0b0b}
-html:not([data-theme="dark"]) .card .price{color:#0b0b0b;font-weight:600}
-html:not([data-theme="dark"]) .card .price s{color:#7b8070;font-weight:400}
-html:not([data-theme="dark"]) .badge{background:#b9f832;color:#0b0b0b;font-weight:600;border-radius:999px;padding:5px 14px}
-html:not([data-theme="dark"]) .badge.sold{background:#0b0b0b;color:#fff}
-html:not([data-theme="dark"]) .product .price{color:#0b0b0b;font-weight:600}
-html:not([data-theme="dark"]) .crumbs a:hover{color:#3f6b00}
-html:not([data-theme="dark"]) .product .gallery{border-radius:14px;overflow:hidden;box-shadow:0 8px 0 #0b0b0b}
+html:not([data-theme="dark"]) .card h3{color:#26272a}
+html:not([data-theme="dark"]) .card .price{color:#26272a;font-weight:600}
+html:not([data-theme="dark"]) .card .price s{color:#708071;font-weight:400}
+html:not([data-theme="dark"]) .badge{background:#375d2e;color:#fff;font-weight:600;border-radius:999px;padding:5px 14px}
+html:not([data-theme="dark"]) .badge.sold{background:#1d3318;color:#fff}
+html:not([data-theme="dark"]) .product .price{color:#26272a;font-weight:600}
+html:not([data-theme="dark"]) .crumbs a:hover{color:#375d2e}
+html:not([data-theme="dark"]) .product .gallery{border-radius:14px;overflow:hidden;box-shadow:0 8px 0 #1d3318}
 /* ---------- sale banner ---------- */
-html:not([data-theme="dark"]) .sale{background:#0b0b0b;border:0;border-radius:18px;color:#fff}
+html:not([data-theme="dark"]) .sale{background:#1d3318;border:0;border-radius:18px;color:#fff}
 html:not([data-theme="dark"]) .sale h2,
 html:not([data-theme="dark"]) .sale .sale-copy h2{color:#fff}
-html:not([data-theme="dark"]) .sale h2::after{background:#b9f832;height:5px;border-radius:3px}
+html:not([data-theme="dark"]) .sale h2::after{background:#375d2e;height:5px;border-radius:3px}
 html:not([data-theme="dark"]) .sale p,
 html:not([data-theme="dark"]) .sale .sale-copy p{color:rgba(255,255,255,.8);opacity:1}
-html:not([data-theme="dark"]) .sale-tag{background:#b9f832;color:#0b0b0b;border-color:#b9f832;font-weight:600}
-html:not([data-theme="dark"]) .sale-art b{color:#b9f832}
+html:not([data-theme="dark"]) .sale-tag{background:#375d2e;color:#fff;border-color:#4c7245;font-weight:600}
+html:not([data-theme="dark"]) .sale-art b{color:#e8c43c}
 html:not([data-theme="dark"]) .sale-art em{color:#fff;opacity:.75}
-html:not([data-theme="dark"]) .sale .btn.solid{border-color:#b9f832;box-shadow:0 4px 0 #5f8a00}
-html:not([data-theme="dark"]) .sale .btn.solid:hover{background:#fff;color:#0b0b0b;border-color:#fff}
+html:not([data-theme="dark"]) .sale .btn.solid{border-color:#4c7245;box-shadow:0 4px 0 #375d2e}
+html:not([data-theme="dark"]) .sale .btn.solid:hover{background:#fff;color:#26272a;border-color:#fff}
 /* ---------- features ---------- */
-html:not([data-theme="dark"]) .features .fi{background:#b9f832;color:#0b0b0b;border:0;box-shadow:none}
-html:not([data-theme="dark"]) .features h4{color:#0b0b0b}
+html:not([data-theme="dark"]) .features .fi{background:#375d2e;color:#fff;border:0;box-shadow:none}
+html:not([data-theme="dark"]) .features h4{color:#26272a}
 html:not([data-theme="dark"]) .features>div+div{border-color:var(--line)}
 /* ---------- toolbar / filters / drawer / search ---------- */
 html:not([data-theme="dark"]) .toolbar{border-color:var(--line)}
-html:not([data-theme="dark"]) details.filter summary:hover{color:#3f6b00}
+html:not([data-theme="dark"]) details.filter summary:hover{color:#375d2e}
 html:not([data-theme="dark"]) .progress .fill,
-html:not([data-theme="dark"]) .drawer .fill{background:#b9f832}
-html:not([data-theme="dark"]) .progress .track{background:#e4e7d8}
+html:not([data-theme="dark"]) .drawer .fill{background:#375d2e}
+html:not([data-theme="dark"]) .progress .track{background:#dce5da}
 html:not([data-theme="dark"]) .drawer-head{border-color:var(--line)}
-html:not([data-theme="dark"]) .search-panel input{border-color:#0b0b0b}
-html:not([data-theme="dark"]) .toast{background:#0b0b0b;color:#b9f832}
+html:not([data-theme="dark"]) .search-panel input{border-color:#1d3318}
+html:not([data-theme="dark"]) .toast{background:#1d3318;color:#e8c43c}
 html:not([data-theme="dark"]) .overlay{background:rgba(11,11,11,.55)}
 /* ---------- footer: black with lime ---------- */
-html:not([data-theme="dark"]) .footer{background:#0b0b0b;color:#fff;border-top:0}
-html:not([data-theme="dark"]) .footer h5{color:#b9f832}
+html:not([data-theme="dark"]) .footer{background:#1d3318;color:#fff;border-top:0}
+html:not([data-theme="dark"]) .footer h5{color:#e8c43c}
 html:not([data-theme="dark"]) .footer p{color:rgba(255,255,255,.75)}
 html:not([data-theme="dark"]) .footer a,
 html:not([data-theme="dark"]) .footer .cols a{color:rgba(255,255,255,.8)}
-html:not([data-theme="dark"]) .footer a:hover{color:#b9f832}
+html:not([data-theme="dark"]) .footer a:hover{color:#e8c43c}
 html:not([data-theme="dark"]) .footer input{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
 html:not([data-theme="dark"]) .footer input::placeholder{color:rgba(255,255,255,.55)}
-html:not([data-theme="dark"]) .footer input:focus{border-color:#b9f832}
-html:not([data-theme="dark"]) .footer form button{background:#b9f832;border:0;color:#0b0b0b;box-shadow:none;font-weight:600}
-html:not([data-theme="dark"]) .footer form button:hover{background:#fff;color:#0b0b0b}
+html:not([data-theme="dark"]) .footer input:focus{border-color:#4c7245}
+html:not([data-theme="dark"]) .footer form button{background:#375d2e;border:0;color:#fff;box-shadow:none;font-weight:600}
+html:not([data-theme="dark"]) .footer form button:hover{background:#fff;color:#26272a}
 html:not([data-theme="dark"]) .footer .copy{border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.6);opacity:1}
 /* ---------- scroll-to-top emblem ---------- */
 html:not([data-theme="dark"]) #sunTop{background:#fff;box-shadow:0 8px 24px rgba(11,11,11,.25)}
-html:not([data-theme="dark"]) #sunTop .trk{stroke:#e1e6d2}
-html:not([data-theme="dark"]) #sunTop .bar{stroke:#5f8a00}
+html:not([data-theme="dark"]) #sunTop .trk{stroke:#d8e3d5}
+html:not([data-theme="dark"]) #sunTop .bar{stroke:#375d2e}
 html:not([data-theme="dark"]) #sunTop .sn svg{fill:none}
-html:not([data-theme="dark"]) #sunTop .sn svg .em-disc{fill:#000}
-html:not([data-theme="dark"]) #sunTop .sn svg .em-mark{fill:#b9f832}
-html:not([data-theme="dark"]) #prog{background:#b9f832}
+html:not([data-theme="dark"]) #sunTop .sn svg .em-disc{fill:#1d3318}
+html:not([data-theme="dark"]) #sunTop .sn svg .em-mark{fill:#375d2e}
+html:not([data-theme="dark"]) #prog{background:#375d2e}
 
 /* ---- category cards: fallback tile (when the photo card hasn't been built by home.js) ---- */
 .ccard:not(:has(.cc-img)){display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:200px;padding:28px 12px}

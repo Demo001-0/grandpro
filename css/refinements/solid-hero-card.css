@@ -3,7 +3,7 @@
 .float-card::before,.float-card::after{content:none!important;display:none!important;animation:none!important}
 .float-card{background-image:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 html:not([data-theme="dark"]) .float-card{background-color:#fff!important;box-shadow:0 14px 36px rgba(78,85,69,.22)!important}
-html[data-theme="dark"] .float-card{background-color:#16170f!important;box-shadow:0 18px 44px rgba(0,0,0,.6)!important}
+html[data-theme="dark"] .float-card{background-color:#101610!important;box-shadow:0 18px 44px rgba(0,0,0,.6)!important}
 
 /* ---------- desktop: the info card sits UNDER the product, it no longer covers it ---------- */
 @media(min-width:821px){

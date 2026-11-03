@@ -1,5 +1,5 @@
 /* js/components/layout.js — Shared header, ticker, drawer, footer */
-const BRAND = "GrandPro";
+const BRAND = "Riyadh Print";
 function layout() {
   const langBtn = (id, cls = "") => `<button class="icon-btn lang-btn ${cls}" id="${id}" data-lang-toggle type="button" aria-label="${t("Switch language")}" title="${isAR() ? "English" : "العربية"}">${icons.globe}<span class="lang-code">${isAR() ? "EN" : "ع"}</span></button>`;
   const header = `
@@ -16,7 +16,7 @@ function layout() {
         <button class="icon-btn" id="openCart" aria-label="${t("Cart")}">${icons.bag}<span class="cart-count" id="cartCount">0</span></button>
       </div>
     </div>
-    <a class="logo" href="home.html" aria-label="${BRAND}">${sunLogo}<span class="word">GRANDPRO</span><span class="sub">${t("Print Shop")}</span></a>
+    <a class="logo" href="home.html" aria-label="${BRAND}">${sunLogo}${wordAr}${wordEn}</a>
     <nav class="nav" id="nav"><button class="icon-btn nav-close" id="closeNav" aria-label="${t("Close menu")}">×</button>${navLinks.map(([h,l])=>`<a href="${h}" class="${h===page?'active':''}">${t(l)}</a>`).join("")}</nav>
   </div></header>
   <div class="search-panel" id="searchPanel"><div class="container">

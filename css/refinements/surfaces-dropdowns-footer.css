@@ -9,15 +9,15 @@
 .toolbar{position:relative;z-index:30}
 
 /* ---- footer ---- */
-.footer{background:var(--hero);color:var(--ink);border-top:1px solid #d2f49e;padding:64px 0 28px}
+.footer{background:var(--hero);color:var(--ink);border-top:1px solid #c2d5bd;padding:64px 0 28px}
 .footer h5{color:var(--ink)}
 .footer form{max-width:420px}
-.footer input{background:#fff;border:1px solid #cdf395;color:var(--ink)}
-.footer input::placeholder{color:#a8f830}
+.footer input{background:#fff;border:1px solid #bcd1b7;color:var(--ink)}
+.footer input::placeholder{color:#e8c43c}
 .footer input:focus{outline:none;border-color:var(--accent)}
 .footer form button{background:var(--accent);border:1px solid var(--accent);color:#fff;transition:.25s}
 .footer form button:hover{background:var(--ink);border-color:var(--ink)}
 .footer a{transition:color .2s}
 .footer a:hover{text-decoration:none;color:var(--accent)}
-.footer .copy{border-top:1px solid #cdf395;opacity:.75}
+.footer .copy{border-top:1px solid #bcd1b7;opacity:.75}
 

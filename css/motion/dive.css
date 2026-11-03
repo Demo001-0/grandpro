@@ -5,20 +5,20 @@ html.dv-open,html.dv-open body{overflow:hidden}
 
 /* ---------- entry points: the pill, the glowing background logo, the cursor label ---------- */
 .dv-enter{position:absolute;left:24px;bottom:22px;z-index:6;display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;
-  border:1px solid rgba(185,248,50,.5);background:rgba(12,13,10,.72);color:#f4f6ea;font:600 13px/1 var(--font-body);cursor:pointer;
+  border:1px solid rgba(55,93,46,.5);background:rgba(10,13,10,.72);color:#eef3ed;font:600 13px/1 var(--font-body);cursor:pointer;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,color .3s,border-color .3s}
-.dv-enter:hover,.dv-enter:focus-visible{background:#b9f832;color:#0b0b0b;border-color:#b9f832}
-.dv-enter i{position:relative;flex:none;width:28px;height:28px;border-radius:50%;background:#b9f832;display:grid;place-items:center}
-.dv-enter i::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid #b9f832;animation:dv-pulse 2.2s ease-out infinite}
-.dv-enter:hover i{background:#0b0b0b}
-.dv-enter svg{width:14px;height:14px;stroke:#0b0b0b;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.dv-enter:hover svg{stroke:#b9f832}
+.dv-enter:hover,.dv-enter:focus-visible{background:#375d2e;color:#fff;border-color:#4c7245}
+.dv-enter i{position:relative;flex:none;width:28px;height:28px;border-radius:50%;background:#375d2e;display:grid;place-items:center}
+.dv-enter i::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid #4c7245;animation:dv-pulse 2.2s ease-out infinite}
+.dv-enter:hover i{background:#1d3318}
+.dv-enter svg{width:14px;height:14px;stroke:#1d3318;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.dv-enter:hover svg{stroke:#4c7245}
 @keyframes dv-pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.9);opacity:0}}
 
 .hero2 .hero-sun{transition:opacity .4s,scale .7s cubic-bezier(.2,.8,.2,1)}
 .hero2.dv-hot{cursor:pointer}
 html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
-.dv-tip{position:fixed;left:0;top:0;z-index:10002;pointer-events:none;margin:16px 0 0 18px;padding:8px 14px;border-radius:999px;background:#b9f832;color:#0b0b0b;
+.dv-tip{position:fixed;left:0;top:0;z-index:10002;pointer-events:none;margin:16px 0 0 18px;padding:8px 14px;border-radius:999px;background:#375d2e;color:#fff;
   font:700 13px/1 var(--font-body);white-space:nowrap;opacity:0;scale:.6;transition:opacity .2s,scale .3s cubic-bezier(.2,.9,.3,1.3)}
 .dv-tip.on{opacity:1;scale:1}
 @media(hover:none){.dv-tip{display:none}}
@@ -30,18 +30,18 @@ html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
 .dv-fly.go{opacity:0}
 
 /* ---------- the overlay ---------- */
-.dv{position:fixed;inset:0;z-index:10050;display:none;opacity:0;overflow:hidden;background:#070807;color:#f4f6ea;font-family:var(--font-body);
+.dv{position:fixed;inset:0;z-index:10050;display:none;opacity:0;overflow:hidden;background:#1d3318;color:#eef3ed;font-family:var(--font-body);
   perspective:1100px;perspective-origin:50% 44%;touch-action:none;overscroll-behavior:contain}
 .dv.show{display:block}
 .dv.vis{opacity:1;transition:opacity .5s ease}
 .dv.out{opacity:0;transition:opacity .55s ease}
 
 .dv-bg{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(70% 60% at 50% 46%,rgba(185,248,50,.13),rgba(185,248,50,0) 70%),radial-gradient(120% 90% at 50% 120%,rgba(185,248,50,.08),rgba(185,248,50,0) 60%)}
+  background:radial-gradient(70% 60% at 50% 46%,rgba(55,93,46,.13),rgba(55,93,46,0) 70%),radial-gradient(120% 90% at 50% 120%,rgba(55,93,46,.08),rgba(55,93,46,0) 60%)}
 .dv-logo{position:absolute;left:50%;top:46%;width:min(85vmin,780px);aspect-ratio:1;opacity:.07;will-change:transform}
 .dv-logo svg{width:100%;height:100%;display:block}
 .dv-logo .em-disc{display:none}
-.dv-logo .em-mark{fill:#b9f832}
+.dv-logo .em-mark{fill:#375d2e}
 .dv-rings{position:absolute;inset:0;width:100%;height:100%}
 
 .dv-world{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
@@ -51,25 +51,25 @@ html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
 
 /* giant outlined number deep behind the page */
 .dv-big{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-head);font-weight:900;font-size:clamp(220px,40vw,620px);line-height:1;
-  color:transparent;-webkit-text-stroke:2px rgba(185,248,50,.2);transform:translateZ(-280px);opacity:var(--o,1);pointer-events:none;user-select:none}
+  color:transparent;-webkit-text-stroke:2px rgba(55,93,46,.2);transform:translateZ(-280px);opacity:var(--o,1);pointer-events:none;user-select:none}
 
 .dv-text{position:relative;transform:translateZ(130px);opacity:var(--o,1)}
-.dv-kicker{display:inline-block;padding:7px 14px;border-radius:999px;background:#b9f832;color:#0b0b0b;font:700 13px/1 var(--font-body)}
+.dv-kicker{display:inline-block;padding:7px 14px;border-radius:999px;background:#375d2e;color:#fff;font:700 13px/1 var(--font-body)}
 .dv-text h2{margin:20px 0 14px;font-family:var(--font-head);font-weight:800;font-size:clamp(42px,6.4vw,96px);line-height:1.05;color:#fff}
 .dv-text p{max-width:38ch;margin:0 0 28px;font-size:clamp(15px,1.4vw,19px);line-height:1.75;color:rgba(244,246,234,.82)}
 .dv-btns{display:flex;flex-wrap:wrap;gap:12px}
 .dv-cta,.dv-ghost{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font:700 15px/1 var(--font-body);text-decoration:none;
   transition:background .25s,color .25s,border-color .25s,translate .25s}
-.dv-cta{background:#b9f832;color:#0b0b0b;border:1.5px solid #b9f832;box-shadow:0 4px 0 #5f8a00}
+.dv-cta{background:#375d2e;color:#fff;border:1.5px solid #4c7245;box-shadow:0 4px 0 #375d2e}
 .dv-cta:hover{background:#fff;border-color:#fff;translate:0 -2px}
 .dv-cta svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .dv-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.55)}
-.dv-ghost:hover{background:#b9f832;border-color:#b9f832;color:#0b0b0b}
+.dv-ghost:hover{background:#375d2e;border-color:#4c7245;color:#fff}
 
 /* floating product cards: each at its own depth, so they slide against each other while the scene turns */
 .dv-cards{position:relative;height:min(68vh,600px);transform-style:preserve-3d}
 .dv-card{position:absolute;display:block;width:clamp(140px,17vw,250px);aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#e6edf0;color:#fff;text-decoration:none;
-  opacity:var(--o,1);box-shadow:0 34px 60px rgba(0,0,0,.55),0 0 0 1px rgba(185,248,50,.2);transition:scale .35s cubic-bezier(.2,.8,.2,1);
+  opacity:var(--o,1);box-shadow:0 34px 60px rgba(0,0,0,.55),0 0 0 1px rgba(55,93,46,.2);transition:scale .35s cubic-bezier(.2,.8,.2,1);
   animation:dv-bob 6s ease-in-out infinite}
 .dv-card img,.dv-card svg{display:block;width:100%;height:100%;object-fit:cover}
 .dv-card span{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 11px;background:linear-gradient(transparent,rgba(0,0,0,.8));font:600 13px/1.35 var(--font-body)}
@@ -87,23 +87,23 @@ html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
 /* HUD */
 .dv-close{position:absolute;left:22px;top:20px;z-index:5;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.06);color:#fff;
   display:grid;place-items:center;cursor:pointer;transition:background .25s,color .25s,rotate .35s}
-.dv-close:hover,.dv-close:focus-visible{background:#b9f832;color:#0b0b0b;border-color:#b9f832;rotate:90deg}
+.dv-close:hover,.dv-close:focus-visible{background:#375d2e;color:#fff;border-color:#4c7245;rotate:90deg}
 .dv-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round}
 .dv-count{position:absolute;right:26px;top:24px;z-index:5;font:700 15px/1 var(--font-head);letter-spacing:.08em;color:rgba(255,255,255,.55)}
-.dv-count b{color:#b9f832;font-size:26px;margin-inline-end:6px}
+.dv-count b{color:#e8c43c;font-size:26px;margin-inline-end:6px}
 .dv-nav{position:absolute;left:26px;top:50%;translate:0 -50%;z-index:5;display:flex;flex-direction:column;gap:6px}
 .dv-nav button{display:flex;align-items:center;gap:12px;padding:6px 4px;background:none;border:0;color:rgba(255,255,255,.4);font:600 13px/1 var(--font-body);cursor:pointer;transition:color .3s}
 .dv-nav button b{font-family:var(--font-head);font-size:13px}
 .dv-nav button span{opacity:0;translate:-6px 0;transition:opacity .3s,translate .3s;white-space:nowrap}
-.dv-nav button:hover,.dv-nav button.active{color:#b9f832}
+.dv-nav button:hover,.dv-nav button.active{color:#e8c43c}
 .dv-nav button:hover span{opacity:1;translate:0 0}
 .dv-hint{position:absolute;left:50%;bottom:30px;translate:-50% 0;z-index:5;display:flex;align-items:center;gap:12px;font:600 13px/1 var(--font-body);color:rgba(255,255,255,.65);transition:opacity .4s}
 .dv-hint.gone{opacity:0}
 .dv-hint i{width:20px;height:32px;border:1.5px solid rgba(255,255,255,.5);border-radius:12px;position:relative}
-.dv-hint i::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#b9f832;animation:dv-wheel 1.6s ease-in-out infinite}
+.dv-hint i::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#375d2e;animation:dv-wheel 1.6s ease-in-out infinite}
 @keyframes dv-wheel{0%{opacity:0;translate:0 0}30%{opacity:1}100%{opacity:0;translate:0 12px}}
 .dv-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
-.dv-bar i{display:block;height:100%;background:#b9f832;transform-origin:0 50%;transform:scaleX(0)}
+.dv-bar i{display:block;height:100%;background:#375d2e;transform-origin:0 50%;transform:scaleX(0)}
 
 /* ---------- tablet / phone ---------- */
 @media(max-width:820px){
@@ -143,32 +143,32 @@ html:root .hero2.dv-hot .hero-sun{opacity:.6!important;scale:1.05}
   transition:opacity .35s ease,transform .7s cubic-bezier(.2,1.5,.35,1)}
 .dv-pop.show{opacity:1;transform:none;pointer-events:auto;animation:dvp-bob 4.5s ease-in-out .8s infinite}
 .dv-pop.bye{opacity:0;transform:translateY(30px) scale(.8);transition:opacity .35s ease,transform .45s ease;pointer-events:none}
-.dv-pop-go{position:relative;display:flex;align-items:center;gap:14px;padding:10px 20px 10px 10px;border-radius:999px;cursor:pointer;color:#f4f6ea;text-align:start;
-  border:1.5px solid rgba(185,248,50,.55);background:linear-gradient(135deg,rgba(18,20,14,.92),rgba(34,40,20,.92));
+.dv-pop-go{position:relative;display:flex;align-items:center;gap:14px;padding:10px 20px 10px 10px;border-radius:999px;cursor:pointer;color:#eef3ed;text-align:start;
+  border:1.5px solid rgba(55,93,46,.55);background:linear-gradient(135deg,rgba(14,20,15,.92),rgba(25,35,26,.92));
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font-family:var(--font-body);
-  box-shadow:0 14px 40px rgba(0,0,0,.35),0 0 0 0 rgba(185,248,50,.5),inset 0 1px 0 rgba(255,255,255,.12);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
-.dv-pop-go::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(185,248,50,.22) 50%,transparent 65%);translate:-120% 0;animation:dvp-sweep 3.2s ease-in-out 1.2s infinite}
-.dv-pop-go:hover,.dv-pop-go:focus-visible{transform:translateY(-3px) scale(1.03);border-color:#b9f832;box-shadow:0 18px 46px rgba(0,0,0,.4),0 0 0 6px rgba(185,248,50,.16),inset 0 1px 0 rgba(255,255,255,.18)}
-.dv-pop-orb{position:relative;flex:none;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#0b0b0b}
-.dv-pop-orb .r1,.dv-pop-orb .r2{position:absolute;inset:0;border-radius:50%;border:1.5px solid #b9f832;opacity:0;animation:dvp-ripple 2.4s ease-out infinite}
+  box-shadow:0 14px 40px rgba(0,0,0,.35),0 0 0 0 rgba(55,93,46,.5),inset 0 1px 0 rgba(255,255,255,.12);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.dv-pop-go::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(55,93,46,.22) 50%,transparent 65%);translate:-120% 0;animation:dvp-sweep 3.2s ease-in-out 1.2s infinite}
+.dv-pop-go:hover,.dv-pop-go:focus-visible{transform:translateY(-3px) scale(1.03);border-color:#4c7245;box-shadow:0 18px 46px rgba(0,0,0,.4),0 0 0 6px rgba(55,93,46,.16),inset 0 1px 0 rgba(255,255,255,.18)}
+.dv-pop-orb{position:relative;flex:none;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#1d3318}
+.dv-pop-orb .r1,.dv-pop-orb .r2{position:absolute;inset:0;border-radius:50%;border:1.5px solid #4c7245;opacity:0;animation:dvp-ripple 2.4s ease-out infinite}
 .dv-pop-orb .r2{animation-delay:1.2s}
 .dv-pop-ring{position:absolute;inset:-4px;width:calc(100% + 8px);height:calc(100% + 8px);rotate:-90deg}
-.dv-pop-ring circle{fill:none;stroke:#b9f832;stroke-width:3;stroke-linecap:round;stroke-dasharray:182.2;stroke-dashoffset:0}
+.dv-pop-ring circle{fill:none;stroke:#4c7245;stroke-width:3;stroke-linecap:round;stroke-dasharray:182.2;stroke-dashoffset:0}
 .dv-pop.show .dv-pop-ring circle{animation:dvp-count var(--ms,15000ms) linear forwards}
 .dv-pop-logo{position:relative;width:34px;height:34px;animation:dvp-spin 9s linear infinite}
 .dv-pop-logo svg{width:100%;height:100%;display:block}
 .dv-pop-logo .em-disc{display:none}
-.dv-pop-logo .em-mark{fill:#b9f832}
+.dv-pop-logo .em-mark{fill:#375d2e}
 .dv-pop-txt{position:relative;display:flex;flex-direction:column;gap:5px;line-height:1}
 .dv-pop-txt small{font:600 11.5px/1.2 var(--font-body);color:rgba(244,246,234,.62);letter-spacing:.02em}
-.dv-pop-txt b{font:800 21px/1 var(--font-head);letter-spacing:.01em;background:linear-gradient(90deg,#f4f6ea 20%,#b9f832 50%,#f4f6ea 80%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:dvp-shine 3.4s linear infinite}
-.dv-pop-go-arrow{position:relative;flex:none;width:30px;height:30px;border-radius:50%;background:#b9f832;display:grid;place-items:center;transition:transform .25s}
-.dv-pop-go-arrow svg{width:15px;height:15px;stroke:#0b0b0b;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.dv-pop-txt b{font:800 21px/1 var(--font-head);letter-spacing:.01em;background:linear-gradient(90deg,#eef3ed 20%,#375d2e 50%,#eef3ed 80%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:dvp-shine 3.4s linear infinite}
+.dv-pop-go-arrow{position:relative;flex:none;width:30px;height:30px;border-radius:50%;background:#375d2e;display:grid;place-items:center;transition:transform .25s}
+.dv-pop-go-arrow svg{width:15px;height:15px;stroke:#1d3318;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .dv-pop-go:hover .dv-pop-go-arrow{transform:translateX(3px)}
 html.is-ar .dv-pop-go:hover .dv-pop-go-arrow{transform:translateX(-3px)}
 .dv-pop-x{flex:none;align-self:flex-start;width:26px;height:26px;margin-inline-start:-2px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
   border:1px solid rgba(255,255,255,.3);background:rgba(10,10,10,.8);color:#fff;transition:background .2s,color .2s}
-.dv-pop-x:hover,.dv-pop-x:focus-visible{background:#b9f832;color:#0b0b0b}
+.dv-pop-x:hover,.dv-pop-x:focus-visible{background:#375d2e;color:#fff}
 .dv-pop-x svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round}
 @keyframes dvp-ripple{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
 @keyframes dvp-count{to{stroke-dashoffset:182.2}}
@@ -191,7 +191,7 @@ html.dv-open .dv-pop{display:none}
 .dv-pop-orb{width:42px;height:42px}
 .dv-pop-logo{width:25px;height:25px}
 .dv-pop-ring circle{stroke-width:3.4}
-.dv-pop-txt small{font:700 13px/1.25 var(--font-body);color:#f4f6ea;letter-spacing:.01em}
+.dv-pop-txt small{font:700 13px/1.25 var(--font-body);color:#eef3ed;letter-spacing:.01em}
 .dv-pop-go-arrow{width:24px;height:24px}
 .dv-pop-go-arrow svg{width:12px;height:12px}
 .dv-pop-x{width:22px;height:22px}

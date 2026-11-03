@@ -1,4 +1,4 @@
-/* GrandPro animations: scroll reveals, headline reveal, emblem rotation, parallax, progress, page transitions */
+/* Riyadh Print animations: scroll reveals, headline reveal, emblem rotation, parallax, progress, page transitions */
 (function () {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const $ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -124,7 +124,7 @@
   const mini = document.createElement("div");
   mini.id = "mini";
   mini.innerHTML = `<button class="icon-btn mburger" id="mMenu" type="button" aria-label="${t("Menu")}">${icons.menu}</button>
-    <a class="mlogo" href="home.html" aria-label="${BRAND}"><span class="msun">${sunLogo}</span><span class="mword">GRANDPRO</span></a>
+    <a class="mlogo" href="home.html" aria-label="${BRAND}"><span class="msun">${sunLogo}</span><span class="mword">${wordAr}</span></a>
     <nav>${navLinks.map(([h, l]) => `<a href="${h}">${t(l)}</a>`).join("")}</nav>
     <div class="macts"><button class="icon-btn lang-btn" id="mLang" type="button" aria-label="${t("Switch language")}">${icons.globe}<span class="lang-code">${isAR() ? "EN" : "ع"}</span></button><button class="icon-btn" id="mSearch" aria-label="${t("Search")}">${icons.search}</button>
     <button class="icon-btn" id="mCart" aria-label="${t("Cart")}">${icons.bag}<span class="cart-count" id="mCount">0</span></button></div>`;
